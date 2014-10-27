@@ -2,10 +2,10 @@
 
 - [Overview](#overview)
 - [Issues](#issues)
-  - [Index Task Fails](#index-task-fails)
   - [Coordinator Console Problems](#coordinator-console-problems)
 - [Resolved Issues](#resolved-issues)
   - [No Task Logs](#no-task-logs)
+  - [Index Task Fails](#index-task-fails)
 
 Overview
 ===
@@ -26,6 +26,67 @@ My druid cluster consists of the following nodes:
 
 Issues
 ===
+
+Coordinator Console Problems
+----
+
+The Coordniator Console looks like this:
+![alt tag](https://raw.github.com/lexicalunit/druid_config/master/images/console.png)
+
+When I go to `http://coordinator-ip:8080`, the Coordinator Console comes up and works perfectly. For example, the dropdowns are properly populated:
+![alt tag](https://raw.github.com/lexicalunit/druid_config/master/images/working_console.png)
+
+However, when I go to, for example, `http://overlord-ip:8080` instead, the console will come up but nothing works properly. For example, dropdowns not working anymore:
+![alt tag](https://raw.github.com/lexicalunit/druid_config/master/images/broken_console.png)
+
+Resolved Issues
+===
+
+No Task Logs
+---
+After kicking off a Indexing Task I can see that it is running in the console:
+![alt tag](https://raw.github.com/lexicalunit/druid_config/master/images/task_running.png)
+
+Eventually, the task fails:
+![alt tag](https://raw.github.com/lexicalunit/druid_config/master/images/task_fail.png)
+
+When I click on the link `log (all)` I am taken to a page that just says:
+
+```
+No log was found for this task. The task may not exist, or it may not have begun running yet.
+```
+
+Given the following properties in my overlord configuration:
+
+```properties
+druid.indexer.logs.type=s3
+druid.indexer.logs.s3Bucket=s3-bucket
+druid.indexer.logs.s3Prefix=logs
+```
+
+And the following properties in my middleManager configuration:
+
+```properties
+druid.selectors.indexing.serviceName=druid:overlord
+```
+
+The logs should be available on S3, however they are not:
+
+```bash
+$ s3cmd ls s3://s3-bucket/
+	DIR   s3://s3-bucket/click_conversion/
+	DIR   s3://s3-bucket/click_conversion_weekly/
+```
+
+### Resolution
+
+The following needed to be added to the middleManager configuration:
+
+```properties
+druid.indexer.logs.type=s3
+druid.indexer.logs.s3Bucket=s3-bucket
+druid.indexer.logs.s3Prefix=logs
+```
 
 Index Task Fails
 ---
@@ -121,63 +182,61 @@ And here is what the overlord log shows:
 2014-10-27 16:42:28,850 INFO [TaskQueue-StorageSync] io.druid.indexing.overlord.TaskQueue - Synced 0 tasks from storage (0 tasks added, 0 tasks removed).
 ```
 
-Coordinator Console Problems
-----
+### Resolution
 
-The Coordniator Console looks like this:
-![alt tag](https://raw.github.com/lexicalunit/druid_config/master/images/console.png)
+I had to workaround a bug that the druid devs found in the indexing service by specifying directly the `numShards` property in the task JSON. This is the replacement task JSON:
 
-When I go to `http://coordinator-ip:8080`, the Coordinator Console comes up and works perfectly. For example, the dropdowns are properly populated:
-![alt tag](https://raw.github.com/lexicalunit/druid_config/master/images/working_console.png)
-
-However, when I go to, for example, `http://overlord-ip:8080` instead, the console will come up but nothing works properly. For example, dropdowns not working anymore:
-![alt tag](https://raw.github.com/lexicalunit/druid_config/master/images/broken_console.png)
-
-Resolved Issues
-===
-
-No Task Logs
----
-After kicking off a Indexing Task I can see that it is running in the console:
-![alt tag](https://raw.github.com/lexicalunit/druid_config/master/images/task_running.png)
-
-Eventually, the task fails:
-![alt tag](https://raw.github.com/lexicalunit/druid_config/master/images/task_fail.png)
-
-When I click on the link `log (all)` I am taken to a page that just says:
-
+```json
+{
+  "type" : "index",
+  "schema" : {
+    "dataSchema" : {
+      "dataSource" : "click_conversion_weekly",
+      "metricsSpec" : [ {
+        "type" : "count",
+        "name" : "count"
+      }, {
+        "type" : "doubleSum",
+        "name" : "commissions",
+        "fieldName" : "commissions"
+      }, {
+        "type" : "doubleSum",
+        "name" : "sales",
+        "fieldName" : "sales"
+      }, {
+        "type" : "doubleSum",
+        "name" : "orders",
+        "fieldName" : "orders"
+      } ],
+      "granularitySpec" : {
+        "type" : "uniform",
+        "segmentGranularity" : "WEEK",
+        "queryGranularity" : "MINUTE",
+        "intervals" : [ "2014-04-13T00:00:00.000Z/2014-09-01T00:00:00.000Z" ]
+      }
+    },
+    "ioConfig" : {
+      "type" : "index",
+      "firehose" : {
+        "type" : "ingestSegment",
+        "dataSource" : "click_conversion",
+        "interval" : "2014-04-13T00:00:00.000Z/2014-09-01T00:00:00.000Z"
+      }
+    },
+    "tuningConfig" : {
+      "type" : "index",
+      "rowFlushBoundary" : 500000,
+      "targetPartitionSize": -1,
+      "numShards" : 3
+    }
+  }
+}
 ```
-No log was found for this task. The task may not exist, or it may not have begun running yet.
-```
 
-Given the following properties in my overlord configuration:
+I also needed to mount an EBS volume on the middle manager node and add the following configuration to the middle manager node:
 
 ```properties
-druid.indexer.logs.type=s3
-druid.indexer.logs.s3Bucket=s3-bucket
-druid.indexer.logs.s3Prefix=logs
-```
-
-And the following properties in my middleManager configuration:
-
-```properties
-druid.selectors.indexing.serviceName=druid:overlord
-```
-
-The logs should be available on S3, however they are not:
-
-```bash
-$ s3cmd ls s3://s3-bucket/
-	DIR   s3://s3-bucket/click_conversion/
-	DIR   s3://s3-bucket/click_conversion_weekly/
-```
-
-**Resolution:**
-
-The following needed to be added to the middleManager configuration:
-
-```properties
-druid.indexer.logs.type=s3
-druid.indexer.logs.s3Bucket=s3-bucket
-druid.indexer.logs.s3Prefix=logs
+druid.indexer.runner.javaOpts="-server -Xmx2g -XX:+UseG1GC -XX:MaxGCPauseMillis=100 -XX:+PrintGCDetails -XX:+PrintGCTimeStamps"
+druid.indexer.task.chathandler.type=announce
+druid.indexer.task.baseTaskDir=/persistent
 ```
