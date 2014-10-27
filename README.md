@@ -58,7 +58,43 @@ Here is my indexing task specification:
 }
 ```
 
-The task fails but I am unable to determine why because there is no task log.
+The task eventually fails with the following error:
+
+```
+2014-10-27 16:40:11,934 INFO [task-runner-0] io.druid.indexing.common.actions.RemoteTaskActionClient - Submitting action for task[reingest] to overlord[http://10.13.132.213:8080/druid/indexer/v1/action]: SegmentListUsedAction{dataSource='click_conversion', interval=2014-04-06T00:00:00.000Z/2014-04-13T00:00:00.000Z}
+2014-10-27 16:40:50,224 WARN [task-runner-0] io.druid.indexing.common.index.YeOldePlumberSchool - Failed to merge and upload
+java.lang.IllegalStateException: Nothing indexed?
+	at io.druid.indexing.common.index.YeOldePlumberSchool$1.finishJob(YeOldePlumberSchool.java:159)
+	at io.druid.indexing.common.task.IndexTask.generateSegment(IndexTask.java:444)
+	at io.druid.indexing.common.task.IndexTask.run(IndexTask.java:198)
+	at io.druid.indexing.overlord.ThreadPoolTaskRunner$ThreadPoolTaskRunnerCallable.call(ThreadPoolTaskRunner.java:219)
+	at io.druid.indexing.overlord.ThreadPoolTaskRunner$ThreadPoolTaskRunnerCallable.call(ThreadPoolTaskRunner.java:198)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:262)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+2014-10-27 16:40:50,228 INFO [task-runner-0] io.druid.indexing.common.task.IndexTask - Task[index_click_conversion_weekly_2014-10-27T16:36:15.336Z] interval[2014-04-07T00:00:00.000Z/2014-04-14T00:00:00.000Z] partition[0] took in 12,968,203 rows (0 processed, 0 unparseable, 12,968,203 thrown away) and output 0 rows
+2014-10-27 16:40:50,229 ERROR [task-runner-0] io.druid.indexing.overlord.ThreadPoolTaskRunner - Exception while running task[IndexTask{id=index_click_conversion_weekly_2014-10-27T16:36:15.336Z, type=index, dataSource=click_conversion_weekly}]
+java.lang.IllegalStateException: Nothing indexed?
+	at io.druid.indexing.common.index.YeOldePlumberSchool$1.finishJob(YeOldePlumberSchool.java:159)
+	at io.druid.indexing.common.task.IndexTask.generateSegment(IndexTask.java:444)
+	at io.druid.indexing.common.task.IndexTask.run(IndexTask.java:198)
+	at io.druid.indexing.overlord.ThreadPoolTaskRunner$ThreadPoolTaskRunnerCallable.call(ThreadPoolTaskRunner.java:219)
+	at io.druid.indexing.overlord.ThreadPoolTaskRunner$ThreadPoolTaskRunnerCallable.call(ThreadPoolTaskRunner.java:198)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:262)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+2014-10-27 16:40:50,229 INFO [task-runner-0] io.druid.indexing.overlord.ThreadPoolTaskRunner - Removing task directory: /tmp/persistent/task/index_click_conversion_weekly_2014-10-27T16:36:15.336Z/work
+2014-10-27 16:40:50,242 INFO [task-runner-0] io.druid.indexing.worker.executor.ExecutorLifecycle - Task completed with status: {
+  "id" : "index_click_conversion_weekly_2014-10-27T16:36:15.336Z",
+  "status" : "FAILED",
+  "duration" : 268865
+}
+2014-10-27 16:40:50,248 INFO [main] com.metamx.common.lifecycle.Lifecycle$AnnotationBasedHandler - Invoking stop method[public void io.druid.server.coordination.AbstractDataSegmentAnnouncer.stop()] on object[io.druid.server.coordination.BatchDataSegmentAnnouncer@47f36a24].
+```
+
+Please see the full log for details: [task.log](task.log).
 
 Coordinator Console Problems
 ----

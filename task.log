@@ -1,0 +1,977 @@
+2014-10-27 16:36:16,158 INFO [main] io.druid.guice.PropertiesModule - Loading properties from runtime.properties
+2014-10-27 16:36:16,200 INFO [main] org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 5.0.1.Final
+2014-10-27 16:36:16,883 INFO [main] io.druid.guice.JsonConfigurator - Loaded class[class io.druid.guice.ExtensionsConfig] from props[druid.extensions.] as [ExtensionsConfig{searchCurrentClassloader=true, coordinates=[io.druid.extensions:druid-s3-extensions:0.6.146], localRepository='/root/.m2/repository', remoteRepositories=[http://repo1.maven.org/maven2/, https://metamx.artifactoryonline.com/metamx/pub-libs-releases-local]}]
+2014-10-27 16:36:17,046 INFO [main] io.druid.initialization.Initialization - Loading extension[io.druid.extensions:druid-s3-extensions:0.6.146] for class[io.druid.cli.CliCommandCreator]
+2014-10-27 16:36:17,538 INFO [main] io.druid.initialization.Initialization - Added URL[file:/root/.m2/repository/io/druid/extensions/druid-s3-extensions/0.6.146/druid-s3-extensions-0.6.146.jar]
+2014-10-27 16:36:17,538 INFO [main] io.druid.initialization.Initialization - Added URL[file:/root/.m2/repository/net/java/dev/jets3t/jets3t/0.9.1/jets3t-0.9.1.jar]
+2014-10-27 16:36:17,539 INFO [main] io.druid.initialization.Initialization - Added URL[file:/root/.m2/repository/commons-codec/commons-codec/1.7/commons-codec-1.7.jar]
+2014-10-27 16:36:17,539 INFO [main] io.druid.initialization.Initialization - Added URL[file:/root/.m2/repository/org/codehaus/jackson/jackson-core-asl/1.9.13/jackson-core-asl-1.9.13.jar]
+2014-10-27 16:36:17,539 INFO [main] io.druid.initialization.Initialization - Added URL[file:/root/.m2/repository/org/codehaus/jackson/jackson-mapper-asl/1.9.13/jackson-mapper-asl-1.9.13.jar]
+2014-10-27 16:36:17,539 INFO [main] io.druid.initialization.Initialization - Added URL[file:/root/.m2/repository/javax/activation/activation/1.1.1/activation-1.1.1.jar]
+2014-10-27 16:36:17,539 INFO [main] io.druid.initialization.Initialization - Added URL[file:/root/.m2/repository/mx4j/mx4j/3.0.2/mx4j-3.0.2.jar]
+2014-10-27 16:36:17,539 INFO [main] io.druid.initialization.Initialization - Added URL[file:/root/.m2/repository/javax/mail/mail/1.4.7/mail-1.4.7.jar]
+2014-10-27 16:36:17,539 INFO [main] io.druid.initialization.Initialization - Added URL[file:/root/.m2/repository/commons-logging/commons-logging/1.1.1/commons-logging-1.1.1.jar]
+2014-10-27 16:36:17,539 INFO [main] io.druid.initialization.Initialization - Added URL[file:/root/.m2/repository/org/bouncycastle/bcprov-jdk15/1.46/bcprov-jdk15-1.46.jar]
+2014-10-27 16:36:17,539 INFO [main] io.druid.initialization.Initialization - Added URL[file:/root/.m2/repository/com/jamesmurty/utils/java-xmlbuilder/0.4/java-xmlbuilder-0.4.jar]
+2014-10-27 16:36:17,539 INFO [main] io.druid.initialization.Initialization - Added URL[file:/root/.m2/repository/com/amazonaws/aws-java-sdk/1.6.0.1/aws-java-sdk-1.6.0.1.jar]
+2014-10-27 16:36:17,539 INFO [main] io.druid.initialization.Initialization - Added URL[file:/root/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.2.3/jackson-core-2.2.3.jar]
+2014-10-27 16:36:17,539 INFO [main] io.druid.initialization.Initialization - Added URL[file:/root/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.2.3/jackson-annotations-2.2.3.jar]
+2014-10-27 16:36:17,540 INFO [main] io.druid.initialization.Initialization - Added URL[file:/root/.m2/repository/org/apache/httpcomponents/httpclient/4.2/httpclient-4.2.jar]
+2014-10-27 16:36:17,540 INFO [main] io.druid.initialization.Initialization - Added URL[file:/root/.m2/repository/org/apache/httpcomponents/httpcore/4.2/httpcore-4.2.jar]
+2014-10-27 16:36:17,540 INFO [main] io.druid.initialization.Initialization - Added URL[file:/root/.m2/repository/com/metamx/emitter/0.2.11/emitter-0.2.11.jar]
+2014-10-27 16:36:17,540 INFO [main] io.druid.initialization.Initialization - Added URL[file:/root/.m2/repository/com/metamx/http-client/0.9.6/http-client-0.9.6.jar]
+2014-10-27 16:36:17,540 INFO [main] io.druid.initialization.Initialization - Added URL[file:/root/.m2/repository/io/netty/netty/3.9.0.Final/netty-3.9.0.Final.jar]
+2014-10-27 16:36:17,540 INFO [main] io.druid.initialization.Initialization - Added URL[file:/root/.m2/repository/log4j/log4j/1.2.16/log4j-1.2.16.jar]
+2014-10-27 16:36:17,540 INFO [main] io.druid.initialization.Initialization - Added URL[file:/root/.m2/repository/com/google/guava/guava/16.0.1/guava-16.0.1.jar]
+2014-10-27 16:36:17,540 INFO [main] io.druid.initialization.Initialization - Added URL[file:/root/.m2/repository/commons-io/commons-io/2.0.1/commons-io-2.0.1.jar]
+2014-10-27 16:36:17,759 INFO [main] io.druid.initialization.Initialization - Loading extension[io.druid.extensions:druid-s3-extensions:0.6.146] for class[io.druid.initialization.DruidModule]
+2014-10-27 16:36:17,872 INFO [main] io.druid.initialization.Initialization - Adding extension module[class io.druid.storage.s3.S3StorageDruidModule] for class[io.druid.initialization.DruidModule]
+2014-10-27 16:36:17,872 INFO [main] io.druid.initialization.Initialization - Adding extension module[class io.druid.firehose.s3.S3FirehoseDruidModule] for class[io.druid.initialization.DruidModule]
+2014-10-27 16:36:18,341 INFO [main] io.druid.guice.JsonConfigurator - Loaded class[class com.metamx.emitter.core.LoggingEmitterConfig] from props[druid.emitter.logging.] as [LoggingEmitterConfig{loggerClass='com.metamx.emitter.core.LoggingEmitter', logLevel='debug'}]
+2014-10-27 16:36:18,419 INFO [main] io.druid.guice.JsonConfigurator - Loaded class[class io.druid.server.metrics.DruidMonitorSchedulerConfig] from props[druid.monitoring.] as [io.druid.server.metrics.DruidMonitorSchedulerConfig@4a27dbfc]
+2014-10-27 16:36:18,448 INFO [main] com.metamx.metrics.SysMonitor - Loading sigar native lib at tmpPath[/tmp/yay1480154080658218601yay/libsigar-amd64-linux.so]
+2014-10-27 16:36:18,452 INFO [main] io.druid.guice.JsonConfigurator - Loaded class[class io.druid.server.metrics.MonitorsConfig] from props[druid.monitoring.] as [MonitorsConfig{monitors=[class com.metamx.metrics.SysMonitor, class com.metamx.metrics.JvmMonitor]}]
+2014-10-27 16:36:18,475 INFO [main] io.druid.guice.JsonConfigurator - Loaded class[class io.druid.server.DruidNode] from props[druid.] as [DruidNode{serviceName='druid/middleManager', host='10.136.64.60:8081', port=8081}]
+2014-10-27 16:36:18,488 INFO [main] io.druid.server.metrics.MetricsModule - Adding monitor[com.metamx.metrics.SysMonitor@7ebce5be]
+2014-10-27 16:36:18,490 INFO [main] io.druid.server.metrics.MetricsModule - Adding monitor[com.metamx.metrics.JvmMonitor@5b39746e]
+2014-10-27 16:36:18,571 INFO [main] io.druid.guice.JsonConfigurator - Loaded class[class io.druid.server.initialization.ServerConfig] from props[druid.server.http.] as [io.druid.server.initialization.ServerConfig@45323ac1]
+2014-10-27 16:36:18,582 INFO [main] io.druid.guice.JsonConfigurator - Loaded class[class io.druid.indexing.common.config.TaskConfig] from props[druid.indexer.task.] as [io.druid.indexing.common.config.TaskConfig@437be5fc]
+2014-10-27 16:36:18,588 INFO [main] io.druid.guice.JsonConfigurator - Loaded class[class io.druid.guice.http.DruidHttpClientConfig] from props[druid.global.http.] as [io.druid.guice.http.DruidHttpClientConfig@d7ef341]
+2014-10-27 16:36:18,682 INFO [main] io.druid.guice.JsonConfigurator - Loaded class[class io.druid.client.indexing.IndexingServiceSelectorConfig] from props[druid.selectors.indexing.] as [io.druid.client.indexing.IndexingServiceSelectorConfig@7025588a]
+2014-10-27 16:36:18,685 INFO [main] org.skife.config.ConfigurationObjectFactory - Assigning value [10.182.204.153:2181] for [druid.zk.service.host] on [io.druid.curator.CuratorConfig#getZkHosts()]
+2014-10-27 16:36:18,687 INFO [main] org.skife.config.ConfigurationObjectFactory - Assigning default value [30000] for [druid.zk.service.sessionTimeoutMs] on [io.druid.curator.CuratorConfig#getZkSessionTimeoutMs()]
+2014-10-27 16:36:18,687 INFO [main] org.skife.config.ConfigurationObjectFactory - Assigning default value [false] for [druid.curator.compress] on [io.druid.curator.CuratorConfig#enableCompression()]
+2014-10-27 16:36:18,768 WARN [main] org.apache.curator.retry.ExponentialBackoffRetry - maxRetries too large (30). Pinning to 29
+2014-10-27 16:36:18,799 INFO [main] io.druid.guice.JsonConfigurator - Loaded class[class io.druid.server.initialization.CuratorDiscoveryConfig] from props[druid.discovery.curator.] as [io.druid.server.initialization.CuratorDiscoveryConfig@e3c4b82]
+2014-10-27 16:36:18,966 INFO [main] io.druid.guice.JsonConfigurator - Loaded class[class io.druid.indexing.common.RetryPolicyConfig] from props[druid.peon.taskActionClient.retry.] as [io.druid.indexing.common.RetryPolicyConfig@466054a1]
+2014-10-27 16:36:18,969 INFO [main] io.druid.guice.JsonConfigurator - Loaded class[class io.druid.storage.s3.AWSCredentialsConfig] from props[druid.s3.] as [io.druid.storage.s3.AWSCredentialsConfig@35681f52]
+2014-10-27 16:36:19,103 INFO [main] io.druid.guice.JsonConfigurator - Loaded class[class io.druid.storage.s3.S3DataSegmentPusherConfig] from props[druid.storage.] as [io.druid.storage.s3.S3DataSegmentPusherConfig@4715f036]
+2014-10-27 16:36:19,107 INFO [main] io.druid.guice.JsonConfigurator - Loaded class[class io.druid.storage.s3.S3DataSegmentArchiverConfig] from props[druid.storage.] as [io.druid.storage.s3.S3DataSegmentArchiverConfig@12b59ea1]
+2014-10-27 16:36:19,126 INFO [main] io.druid.guice.JsonConfigurator - Loaded class[class io.druid.client.DruidServerConfig] from props[druid.server.] as [io.druid.client.DruidServerConfig@628419dc]
+2014-10-27 16:36:19,126 INFO [main] org.skife.config.ConfigurationObjectFactory - Using method itself for [druid.zk.paths.liveSegmentsPath] on [io.druid.server.initialization.ZkPathsConfig#getLiveSegmentsPath()]
+2014-10-27 16:36:19,127 INFO [main] org.skife.config.ConfigurationObjectFactory - Using method itself for [druid.zk.paths.base] on [io.druid.server.initialization.ZkPathsConfig#getZkBasePath()]
+2014-10-27 16:36:19,127 INFO [main] org.skife.config.ConfigurationObjectFactory - Using method itself for [druid.zk.paths.announcementsPath] on [io.druid.server.initialization.ZkPathsConfig#getAnnouncementsPath()]
+2014-10-27 16:36:19,127 INFO [main] org.skife.config.ConfigurationObjectFactory - Using method itself for [druid.zk.paths.servedSegmentsPath] on [io.druid.server.initialization.ZkPathsConfig#getServedSegmentsPath()]
+2014-10-27 16:36:19,127 INFO [main] org.skife.config.ConfigurationObjectFactory - Using method itself for [druid.zk.paths.connectorPath] on [io.druid.server.initialization.ZkPathsConfig#getConnectorPath()]
+2014-10-27 16:36:19,127 INFO [main] org.skife.config.ConfigurationObjectFactory - Using method itself for [druid.zk.paths.indexer.announcementsPath] on [io.druid.server.initialization.ZkPathsConfig#getIndexerAnnouncementPath()]
+2014-10-27 16:36:19,128 INFO [main] org.skife.config.ConfigurationObjectFactory - Using method itself for [druid.zk.paths.indexer.tasksPath] on [io.druid.server.initialization.ZkPathsConfig#getIndexerTaskPath()]
+2014-10-27 16:36:19,128 INFO [main] org.skife.config.ConfigurationObjectFactory - Using method itself for [druid.zk.paths.propertiesPath] on [io.druid.server.initialization.ZkPathsConfig#getPropertiesPath()]
+2014-10-27 16:36:19,128 INFO [main] org.skife.config.ConfigurationObjectFactory - Using method itself for [druid.zk.paths.loadQueuePath] on [io.druid.server.initialization.ZkPathsConfig#getLoadQueuePath()]
+2014-10-27 16:36:19,128 INFO [main] org.skife.config.ConfigurationObjectFactory - Using method itself for [druid.zk.paths.coordinatorPath] on [io.druid.server.initialization.ZkPathsConfig#getCoordinatorPath()]
+2014-10-27 16:36:19,129 INFO [main] org.skife.config.ConfigurationObjectFactory - Using method itself for [druid.zk.paths.indexer.statusPath] on [io.druid.server.initialization.ZkPathsConfig#getIndexerStatusPath()]
+2014-10-27 16:36:19,129 INFO [main] org.skife.config.ConfigurationObjectFactory - Using method itself for [druid.zk.paths.indexer.leaderLatchPath] on [io.druid.server.initialization.ZkPathsConfig#getIndexerLeaderLatchPath()]
+2014-10-27 16:36:19,161 INFO [main] io.druid.guice.JsonConfigurator - Loaded class[class io.druid.server.initialization.BatchDataSegmentAnnouncerConfig] from props[druid.announcer.] as [io.druid.server.initialization.BatchDataSegmentAnnouncerConfig@695e2e5]
+2014-10-27 16:36:19,165 INFO [main] io.druid.guice.JsonConfigurator - Loaded class[interface io.druid.server.coordination.DataSegmentAnnouncerProvider] from props[druid.announcer.] as [io.druid.server.coordination.LegacyDataSegmentAnnouncerProvider@22bd297b]
+2014-10-27 16:36:19,171 INFO [main] io.druid.guice.JsonConfigurator - Loaded class[interface io.druid.client.FilteredServerViewProvider] from props[druid.announcer.] as [io.druid.client.SingleServerInventoryProvider@28ec249e]
+2014-10-27 16:36:19,182 INFO [main] io.druid.guice.JsonConfigurator - Loaded class[class io.druid.query.QueryConfig] from props[druid.query.] as [io.druid.query.QueryConfig@1ffa87c5]
+2014-10-27 16:36:19,194 INFO [main] io.druid.guice.JsonConfigurator - Loaded class[class io.druid.query.search.search.SearchQueryConfig] from props[druid.query.search.] as [io.druid.query.search.search.SearchQueryConfig@2f2eea84]
+2014-10-27 16:36:19,200 INFO [main] io.druid.guice.JsonConfigurator - Loaded class[class io.druid.query.groupby.GroupByQueryConfig] from props[druid.query.groupBy.] as [io.druid.query.groupby.GroupByQueryConfig@4b35f3d]
+2014-10-27 16:36:19,201 INFO [main] org.skife.config.ConfigurationObjectFactory - Assigning value [536870912] for [druid.computation.buffer.size] on [io.druid.query.DruidProcessingConfig#intermediateComputeSizeBytes()]
+2014-10-27 16:36:19,201 INFO [main] org.skife.config.ConfigurationObjectFactory - Assigning value [3] for [druid.processing.numThreads] on [io.druid.query.DruidProcessingConfig#getNumThreads()]
+2014-10-27 16:36:19,201 INFO [main] org.skife.config.ConfigurationObjectFactory - Using method itself for [${base_path}.columnCache.sizeBytes] on [io.druid.query.DruidProcessingConfig#columnCacheSizeBytes()]
+2014-10-27 16:36:19,201 INFO [main] org.skife.config.ConfigurationObjectFactory - Assigning default value [processing-%s] for [${base_path}.formatString] on [com.metamx.common.concurrent.ExecutorServiceConfig#getFormatString()]
+2014-10-27 16:36:19,212 INFO [main] io.druid.guice.JsonConfigurator - Loaded class[class io.druid.query.topn.TopNQueryConfig] from props[druid.query.topN.] as [io.druid.query.topn.TopNQueryConfig@7641e82f]
+2014-10-27 16:36:19,228 INFO [main] io.druid.guice.JsonConfigurator - Loaded class[interface io.druid.server.log.RequestLoggerProvider] from props[druid.request.logging.] as [io.druid.server.log.FileRequestLoggerProvider@2e6f4499]
+2014-10-27 16:36:19,236 INFO [main] org.eclipse.jetty.util.log - Logging initialized @3607ms
+2014-10-27 16:36:19,323 INFO [main] com.metamx.common.lifecycle.Lifecycle$AnnotationBasedHandler - Invoking start method[public void com.metamx.emitter.core.LoggingEmitter.start()] on object[com.metamx.emitter.core.LoggingEmitter@343242ef].
+2014-10-27 16:36:19,323 INFO [main] com.metamx.common.lifecycle.Lifecycle$AnnotationBasedHandler - Invoking start method[public void com.metamx.emitter.service.ServiceEmitter.start()] on object[com.metamx.emitter.service.ServiceEmitter@23dce922].
+2014-10-27 16:36:19,324 INFO [main] com.metamx.common.lifecycle.Lifecycle$AnnotationBasedHandler - Invoking start method[public void com.metamx.metrics.MonitorScheduler.start()] on object[com.metamx.metrics.MonitorScheduler@7c4dc992].
+2014-10-27 16:36:19,328 INFO [main] com.metamx.common.lifecycle.Lifecycle$AnnotationBasedHandler - Invoking start method[public void com.metamx.http.client.HttpClient.start()] on object[com.metamx.http.client.HttpClient@4e3b9bed].
+2014-10-27 16:36:19,328 INFO [main] io.druid.curator.CuratorModule - Starting Curator
+2014-10-27 16:36:19,328 INFO [main] org.apache.curator.framework.imps.CuratorFrameworkImpl - Starting
+2014-10-27 16:36:19,341 INFO [main] org.apache.zookeeper.ZooKeeper - Client environment:zookeeper.version=3.4.6-1569965, built on 02/20/2014 09:09 GMT
+2014-10-27 16:36:19,341 INFO [main] org.apache.zookeeper.ZooKeeper - Client environment:host.name=ip-10-136-64-60.ec2.internal
+2014-10-27 16:36:19,341 INFO [main] org.apache.zookeeper.ZooKeeper - Client environment:java.version=1.7.0_65
+2014-10-27 16:36:19,341 INFO [main] org.apache.zookeeper.ZooKeeper - Client environment:java.vendor=Oracle Corporation
+2014-10-27 16:36:19,341 INFO [main] org.apache.zookeeper.ZooKeeper - Client environment:java.home=/usr/lib/jvm/java-7-openjdk-amd64/jre
+2014-10-27 16:36:19,341 INFO [main] org.apache.zookeeper.ZooKeeper - Client environment:java.class.path=/usr/local/druid-services/lib/commons-io-2.0.1.jar:/usr/local/druid-services/lib/maven-model-3.1.1.jar:/usr/local/druid-services/lib/lz4-1.1.2.jar:/usr/local/druid-services/lib/jetty-util-9.2.2.v20140723.jar:/usr/local/druid-services/lib/hibernate-validator-5.0.1.Final.jar:/usr/local/druid-services/lib/java-xmlbuilder-0.4.jar:/usr/local/druid-services/lib/httpcore-4.2.jar:/usr/local/druid-services/lib/emitter-0.2.11.jar:/usr/local/druid-services/lib/plexus-interpolation-1.19.jar:/usr/local/druid-services/lib/aether-connector-file-0.9.0.M2.jar:/usr/local/druid-services/lib/jetty-io-9.2.2.v20140723.jar:/usr/local/druid-services/lib/asm-3.1.jar:/usr/local/druid-services/lib/guava-16.0.1.jar:/usr/local/druid-services/lib/jackson-jaxrs-json-provider-2.2.3.jar:/usr/local/druid-services/lib/commons-codec-1.7.jar:/usr/local/druid-services/lib/curator-client-2.6.0.jar:/usr/local/druid-services/lib/jetty-servlets-9.2.2.v20140723.jar:/usr/local/druid-services/lib/plexus-utils-3.0.15.jar:/usr/local/druid-services/lib/spymemcached-2.8.4.jar:/usr/local/druid-services/lib/curator-framework-2.6.0.jar:/usr/local/druid-services/lib/jackson-core-2.2.3.jar:/usr/local/druid-services/lib/extendedset-1.3.4.jar:/usr/local/druid-services/lib/slf4j-log4j12-1.6.2.jar:/usr/local/druid-services/lib/druid-common-0.6.146.jar:/usr/local/druid-services/lib/config-magic-0.9.jar:/usr/local/druid-services/lib/jets3t-0.9.1.jar:/usr/local/druid-services/lib/maven-model-builder-3.1.1.jar:/usr/local/druid-services/lib/google-http-client-jackson2-1.15.0-rc.jar:/usr/local/druid-services/lib/icu4j-4.8.1.jar:/usr/local/druid-services/lib/okhttp-1.0.2.jar:/usr/local/druid-services/lib/compress-lzf-0.8.4.jar:/usr/local/druid-services/lib/mail-1.4.7.jar:/usr/local/druid-services/lib/commons-lang-2.6.jar:/usr/local/druid-services/lib/commons-dbcp-1.4.jar:/usr/local/druid-services/lib/aopalliance-1.0.jar:/usr/local/druid-services/lib/org.abego.treelayout.core-1.0.1.jar:/usr/local/druid-services/lib/aether-spi-0.9.0.M2.jar:/usr/local/druid-services/lib/commons-pool-1.6.jar:/usr/local/druid-services/lib/sigar-1.6.5.132.jar:/usr/local/druid-services/lib/jackson-jaxrs-base-2.2.3.jar:/usr/local/druid-services/lib/zookeeper-3.4.6.jar:/usr/local/druid-services/lib/jersey-server-1.17.1.jar:/usr/local/druid-services/lib/rhino-1.7R4.jar:/usr/local/druid-services/lib/httpclient-4.2.jar:/usr/local/druid-services/lib/aether-api-0.9.0.M2.jar:/usr/local/druid-services/lib/slf4j-api-1.6.4.jar:/usr/local/druid-services/lib/jersey-servlet-1.17.1.jar:/usr/local/druid-services/lib/jboss-logging-3.1.1.GA.jar:/usr/local/druid-services/lib/aether-util-0.9.0.M2.jar:/usr/local/druid-services/lib/google-http-client-1.15.0-rc.jar:/usr/local/druid-services/lib/jersey-guice-1.17.1.jar:/usr/local/druid-services/lib/jackson-core-asl-1.9.13.jar:/usr/local/druid-services/lib/guice-servlet-4.0-beta.jar:/usr/local/druid-services/lib/bytebuffer-collections-0.0.2.jar:/usr/local/druid-services/lib/commons-logging-1.1.1.jar:/usr/local/druid-services/lib/jetty-servlet-9.2.2.v20140723.jar:/usr/local/druid-services/lib/druid-api-0.2.7.jar:/usr/local/druid-services/lib/netty-3.9.0.Final.jar:/usr/local/druid-services/lib/validation-api-1.1.0.Final.jar:/usr/local/druid-services/lib/jetty-continuation-9.2.2.v20140723.jar:/usr/local/druid-services/lib/maven-settings-builder-3.1.1.jar:/usr/local/druid-services/lib/activation-1.1.1.jar:/usr/local/druid-services/lib/druid-indexing-hadoop-0.6.146.jar:/usr/local/druid-services/lib/maxminddb-0.2.0.jar:/usr/local/druid-services/lib/alphanum-1.0.3.jar:/usr/local/druid-services/lib/tesla-aether-0.0.5.jar:/usr/local/druid-services/lib/antlr4-runtime-4.0.jar:/usr/local/druid-services/lib/aether-impl-0.9.0.M2.jar:/usr/local/druid-services/lib/commons-cli-1.2.jar:/usr/local/druid-services/lib/opencsv-2.3.jar:/usr/local/druid-services/lib/http-client-0.9.6.jar:/usr/local/druid-services/lib/druid-services-0.6.146.jar:/usr/local/druid-services/lib/jsr305-2.0.1.jar:/usr/local/druid-services/lib/aether-connector-okhttp-0.0.9.jar:/usr/local/druid-services/lib/maven-aether-provider-3.1.1.jar:/usr/local/druid-services/lib/jackson-datatype-guava-2.2.3.jar:/usr/local/druid-services/lib/wagon-provider-api-2.4.jar:/usr/local/druid-services/lib/jetty-server-9.2.2.v20140723.jar:/usr/local/druid-services/lib/classmate-0.8.0.jar:/usr/local/druid-services/lib/xpp3-1.1.4c.jar:/usr/local/druid-services/lib/jackson-databind-2.2.3.jar:/usr/local/druid-services/lib/joda-time-2.1.jar:/usr/local/druid-services/lib/jetty-http-9.2.2.v20140723.jar:/usr/local/druid-services/lib/jackson-mapper-asl-1.9.13.jar:/usr/local/druid-services/lib/irc-api-1.0-0011.jar:/usr/local/druid-services/lib/curator-x-discovery-2.6.0.jar:/usr/local/druid-services/lib/bcprov-jdk15-1.46.jar:/usr/local/druid-services/lib/log4j-1.2.16.jar:/usr/local/druid-services/lib/jackson-annotations-2.2.3.jar:/usr/local/druid-services/lib/druid-server-0.6.146.jar:/usr/local/druid-services/lib/java-util-0.26.6.jar:/usr/local/druid-services/lib/mysql-connector-java-5.1.18.jar:/usr/local/druid-services/lib/mx4j-3.0.2.jar:/usr/local/druid-services/lib/curator-recipes-2.6.0.jar:/usr/local/druid-services/lib/jetty-security-9.2.2.v20140723.jar:/usr/local/druid-services/lib/javax.inject-1.jar:/usr/local/druid-services/lib/jdbi-2.32.jar:/usr/local/druid-services/lib/aws-java-sdk-1.6.0.1.jar:/usr/local/druid-services/lib/jersey-core-1.17.1.jar:/usr/local/druid-services/lib/jetty-client-9.2.2.v20140723.jar:/usr/local/druid-services/lib/protobuf-java-2.5.0.jar:/usr/local/druid-services/lib/jackson-datatype-joda-2.2.3.jar:/usr/local/druid-services/lib/airline-0.6.jar:/usr/local/druid-services/lib/jackson-dataformat-smile-2.2.3.jar:/usr/local/druid-services/lib/guice-4.0-beta.jar:/usr/local/druid-services/lib/server-metrics-0.0.9.jar:/usr/local/druid-services/lib/maven-repository-metadata-3.1.1.jar:/usr/local/druid-services/lib/guice-multibindings-4.0-beta.jar:/usr/local/druid-services/lib/jline-0.9.94.jar:/usr/local/druid-services/lib/javax.servlet-api-3.1.0.jar:/usr/local/druid-services/lib/druid-indexing-service-0.6.146.jar:/usr/local/druid-services/lib/geoip2-0.4.0.jar:/usr/local/druid-services/lib/javax.el-3.0.0.jar:/usr/local/druid-services/lib/jackson-module-jaxb-annotations-2.2.3.jar:/usr/local/druid-services/lib/jetty-proxy-9.2.2.v20140723.jar:/usr/local/druid-services/lib/maven-settings-3.1.1.jar:/usr/local/druid-services/lib/druid-processing-0.6.146.jar:/usr/local/druid-services/config/middleManager
+2014-10-27 16:36:19,341 INFO [main] org.apache.zookeeper.ZooKeeper - Client environment:java.library.path=/usr/java/packages/lib/amd64:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib
+2014-10-27 16:36:19,341 INFO [main] org.apache.zookeeper.ZooKeeper - Client environment:java.io.tmpdir=/tmp
+2014-10-27 16:36:19,341 INFO [main] org.apache.zookeeper.ZooKeeper - Client environment:java.compiler=<NA>
+2014-10-27 16:36:19,341 INFO [main] org.apache.zookeeper.ZooKeeper - Client environment:os.name=Linux
+2014-10-27 16:36:19,341 INFO [main] org.apache.zookeeper.ZooKeeper - Client environment:os.arch=amd64
+2014-10-27 16:36:19,341 INFO [main] org.apache.zookeeper.ZooKeeper - Client environment:os.version=3.13.0-24-generic
+2014-10-27 16:36:19,341 INFO [main] org.apache.zookeeper.ZooKeeper - Client environment:user.name=root
+2014-10-27 16:36:19,341 INFO [main] org.apache.zookeeper.ZooKeeper - Client environment:user.home=/root
+2014-10-27 16:36:19,341 INFO [main] org.apache.zookeeper.ZooKeeper - Client environment:user.dir=/tmp/start-druid-middleManager
+2014-10-27 16:36:19,342 INFO [main] org.apache.zookeeper.ZooKeeper - Initiating client connection, connectString=10.182.204.153:2181 sessionTimeout=30000 watcher=org.apache.curator.ConnectionState@19c5167e
+2014-10-27 16:36:19,355 INFO [main] com.metamx.common.lifecycle.Lifecycle$AnnotationBasedHandler - Invoking start method[public void io.druid.curator.discovery.ServerDiscoverySelector.start() throws java.lang.Exception] on object[io.druid.curator.discovery.ServerDiscoverySelector@17d3a6c].
+2014-10-27 16:36:19,358 INFO [main-SendThread(10.182.204.153:2181)] org.apache.zookeeper.ClientCnxn - Opening socket connection to server 10.182.204.153/10.182.204.153:2181. Will not attempt to authenticate using SASL (unknown error)
+2014-10-27 16:36:19,365 INFO [main-SendThread(10.182.204.153:2181)] org.apache.zookeeper.ClientCnxn - Socket connection established to 10.182.204.153/10.182.204.153:2181, initiating session
+2014-10-27 16:36:19,372 WARN [main-SendThread(10.182.204.153:2181)] org.apache.zookeeper.ClientCnxnSocket - Connected to an old server; r-o mode will be unavailable
+2014-10-27 16:36:19,373 INFO [main-SendThread(10.182.204.153:2181)] org.apache.zookeeper.ClientCnxn - Session establishment complete on server 10.182.204.153/10.182.204.153:2181, sessionid = 0x1495224b432000c, negotiated timeout = 30000
+2014-10-27 16:36:19,376 INFO [main-EventThread] org.apache.curator.framework.state.ConnectionStateManager - State change: CONNECTED
+2014-10-27 16:36:20,468 INFO [main] com.metamx.common.lifecycle.Lifecycle$AnnotationBasedHandler - Invoking start method[public void io.druid.curator.announcement.Announcer.start()] on object[io.druid.curator.announcement.Announcer@2a592759].
+2014-10-27 16:36:20,469 INFO [main] com.metamx.common.lifecycle.Lifecycle$AnnotationBasedHandler - Invoking start method[public void io.druid.client.ServerInventoryView.start() throws java.lang.Exception] on object[io.druid.client.SingleServerInventoryView@2f9801c7].
+2014-10-27 16:36:20,471 INFO [main] com.metamx.common.lifecycle.Lifecycle$AnnotationBasedHandler - Invoking start method[public void io.druid.server.log.FileRequestLogger.start()] on object[io.druid.server.log.FileRequestLogger@26f73ca4].
+2014-10-27 16:36:20,486 INFO [main] org.eclipse.jetty.server.Server - jetty-9.2.2.v20140723
+2014-10-27 16:36:20,521 INFO [ServerInventoryView-0] io.druid.curator.inventory.CuratorInventoryManager - Created new InventoryCacheListener for /druid/servedSegments/10.63.207.138:8080
+2014-10-27 16:36:20,522 INFO [ServerInventoryView-0] io.druid.curator.inventory.CuratorInventoryManager - Starting inventory cache for 10.63.207.138:8080, inventoryPath /druid/servedSegments/10.63.207.138:8080
+2014-10-27 16:36:20,522 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - New Server[DruidServerMetadata{name='10.63.207.138:8080', host='10.63.207.138:8080', maxSize=21207667507, tier='_default_tier', type='historical', priority='0'}]
+2014-10-27 16:36:20,523 INFO [ServerInventoryView-0] io.druid.curator.inventory.CuratorInventoryManager - Created new InventoryCacheListener for /druid/servedSegments/10.61.184.106:8080
+2014-10-27 16:36:20,523 INFO [ServerInventoryView-0] io.druid.curator.inventory.CuratorInventoryManager - Starting inventory cache for 10.61.184.106:8080, inventoryPath /druid/servedSegments/10.61.184.106:8080
+2014-10-27 16:36:20,523 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - New Server[DruidServerMetadata{name='10.61.184.106:8080', host='10.61.184.106:8080', maxSize=21207667507, tier='_default_tier', type='historical', priority='0'}]
+2014-10-27 16:36:20,523 INFO [ServerInventoryView-0] io.druid.curator.inventory.CuratorInventoryManager - Created new InventoryCacheListener for /druid/servedSegments/10.63.196.119:8080
+2014-10-27 16:36:20,523 INFO [ServerInventoryView-0] io.druid.curator.inventory.CuratorInventoryManager - Starting inventory cache for 10.63.196.119:8080, inventoryPath /druid/servedSegments/10.63.196.119:8080
+2014-10-27 16:36:20,523 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - New Server[DruidServerMetadata{name='10.63.196.119:8080', host='10.63.196.119:8080', maxSize=21207667507, tier='_default_tier', type='historical', priority='0'}]
+Oct 27, 2014 4:36:20 PM com.sun.jersey.guice.spi.container.GuiceComponentProviderFactory register
+INFO: Registering com.fasterxml.jackson.jaxrs.json.JacksonJsonProvider as a provider class
+Oct 27, 2014 4:36:20 PM com.sun.jersey.guice.spi.container.GuiceComponentProviderFactory register
+INFO: Registering io.druid.server.StatusResource as a root resource class
+Oct 27, 2014 4:36:20 PM com.sun.jersey.server.impl.application.WebApplicationImpl _initiate
+INFO: Initiating Jersey application, version 'Jersey: 1.17.1 02/28/2013 12:47 PM'
+2014-10-27 16:36:20,677 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.63.207.138:8080] added segment[click_conversion_2014-07-19T00:00:00.000Z_2014-07-20T00:00:00.000Z_2014-10-16T16:53:21.542Z]
+2014-10-27 16:36:20,678 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.63.207.138:8080] added segment[click_conversion_2014-08-30T00:00:00.000Z_2014-08-31T00:00:00.000Z_2014-10-16T16:59:39.454Z]
+2014-10-27 16:36:20,679 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.63.207.138:8080] added segment[click_conversion_2014-06-14T00:00:00.000Z_2014-06-15T00:00:00.000Z_2014-10-15T18:39:05.536Z]
+2014-10-27 16:36:20,680 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.63.207.138:8080] added segment[click_conversion_2014-08-31T00:00:00.000Z_2014-09-01T00:00:00.000Z_2014-10-16T16:59:39.454Z]
+2014-10-27 16:36:20,680 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.63.207.138:8080] added segment[click_conversion_2014-08-17T00:00:00.000Z_2014-08-18T00:00:00.000Z_2014-10-16T16:59:39.454Z]
+2014-10-27 16:36:20,681 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.63.207.138:8080] added segment[click_conversion_2014-06-30T00:00:00.000Z_2014-07-01T00:00:00.000Z_2014-10-15T18:46:02.327Z]
+2014-10-27 16:36:20,682 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.63.207.138:8080] added segment[click_conversion_2014-05-13T00:00:00.000Z_2014-05-14T00:00:00.000Z_2014-10-15T17:44:16.171Z]
+2014-10-27 16:36:20,683 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.63.207.138:8080] added segment[click_conversion_2014-05-29T00:00:00.000Z_2014-05-30T00:00:00.000Z_2014-10-15T17:49:20.571Z]
+2014-10-27 16:36:20,684 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.63.207.138:8080] added segment[click_conversion_2014-05-25T00:00:00.000Z_2014-05-26T00:00:00.000Z_2014-10-15T17:49:20.571Z]
+2014-10-27 16:36:20,685 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.63.207.138:8080] added segment[click_conversion_2014-07-22T00:00:00.000Z_2014-07-23T00:00:00.000Z_2014-10-16T16:53:21.542Z]
+2014-10-27 16:36:20,686 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.63.207.138:8080] added segment[click_conversion_2014-05-08T00:00:00.000Z_2014-05-09T00:00:00.000Z_2014-10-15T17:44:16.171Z]
+2014-10-27 16:36:20,687 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.63.207.138:8080] added segment[click_conversion_2014-06-10T00:00:00.000Z_2014-06-11T00:00:00.000Z_2014-10-15T18:39:05.536Z]
+2014-10-27 16:36:20,687 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.63.207.138:8080] added segment[click_conversion_2014-05-04T00:00:00.000Z_2014-05-05T00:00:00.000Z_2014-10-15T17:44:16.171Z]
+2014-10-27 16:36:20,688 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.63.207.138:8080] added segment[click_conversion_2014-08-03T00:00:00.000Z_2014-08-04T00:00:00.000Z_2014-10-16T16:45:43.003Z]
+2014-10-27 16:36:20,689 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.63.207.138:8080] added segment[click_conversion_2014-06-16T00:00:00.000Z_2014-06-17T00:00:00.000Z_2014-10-15T18:46:02.327Z]
+2014-10-27 16:36:20,690 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.63.207.138:8080] added segment[click_conversion_2014-06-01T00:00:00.000Z_2014-06-02T00:00:00.000Z_2014-10-15T18:39:05.536Z]
+2014-10-27 16:36:20,691 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.63.207.138:8080] added segment[click_conversion_2014-07-06T00:00:00.000Z_2014-07-07T00:00:00.000Z_2014-10-15T19:35:47.234Z]
+2014-10-27 16:36:20,692 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.63.207.138:8080] added segment[click_conversion_2014-07-14T00:00:00.000Z_2014-07-15T00:00:00.000Z_2014-10-15T19:35:47.234Z]
+Oct 27, 2014 4:36:20 PM com.sun.jersey.guice.spi.container.GuiceComponentProviderFactory getComponentProvider
+INFO: Binding com.fasterxml.jackson.jaxrs.json.JacksonJsonProvider to GuiceManagedComponentProvider with the scope "Singleton"
+2014-10-27 16:36:20,693 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.63.207.138:8080] added segment[click_conversion_2014-08-12T00:00:00.000Z_2014-08-13T00:00:00.000Z_2014-10-16T16:45:43.003Z]
+2014-10-27 16:36:20,694 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.63.207.138:8080] added segment[click_conversion_2014-06-29T00:00:00.000Z_2014-06-30T00:00:00.000Z_2014-10-15T18:46:02.327Z]
+2014-10-27 16:36:20,694 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.63.207.138:8080] added segment[click_conversion_2014-08-08T00:00:00.000Z_2014-08-09T00:00:00.000Z_2014-10-16T16:45:43.003Z]
+2014-10-27 16:36:20,695 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.63.207.138:8080] added segment[click_conversion_2014-05-10T00:00:00.000Z_2014-05-11T00:00:00.000Z_2014-10-15T17:44:16.171Z]
+2014-10-27 16:36:20,696 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.63.207.138:8080] added segment[click_conversion_2014-07-18T00:00:00.000Z_2014-07-19T00:00:00.000Z_2014-10-16T16:53:21.542Z]
+2014-10-27 16:36:20,697 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.63.207.138:8080] added segment[click_conversion_2014-05-05T00:00:00.000Z_2014-05-06T00:00:00.000Z_2014-10-15T17:44:16.171Z]
+2014-10-27 16:36:20,698 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.63.207.138:8080] added segment[click_conversion_2014-05-26T00:00:00.000Z_2014-05-27T00:00:00.000Z_2014-10-15T17:49:20.571Z]
+2014-10-27 16:36:20,699 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.63.207.138:8080] added segment[click_conversion_2014-06-04T00:00:00.000Z_2014-06-05T00:00:00.000Z_2014-10-15T18:39:05.536Z]
+2014-10-27 16:36:20,699 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.63.207.138:8080] added segment[click_conversion_2014-08-25T00:00:00.000Z_2014-08-26T00:00:00.000Z_2014-10-16T16:59:39.454Z]
+2014-10-27 16:36:20,700 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.63.207.138:8080] added segment[click_conversion_2014-07-03T00:00:00.000Z_2014-07-04T00:00:00.000Z_2014-10-15T19:35:47.234Z]
+2014-10-27 16:36:20,701 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.63.207.138:8080] added segment[click_conversion_2014-08-26T00:00:00.000Z_2014-08-27T00:00:00.000Z_2014-10-16T16:59:39.454Z]
+2014-10-27 16:36:20,702 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.63.207.138:8080] added segment[click_conversion_2014-08-20T00:00:00.000Z_2014-08-21T00:00:00.000Z_2014-10-16T16:59:39.454Z]
+2014-10-27 16:36:20,703 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.63.207.138:8080] added segment[click_conversion_2014-07-05T00:00:00.000Z_2014-07-06T00:00:00.000Z_2014-10-15T19:35:47.234Z]
+2014-10-27 16:36:20,704 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.63.207.138:8080] added segment[click_conversion_2014-04-06T00:00:00.000Z_2014-04-07T00:00:00.000Z_2014-10-15T16:40:58.252Z]
+2014-10-27 16:36:20,705 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.63.207.138:8080] added segment[click_conversion_2014-08-11T00:00:00.000Z_2014-08-12T00:00:00.000Z_2014-10-16T16:45:43.003Z]
+2014-10-27 16:36:20,705 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.63.207.138:8080] added segment[click_conversion_2014-07-28T00:00:00.000Z_2014-07-29T00:00:00.000Z_2014-10-16T16:53:21.542Z]
+2014-10-27 16:36:20,706 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.63.207.138:8080] added segment[click_conversion_2014-04-25T00:00:00.000Z_2014-04-26T00:00:00.000Z_2014-10-15T16:48:40.148Z]
+2014-10-27 16:36:20,707 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.63.207.138:8080] added segment[click_conversion_2014-06-23T00:00:00.000Z_2014-06-24T00:00:00.000Z_2014-10-15T18:46:02.327Z]
+2014-10-27 16:36:20,707 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.63.207.138:8080] added segment[click_conversion_2014-04-23T00:00:00.000Z_2014-04-24T00:00:00.000Z_2014-10-15T16:48:40.148Z]
+2014-10-27 16:36:20,708 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.63.207.138:8080] added segment[click_conversion_2014-05-11T00:00:00.000Z_2014-05-12T00:00:00.000Z_2014-10-15T17:44:16.171Z]
+2014-10-27 16:36:20,708 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.63.207.138:8080] added segment[click_conversion_2014-07-29T00:00:00.000Z_2014-07-30T00:00:00.000Z_2014-10-16T16:53:21.542Z]
+2014-10-27 16:36:20,709 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.63.207.138:8080] added segment[click_conversion_2014-04-09T00:00:00.000Z_2014-04-10T00:00:00.000Z_2014-10-15T16:40:58.252Z]
+2014-10-27 16:36:20,710 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.63.207.138:8080] added segment[click_conversion_2014-07-25T00:00:00.000Z_2014-07-26T00:00:00.000Z_2014-10-16T16:53:21.542Z]
+2014-10-27 16:36:20,710 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.63.207.138:8080] added segment[click_conversion_2014-06-11T00:00:00.000Z_2014-06-12T00:00:00.000Z_2014-10-15T18:39:05.536Z]
+2014-10-27 16:36:20,711 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.63.207.138:8080] added segment[click_conversion_2014-04-20T00:00:00.000Z_2014-04-21T00:00:00.000Z_2014-10-15T16:48:40.148Z]
+2014-10-27 16:36:20,711 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.63.207.138:8080] added segment[click_conversion_2014-07-02T00:00:00.000Z_2014-07-03T00:00:00.000Z_2014-10-15T19:35:47.234Z]
+2014-10-27 16:36:20,712 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.63.207.138:8080] added segment[click_conversion_2014-04-13T00:00:00.000Z_2014-04-14T00:00:00.000Z_2014-10-15T16:40:58.252Z]
+2014-10-27 16:36:20,712 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.63.207.138:8080] added segment[click_conversion_2014-06-08T00:00:00.000Z_2014-06-09T00:00:00.000Z_2014-10-15T18:39:05.536Z]
+2014-10-27 16:36:20,713 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.63.207.138:8080] added segment[click_conversion_2014-06-26T00:00:00.000Z_2014-06-27T00:00:00.000Z_2014-10-15T18:46:02.327Z]
+2014-10-27 16:36:20,714 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.63.207.138:8080] added segment[click_conversion_2014-04-10T00:00:00.000Z_2014-04-11T00:00:00.000Z_2014-10-15T16:40:58.252Z]
+2014-10-27 16:36:20,714 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.63.207.138:8080] added segment[click_conversion_2014-04-18T00:00:00.000Z_2014-04-19T00:00:00.000Z_2014-10-15T16:48:40.148Z]
+2014-10-27 16:36:20,715 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.63.207.138:8080] added segment[click_conversion_2014-04-22T00:00:00.000Z_2014-04-23T00:00:00.000Z_2014-10-15T16:48:40.148Z]
+2014-10-27 16:36:20,715 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.63.207.138:8080] added segment[click_conversion_2014-05-01T00:00:00.000Z_2014-05-02T00:00:00.000Z_2014-10-15T17:44:16.171Z]
+2014-10-27 16:36:20,716 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.63.207.138:8080] added segment[click_conversion_2014-08-14T00:00:00.000Z_2014-08-15T00:00:00.000Z_2014-10-16T16:45:43.003Z]
+2014-10-27 16:36:20,717 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.63.207.138:8080] added segment[click_conversion_2014-05-02T00:00:00.000Z_2014-05-03T00:00:00.000Z_2014-10-15T17:44:16.171Z]
+2014-10-27 16:36:20,717 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.63.207.138:8080] added segment[click_conversion_2014-06-20T00:00:00.000Z_2014-06-21T00:00:00.000Z_2014-10-15T18:46:02.327Z]
+2014-10-27 16:36:20,718 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.63.207.138:8080] added segment[click_conversion_2014-07-12T00:00:00.000Z_2014-07-13T00:00:00.000Z_2014-10-15T19:35:47.234Z]
+2014-10-27 16:36:20,718 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.63.207.138:8080] added segment[click_conversion_2014-08-06T00:00:00.000Z_2014-08-07T00:00:00.000Z_2014-10-16T16:45:43.003Z]
+2014-10-27 16:36:20,719 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.63.207.138:8080] added segment[click_conversion_2014-04-02T00:00:00.000Z_2014-04-03T00:00:00.000Z_2014-10-15T16:40:58.252Z]
+2014-10-27 16:36:20,720 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.63.207.138:8080] added segment[click_conversion_2014-07-08T00:00:00.000Z_2014-07-09T00:00:00.000Z_2014-10-15T19:35:47.234Z]
+2014-10-27 16:36:20,721 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.63.207.138:8080] added segment[click_conversion_2014-08-21T00:00:00.000Z_2014-08-22T00:00:00.000Z_2014-10-16T16:59:39.454Z]
+2014-10-27 16:36:20,721 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.63.207.138:8080] added segment[click_conversion_2014-05-07T00:00:00.000Z_2014-05-08T00:00:00.000Z_2014-10-15T17:44:16.171Z]
+2014-10-27 16:36:20,722 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.63.207.138:8080] added segment[click_conversion_2014-06-13T00:00:00.000Z_2014-06-14T00:00:00.000Z_2014-10-15T18:39:05.536Z]
+2014-10-27 16:36:20,722 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.63.207.138:8080] added segment[click_conversion_2014-08-02T00:00:00.000Z_2014-08-03T00:00:00.000Z_2014-10-16T16:45:43.003Z]
+2014-10-27 16:36:20,723 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.63.207.138:8080] added segment[click_conversion_2014-06-24T00:00:00.000Z_2014-06-25T00:00:00.000Z_2014-10-15T18:46:02.327Z]
+2014-10-27 16:36:20,724 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.63.207.138:8080] added segment[click_conversion_2014-08-18T00:00:00.000Z_2014-08-19T00:00:00.000Z_2014-10-16T16:59:39.454Z]
+2014-10-27 16:36:20,724 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.63.207.138:8080] added segment[click_conversion_2014-04-07T00:00:00.000Z_2014-04-08T00:00:00.000Z_2014-10-15T16:40:58.252Z]
+2014-10-27 16:36:20,725 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.63.207.138:8080] added segment[click_conversion_2014-08-29T00:00:00.000Z_2014-08-30T00:00:00.000Z_2014-10-16T16:59:39.454Z]
+2014-10-27 16:36:20,725 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.63.207.138:8080] added segment[click_conversion_2014-08-09T00:00:00.000Z_2014-08-10T00:00:00.000Z_2014-10-16T16:45:43.003Z]
+2014-10-27 16:36:20,726 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.63.207.138:8080] added segment[click_conversion_2014-07-16T00:00:00.000Z_2014-07-17T00:00:00.000Z_2014-10-16T16:53:21.542Z]
+2014-10-27 16:36:20,727 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.63.207.138:8080] added segment[click_conversion_2014-06-05T00:00:00.000Z_2014-06-06T00:00:00.000Z_2014-10-15T18:39:05.536Z]
+2014-10-27 16:36:20,727 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.63.207.138:8080] added segment[click_conversion_2014-06-17T00:00:00.000Z_2014-06-18T00:00:00.000Z_2014-10-15T18:46:02.327Z]
+2014-10-27 16:36:20,728 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.63.207.138:8080] added segment[click_conversion_2014-04-26T00:00:00.000Z_2014-04-27T00:00:00.000Z_2014-10-15T16:48:40.148Z]
+2014-10-27 16:36:20,728 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.63.207.138:8080] added segment[click_conversion_2014-07-21T00:00:00.000Z_2014-07-22T00:00:00.000Z_2014-10-16T16:53:21.542Z]
+2014-10-27 16:36:20,729 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.63.207.138:8080] added segment[click_conversion_2014-08-13T00:00:00.000Z_2014-08-14T00:00:00.000Z_2014-10-16T16:45:43.003Z]
+2014-10-27 16:36:20,730 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.63.207.138:8080] added segment[click_conversion_2014-06-27T00:00:00.000Z_2014-06-28T00:00:00.000Z_2014-10-15T18:46:02.327Z]
+2014-10-27 16:36:20,730 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.63.207.138:8080] added segment[click_conversion_2014-06-22T00:00:00.000Z_2014-06-23T00:00:00.000Z_2014-10-15T18:46:02.327Z]
+2014-10-27 16:36:20,731 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.63.207.138:8080] added segment[click_conversion_2014-08-01T00:00:00.000Z_2014-08-02T00:00:00.000Z_2014-10-16T16:45:43.003Z]
+2014-10-27 16:36:20,732 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.63.207.138:8080] added segment[click_conversion_2014-08-23T00:00:00.000Z_2014-08-24T00:00:00.000Z_2014-10-16T16:59:39.454Z]
+2014-10-27 16:36:20,732 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.63.207.138:8080] added segment[click_conversion_2014-04-16T00:00:00.000Z_2014-04-17T00:00:00.000Z_2014-10-15T16:48:40.148Z]
+2014-10-27 16:36:20,733 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.63.207.138:8080] added segment[click_conversion_2014-05-28T00:00:00.000Z_2014-05-29T00:00:00.000Z_2014-10-15T17:49:20.571Z]
+2014-10-27 16:36:20,734 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.63.207.138:8080] added segment[click_conversion_2014-05-23T00:00:00.000Z_2014-05-24T00:00:00.000Z_2014-10-15T17:49:20.571Z]
+2014-10-27 16:36:20,735 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.63.207.138:8080] added segment[click_conversion_2014-05-20T00:00:00.000Z_2014-05-21T00:00:00.000Z_2014-10-15T17:49:20.571Z]
+2014-10-27 16:36:20,736 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.63.207.138:8080] added segment[click_conversion_2014-07-09T00:00:00.000Z_2014-07-10T00:00:00.000Z_2014-10-15T19:35:47.234Z]
+2014-10-27 16:36:20,737 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.63.207.138:8080] added segment[click_conversion_2014-07-31T00:00:00.000Z_2014-08-01T00:00:00.000Z_2014-10-16T16:53:21.542Z]
+2014-10-27 16:36:20,738 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.63.207.138:8080] added segment[click_conversion_2014-05-19T00:00:00.000Z_2014-05-20T00:00:00.000Z_2014-10-15T17:49:20.571Z]
+2014-10-27 16:36:20,738 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.63.207.138:8080] added segment[click_conversion_2014-04-15T00:00:00.000Z_2014-04-16T00:00:00.000Z_2014-10-15T16:48:40.148Z]
+2014-10-27 16:36:20,739 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.63.207.138:8080] added segment[click_conversion_2014-04-19T00:00:00.000Z_2014-04-20T00:00:00.000Z_2014-10-15T16:48:40.148Z]
+2014-10-27 16:36:20,740 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.63.207.138:8080] added segment[click_conversion_2014-05-22T00:00:00.000Z_2014-05-23T00:00:00.000Z_2014-10-15T17:49:20.571Z]
+2014-10-27 16:36:20,741 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.63.207.138:8080] added segment[click_conversion_2014-08-27T00:00:00.000Z_2014-08-28T00:00:00.000Z_2014-10-16T16:59:39.454Z]
+2014-10-27 16:36:20,742 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.63.207.138:8080] added segment[click_conversion_2014-08-15T00:00:00.000Z_2014-08-16T00:00:00.000Z_2014-10-16T16:59:39.454Z]
+2014-10-27 16:36:20,743 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.63.207.138:8080] added segment[click_conversion_2014-05-17T00:00:00.000Z_2014-05-18T00:00:00.000Z_2014-10-15T17:49:20.571Z]
+2014-10-27 16:36:20,744 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.63.207.138:8080] added segment[click_conversion_2014-04-12T00:00:00.000Z_2014-04-13T00:00:00.000Z_2014-10-15T16:40:58.252Z]
+2014-10-27 16:36:20,744 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.63.207.138:8080] added segment[click_conversion_2014-06-02T00:00:00.000Z_2014-06-03T00:00:00.000Z_2014-10-15T18:39:05.536Z]
+2014-10-27 16:36:20,745 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.63.207.138:8080] added segment[click_conversion_2014-07-11T00:00:00.000Z_2014-07-12T00:00:00.000Z_2014-10-15T19:35:47.234Z]
+2014-10-27 16:36:20,746 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.63.207.138:8080] added segment[click_conversion_2014-04-29T00:00:00.000Z_2014-04-30T00:00:00.000Z_2014-10-15T16:48:40.148Z]
+2014-10-27 16:36:20,747 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.63.207.138:8080] added segment[click_conversion_2014-05-14T00:00:00.000Z_2014-05-15T00:00:00.000Z_2014-10-15T17:44:16.171Z]
+2014-10-27 16:36:20,748 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.63.207.138:8080] added segment[click_conversion_2014-07-26T00:00:00.000Z_2014-07-27T00:00:00.000Z_2014-10-16T16:53:21.542Z]
+2014-10-27 16:36:20,748 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.63.207.138:8080] added segment[click_conversion_2014-07-27T00:00:00.000Z_2014-07-28T00:00:00.000Z_2014-10-16T16:53:21.542Z]
+2014-10-27 16:36:20,749 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.63.207.138:8080] added segment[click_conversion_2014-04-28T00:00:00.000Z_2014-04-29T00:00:00.000Z_2014-10-15T16:48:40.148Z]
+2014-10-27 16:36:20,749 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.63.207.138:8080] added segment[click_conversion_2014-05-16T00:00:00.000Z_2014-05-17T00:00:00.000Z_2014-10-15T17:49:20.571Z]
+2014-10-27 16:36:20,750 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.63.207.138:8080] added segment[click_conversion_2014-06-07T00:00:00.000Z_2014-06-08T00:00:00.000Z_2014-10-15T18:39:05.536Z]
+2014-10-27 16:36:20,751 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.63.207.138:8080] added segment[click_conversion_2014-05-30T00:00:00.000Z_2014-05-31T00:00:00.000Z_2014-10-15T17:49:20.571Z]
+2014-10-27 16:36:20,751 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.63.207.138:8080] added segment[click_conversion_2014-04-03T00:00:00.000Z_2014-04-04T00:00:00.000Z_2014-10-15T16:40:58.252Z]
+2014-10-27 16:36:20,752 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.63.207.138:8080] added segment[click_conversion_2014-08-05T00:00:00.000Z_2014-08-06T00:00:00.000Z_2014-10-16T16:45:43.003Z]
+2014-10-27 16:36:20,752 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.61.184.106:8080] added segment[click_conversion_2014-07-19T00:00:00.000Z_2014-07-20T00:00:00.000Z_2014-10-16T16:53:21.542Z]
+2014-10-27 16:36:20,753 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.61.184.106:8080] added segment[click_conversion_2014-07-07T00:00:00.000Z_2014-07-08T00:00:00.000Z_2014-10-15T19:35:47.234Z]
+2014-10-27 16:36:20,754 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.61.184.106:8080] added segment[click_conversion_2014-06-14T00:00:00.000Z_2014-06-15T00:00:00.000Z_2014-10-15T18:39:05.536Z]
+2014-10-27 16:36:20,755 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.61.184.106:8080] added segment[click_conversion_2014-05-24T00:00:00.000Z_2014-05-25T00:00:00.000Z_2014-10-15T17:49:20.571Z]
+2014-10-27 16:36:20,756 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.61.184.106:8080] added segment[click_conversion_2014-08-31T00:00:00.000Z_2014-09-01T00:00:00.000Z_2014-10-16T16:59:39.454Z]
+2014-10-27 16:36:20,757 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.61.184.106:8080] added segment[click_conversion_2014-06-28T00:00:00.000Z_2014-06-29T00:00:00.000Z_2014-10-15T18:46:02.327Z]
+2014-10-27 16:36:20,758 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.61.184.106:8080] added segment[click_conversion_2014-05-13T00:00:00.000Z_2014-05-14T00:00:00.000Z_2014-10-15T17:44:16.171Z]
+2014-10-27 16:36:20,758 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.61.184.106:8080] added segment[click_conversion_2014-06-09T00:00:00.000Z_2014-06-10T00:00:00.000Z_2014-10-15T18:39:05.536Z]
+2014-10-27 16:36:20,759 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.61.184.106:8080] added segment[click_conversion_2014-04-04T00:00:00.000Z_2014-04-05T00:00:00.000Z_2014-10-15T16:40:58.252Z]
+2014-10-27 16:36:20,760 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.61.184.106:8080] added segment[click_conversion_2014-05-25T00:00:00.000Z_2014-05-26T00:00:00.000Z_2014-10-15T17:49:20.571Z]
+2014-10-27 16:36:20,761 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.61.184.106:8080] added segment[click_conversion_2014-07-22T00:00:00.000Z_2014-07-23T00:00:00.000Z_2014-10-16T16:53:21.542Z]
+2014-10-27 16:36:20,762 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.61.184.106:8080] added segment[click_conversion_2014-05-04T00:00:00.000Z_2014-05-05T00:00:00.000Z_2014-10-15T17:44:16.171Z]
+2014-10-27 16:36:20,763 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.61.184.106:8080] added segment[click_conversion_2014-08-03T00:00:00.000Z_2014-08-04T00:00:00.000Z_2014-10-16T16:45:43.003Z]
+2014-10-27 16:36:20,764 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.61.184.106:8080] added segment[click_conversion_2014-07-13T00:00:00.000Z_2014-07-14T00:00:00.000Z_2014-10-15T19:35:47.234Z]
+2014-10-27 16:36:20,765 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.61.184.106:8080] added segment[click_conversion_2014-08-24T00:00:00.000Z_2014-08-25T00:00:00.000Z_2014-10-16T16:59:39.454Z]
+2014-10-27 16:36:20,765 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.61.184.106:8080] added segment[click_conversion_2014-06-29T00:00:00.000Z_2014-06-30T00:00:00.000Z_2014-10-15T18:46:02.327Z]
+2014-10-27 16:36:20,766 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.61.184.106:8080] added segment[click_conversion_2014-07-15T00:00:00.000Z_2014-07-16T00:00:00.000Z_2014-10-16T16:53:21.542Z]
+2014-10-27 16:36:20,767 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.61.184.106:8080] added segment[click_conversion_2014-06-19T00:00:00.000Z_2014-06-20T00:00:00.000Z_2014-10-15T18:46:02.327Z]
+2014-10-27 16:36:20,768 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.61.184.106:8080] added segment[click_conversion_2014-04-24T00:00:00.000Z_2014-04-25T00:00:00.000Z_2014-10-15T16:48:40.148Z]
+2014-10-27 16:36:20,769 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.61.184.106:8080] added segment[click_conversion_2014-08-08T00:00:00.000Z_2014-08-09T00:00:00.000Z_2014-10-16T16:45:43.003Z]
+2014-10-27 16:36:20,769 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.61.184.106:8080] added segment[click_conversion_2014-05-10T00:00:00.000Z_2014-05-11T00:00:00.000Z_2014-10-15T17:44:16.171Z]
+2014-10-27 16:36:20,770 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.61.184.106:8080] added segment[click_conversion_2014-07-20T00:00:00.000Z_2014-07-21T00:00:00.000Z_2014-10-16T16:53:21.542Z]
+2014-10-27 16:36:20,771 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.61.184.106:8080] added segment[click_conversion_2014-06-03T00:00:00.000Z_2014-06-04T00:00:00.000Z_2014-10-15T18:39:05.536Z]
+2014-10-27 16:36:20,771 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.61.184.106:8080] added segment[click_conversion_2014-08-10T00:00:00.000Z_2014-08-11T00:00:00.000Z_2014-10-16T16:45:43.003Z]
+2014-10-27 16:36:20,772 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.61.184.106:8080] added segment[click_conversion_2014-06-25T00:00:00.000Z_2014-06-26T00:00:00.000Z_2014-10-15T18:46:02.327Z]
+2014-10-27 16:36:20,772 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.61.184.106:8080] added segment[click_conversion_2014-08-26T00:00:00.000Z_2014-08-27T00:00:00.000Z_2014-10-16T16:59:39.454Z]
+2014-10-27 16:36:20,773 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.61.184.106:8080] added segment[click_conversion_2014-04-21T00:00:00.000Z_2014-04-22T00:00:00.000Z_2014-10-15T16:48:40.148Z]
+2014-10-27 16:36:20,774 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.61.184.106:8080] added segment[click_conversion_2014-06-18T00:00:00.000Z_2014-06-19T00:00:00.000Z_2014-10-15T18:46:02.327Z]
+2014-10-27 16:36:20,774 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.61.184.106:8080] added segment[click_conversion_2014-04-01T00:00:00.000Z_2014-04-02T00:00:00.000Z_2014-10-15T16:40:58.252Z]
+2014-10-27 16:36:20,775 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.61.184.106:8080] added segment[click_conversion_2014-07-05T00:00:00.000Z_2014-07-06T00:00:00.000Z_2014-10-15T19:35:47.234Z]
+2014-10-27 16:36:20,775 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.61.184.106:8080] added segment[click_conversion_2014-04-06T00:00:00.000Z_2014-04-07T00:00:00.000Z_2014-10-15T16:40:58.252Z]
+2014-10-27 16:36:20,776 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.61.184.106:8080] added segment[click_conversion_2014-05-18T00:00:00.000Z_2014-05-19T00:00:00.000Z_2014-10-15T17:49:20.571Z]
+2014-10-27 16:36:20,777 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.61.184.106:8080] added segment[click_conversion_2014-05-09T00:00:00.000Z_2014-05-10T00:00:00.000Z_2014-10-15T17:44:16.171Z]
+2014-10-27 16:36:20,777 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.61.184.106:8080] added segment[click_conversion_2014-08-11T00:00:00.000Z_2014-08-12T00:00:00.000Z_2014-10-16T16:45:43.003Z]
+2014-10-27 16:36:20,778 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.61.184.106:8080] added segment[click_conversion_2014-04-25T00:00:00.000Z_2014-04-26T00:00:00.000Z_2014-10-15T16:48:40.148Z]
+2014-10-27 16:36:20,778 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.61.184.106:8080] added segment[click_conversion_2014-06-23T00:00:00.000Z_2014-06-24T00:00:00.000Z_2014-10-15T18:46:02.327Z]
+2014-10-27 16:36:20,779 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.61.184.106:8080] added segment[click_conversion_2014-05-06T00:00:00.000Z_2014-05-07T00:00:00.000Z_2014-10-15T17:44:16.171Z]
+2014-10-27 16:36:20,779 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.61.184.106:8080] added segment[click_conversion_2014-04-23T00:00:00.000Z_2014-04-24T00:00:00.000Z_2014-10-15T16:48:40.148Z]
+2014-10-27 16:36:20,780 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.61.184.106:8080] added segment[click_conversion_2014-08-22T00:00:00.000Z_2014-08-23T00:00:00.000Z_2014-10-16T16:59:39.454Z]
+2014-10-27 16:36:20,781 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.61.184.106:8080] added segment[click_conversion_2014-07-29T00:00:00.000Z_2014-07-30T00:00:00.000Z_2014-10-16T16:53:21.542Z]
+2014-10-27 16:36:20,781 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.61.184.106:8080] added segment[click_conversion_2014-04-09T00:00:00.000Z_2014-04-10T00:00:00.000Z_2014-10-15T16:40:58.252Z]
+2014-10-27 16:36:20,782 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.61.184.106:8080] added segment[click_conversion_2014-06-11T00:00:00.000Z_2014-06-12T00:00:00.000Z_2014-10-15T18:39:05.536Z]
+2014-10-27 16:36:20,782 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.61.184.106:8080] added segment[click_conversion_2014-04-20T00:00:00.000Z_2014-04-21T00:00:00.000Z_2014-10-15T16:48:40.148Z]
+2014-10-27 16:36:20,783 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.61.184.106:8080] added segment[click_conversion_2014-06-06T00:00:00.000Z_2014-06-07T00:00:00.000Z_2014-10-15T18:39:05.536Z]
+2014-10-27 16:36:20,783 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.61.184.106:8080] added segment[click_conversion_2014-07-02T00:00:00.000Z_2014-07-03T00:00:00.000Z_2014-10-15T19:35:47.234Z]
+2014-10-27 16:36:20,784 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.61.184.106:8080] added segment[click_conversion_2014-08-04T00:00:00.000Z_2014-08-05T00:00:00.000Z_2014-10-16T16:45:43.003Z]
+2014-10-27 16:36:20,785 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.61.184.106:8080] added segment[click_conversion_2014-05-12T00:00:00.000Z_2014-05-13T00:00:00.000Z_2014-10-15T17:44:16.171Z]
+2014-10-27 16:36:20,785 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.61.184.106:8080] added segment[click_conversion_2014-08-28T00:00:00.000Z_2014-08-29T00:00:00.000Z_2014-10-16T16:59:39.454Z]
+2014-10-27 16:36:20,786 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.61.184.106:8080] added segment[click_conversion_2014-04-05T00:00:00.000Z_2014-04-06T00:00:00.000Z_2014-10-15T16:40:58.252Z]
+2014-10-27 16:36:20,786 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.61.184.106:8080] added segment[click_conversion_2014-07-23T00:00:00.000Z_2014-07-24T00:00:00.000Z_2014-10-16T16:53:21.542Z]
+2014-10-27 16:36:20,787 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.61.184.106:8080] added segment[click_conversion_2014-07-10T00:00:00.000Z_2014-07-11T00:00:00.000Z_2014-10-15T19:35:47.234Z]
+2014-10-27 16:36:20,787 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.61.184.106:8080] added segment[click_conversion_2014-05-03T00:00:00.000Z_2014-05-04T00:00:00.000Z_2014-10-15T17:44:16.171Z]
+2014-10-27 16:36:20,788 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.61.184.106:8080] added segment[click_conversion_2014-06-26T00:00:00.000Z_2014-06-27T00:00:00.000Z_2014-10-15T18:46:02.327Z]
+2014-10-27 16:36:20,788 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.61.184.106:8080] added segment[click_conversion_2014-04-18T00:00:00.000Z_2014-04-19T00:00:00.000Z_2014-10-15T16:48:40.148Z]
+2014-10-27 16:36:20,789 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.61.184.106:8080] added segment[click_conversion_2014-07-04T00:00:00.000Z_2014-07-05T00:00:00.000Z_2014-10-15T19:35:47.234Z]
+2014-10-27 16:36:20,790 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.61.184.106:8080] added segment[click_conversion_2014-05-01T00:00:00.000Z_2014-05-02T00:00:00.000Z_2014-10-15T17:44:16.171Z]
+2014-10-27 16:36:20,790 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.61.184.106:8080] added segment[click_conversion_2014-06-20T00:00:00.000Z_2014-06-21T00:00:00.000Z_2014-10-15T18:46:02.327Z]
+2014-10-27 16:36:20,791 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.61.184.106:8080] added segment[click_conversion_2014-08-19T00:00:00.000Z_2014-08-20T00:00:00.000Z_2014-10-16T16:59:39.454Z]
+2014-10-27 16:36:20,792 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.61.184.106:8080] added segment[click_conversion_2014-05-15T00:00:00.000Z_2014-05-16T00:00:00.000Z_2014-10-15T17:49:20.571Z]
+2014-10-27 16:36:20,793 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.61.184.106:8080] added segment[click_conversion_2014-04-08T00:00:00.000Z_2014-04-09T00:00:00.000Z_2014-10-15T16:40:58.252Z]
+2014-10-27 16:36:20,794 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.61.184.106:8080] added segment[click_conversion_2014-04-11T00:00:00.000Z_2014-04-12T00:00:00.000Z_2014-10-15T16:40:58.252Z]
+2014-10-27 16:36:20,794 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.61.184.106:8080] added segment[click_conversion_2014-08-21T00:00:00.000Z_2014-08-22T00:00:00.000Z_2014-10-16T16:59:39.454Z]
+2014-10-27 16:36:20,795 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.61.184.106:8080] added segment[click_conversion_2014-05-07T00:00:00.000Z_2014-05-08T00:00:00.000Z_2014-10-15T17:44:16.171Z]
+2014-10-27 16:36:20,796 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.61.184.106:8080] added segment[click_conversion_2014-08-18T00:00:00.000Z_2014-08-19T00:00:00.000Z_2014-10-16T16:59:39.454Z]
+2014-10-27 16:36:20,797 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.61.184.106:8080] added segment[click_conversion_2014-08-29T00:00:00.000Z_2014-08-30T00:00:00.000Z_2014-10-16T16:59:39.454Z]
+2014-10-27 16:36:20,798 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.61.184.106:8080] added segment[click_conversion_2014-07-16T00:00:00.000Z_2014-07-17T00:00:00.000Z_2014-10-16T16:53:21.542Z]
+2014-10-27 16:36:20,798 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.61.184.106:8080] added segment[click_conversion_2014-06-05T00:00:00.000Z_2014-06-06T00:00:00.000Z_2014-10-15T18:39:05.536Z]
+2014-10-27 16:36:20,799 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.61.184.106:8080] added segment[click_conversion_2014-06-17T00:00:00.000Z_2014-06-18T00:00:00.000Z_2014-10-15T18:46:02.327Z]
+2014-10-27 16:36:20,800 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.61.184.106:8080] added segment[click_conversion_2014-08-16T00:00:00.000Z_2014-08-17T00:00:00.000Z_2014-10-16T16:59:39.454Z]
+2014-10-27 16:36:20,800 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.61.184.106:8080] added segment[click_conversion_2014-05-21T00:00:00.000Z_2014-05-22T00:00:00.000Z_2014-10-15T17:49:20.571Z]
+2014-10-27 16:36:20,801 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.61.184.106:8080] added segment[click_conversion_2014-06-12T00:00:00.000Z_2014-06-13T00:00:00.000Z_2014-10-15T18:39:05.536Z]
+2014-10-27 16:36:20,801 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.61.184.106:8080] added segment[click_conversion_2014-08-13T00:00:00.000Z_2014-08-14T00:00:00.000Z_2014-10-16T16:45:43.003Z]
+2014-10-27 16:36:20,802 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.61.184.106:8080] added segment[click_conversion_2014-08-01T00:00:00.000Z_2014-08-02T00:00:00.000Z_2014-10-16T16:45:43.003Z]
+2014-10-27 16:36:20,802 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.61.184.106:8080] added segment[click_conversion_2014-07-30T00:00:00.000Z_2014-07-31T00:00:00.000Z_2014-10-16T16:53:21.542Z]
+2014-10-27 16:36:20,803 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.61.184.106:8080] added segment[click_conversion_2014-05-28T00:00:00.000Z_2014-05-29T00:00:00.000Z_2014-10-15T17:49:20.571Z]
+2014-10-27 16:36:20,803 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.61.184.106:8080] added segment[click_conversion_2014-08-07T00:00:00.000Z_2014-08-08T00:00:00.000Z_2014-10-16T16:45:43.003Z]
+2014-10-27 16:36:20,804 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.61.184.106:8080] added segment[click_conversion_2014-07-09T00:00:00.000Z_2014-07-10T00:00:00.000Z_2014-10-15T19:35:47.234Z]
+2014-10-27 16:36:20,805 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.61.184.106:8080] added segment[click_conversion_2014-04-17T00:00:00.000Z_2014-04-18T00:00:00.000Z_2014-10-15T16:48:40.148Z]
+2014-10-27 16:36:20,805 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.61.184.106:8080] added segment[click_conversion_2014-05-19T00:00:00.000Z_2014-05-20T00:00:00.000Z_2014-10-15T17:49:20.571Z]
+2014-10-27 16:36:20,806 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.61.184.106:8080] added segment[click_conversion_2014-04-15T00:00:00.000Z_2014-04-16T00:00:00.000Z_2014-10-15T16:48:40.148Z]
+2014-10-27 16:36:20,806 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.61.184.106:8080] added segment[click_conversion_2014-05-22T00:00:00.000Z_2014-05-23T00:00:00.000Z_2014-10-15T17:49:20.571Z]
+2014-10-27 16:36:20,807 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.61.184.106:8080] added segment[click_conversion_2014-08-15T00:00:00.000Z_2014-08-16T00:00:00.000Z_2014-10-16T16:59:39.454Z]
+2014-10-27 16:36:20,807 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.61.184.106:8080] added segment[click_conversion_2014-04-27T00:00:00.000Z_2014-04-28T00:00:00.000Z_2014-10-15T16:48:40.148Z]
+2014-10-27 16:36:20,808 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.61.184.106:8080] added segment[click_conversion_2014-04-14T00:00:00.000Z_2014-04-15T00:00:00.000Z_2014-10-15T16:40:58.252Z]
+2014-10-27 16:36:20,808 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.61.184.106:8080] added segment[click_conversion_2014-04-12T00:00:00.000Z_2014-04-13T00:00:00.000Z_2014-10-15T16:40:58.252Z]
+2014-10-27 16:36:20,809 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.61.184.106:8080] added segment[click_conversion_2014-06-02T00:00:00.000Z_2014-06-03T00:00:00.000Z_2014-10-15T18:39:05.536Z]
+2014-10-27 16:36:20,810 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.61.184.106:8080] added segment[click_conversion_2014-04-30T00:00:00.000Z_2014-05-01T00:00:00.000Z_2014-10-15T16:48:40.148Z]
+2014-10-27 16:36:20,810 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.61.184.106:8080] added segment[click_conversion_2014-07-11T00:00:00.000Z_2014-07-12T00:00:00.000Z_2014-10-15T19:35:47.234Z]
+2014-10-27 16:36:20,811 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.61.184.106:8080] added segment[click_conversion_2014-06-15T00:00:00.000Z_2014-06-16T00:00:00.000Z_2014-10-15T18:46:02.327Z]
+2014-10-27 16:36:20,812 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.61.184.106:8080] added segment[click_conversion_2014-07-27T00:00:00.000Z_2014-07-28T00:00:00.000Z_2014-10-16T16:53:21.542Z]
+2014-10-27 16:36:20,813 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.61.184.106:8080] added segment[click_conversion_2014-05-31T00:00:00.000Z_2014-06-01T00:00:00.000Z_2014-10-15T17:49:20.571Z]
+2014-10-27 16:36:20,814 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.61.184.106:8080] added segment[click_conversion_2014-04-28T00:00:00.000Z_2014-04-29T00:00:00.000Z_2014-10-15T16:48:40.148Z]
+2014-10-27 16:36:20,815 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.61.184.106:8080] added segment[click_conversion_2014-06-21T00:00:00.000Z_2014-06-22T00:00:00.000Z_2014-10-15T18:46:02.327Z]
+2014-10-27 16:36:20,815 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.61.184.106:8080] added segment[click_conversion_2014-05-16T00:00:00.000Z_2014-05-17T00:00:00.000Z_2014-10-15T17:49:20.571Z]
+2014-10-27 16:36:20,816 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.61.184.106:8080] added segment[click_conversion_2014-07-17T00:00:00.000Z_2014-07-18T00:00:00.000Z_2014-10-16T16:53:21.542Z]
+2014-10-27 16:36:20,816 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.61.184.106:8080] added segment[click_conversion_2014-05-27T00:00:00.000Z_2014-05-28T00:00:00.000Z_2014-10-15T17:49:20.571Z]
+2014-10-27 16:36:20,817 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.61.184.106:8080] added segment[click_conversion_2014-06-07T00:00:00.000Z_2014-06-08T00:00:00.000Z_2014-10-15T18:39:05.536Z]
+2014-10-27 16:36:20,817 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.61.184.106:8080] added segment[click_conversion_2014-04-03T00:00:00.000Z_2014-04-04T00:00:00.000Z_2014-10-15T16:40:58.252Z]
+2014-10-27 16:36:20,818 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.61.184.106:8080] added segment[click_conversion_2014-05-30T00:00:00.000Z_2014-05-31T00:00:00.000Z_2014-10-15T17:49:20.571Z]
+2014-10-27 16:36:20,818 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.61.184.106:8080] added segment[click_conversion_2014-07-01T00:00:00.000Z_2014-07-02T00:00:00.000Z_2014-10-15T19:35:47.234Z]
+2014-10-27 16:36:20,819 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.61.184.106:8080] added segment[click_conversion_2014-08-05T00:00:00.000Z_2014-08-06T00:00:00.000Z_2014-10-16T16:45:43.003Z]
+2014-10-27 16:36:20,819 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.61.184.106:8080] added segment[click_conversion_2014-07-24T00:00:00.000Z_2014-07-25T00:00:00.000Z_2014-10-16T16:53:21.542Z]
+2014-10-27 16:36:20,820 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.63.196.119:8080] added segment[click_conversion_2014-08-30T00:00:00.000Z_2014-08-31T00:00:00.000Z_2014-10-16T16:59:39.454Z]
+2014-10-27 16:36:20,820 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.63.196.119:8080] added segment[click_conversion_2014-07-07T00:00:00.000Z_2014-07-08T00:00:00.000Z_2014-10-15T19:35:47.234Z]
+2014-10-27 16:36:20,821 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.63.196.119:8080] added segment[click_conversion_2014-05-24T00:00:00.000Z_2014-05-25T00:00:00.000Z_2014-10-15T17:49:20.571Z]
+2014-10-27 16:36:20,821 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.63.196.119:8080] added segment[click_conversion_2014-06-28T00:00:00.000Z_2014-06-29T00:00:00.000Z_2014-10-15T18:46:02.327Z]
+2014-10-27 16:36:20,822 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.63.196.119:8080] added segment[click_conversion_2014-08-17T00:00:00.000Z_2014-08-18T00:00:00.000Z_2014-10-16T16:59:39.454Z]
+2014-10-27 16:36:20,822 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.63.196.119:8080] added segment[click_conversion_2014-06-30T00:00:00.000Z_2014-07-01T00:00:00.000Z_2014-10-15T18:46:02.327Z]
+2014-10-27 16:36:20,823 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.63.196.119:8080] added segment[click_conversion_2014-05-29T00:00:00.000Z_2014-05-30T00:00:00.000Z_2014-10-15T17:49:20.571Z]
+2014-10-27 16:36:20,823 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.63.196.119:8080] added segment[click_conversion_2014-06-09T00:00:00.000Z_2014-06-10T00:00:00.000Z_2014-10-15T18:39:05.536Z]
+2014-10-27 16:36:20,824 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.63.196.119:8080] added segment[click_conversion_2014-04-04T00:00:00.000Z_2014-04-05T00:00:00.000Z_2014-10-15T16:40:58.252Z]
+2014-10-27 16:36:20,824 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.63.196.119:8080] added segment[click_conversion_2014-05-08T00:00:00.000Z_2014-05-09T00:00:00.000Z_2014-10-15T17:44:16.171Z]
+2014-10-27 16:36:20,825 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.63.196.119:8080] added segment[click_conversion_2014-06-10T00:00:00.000Z_2014-06-11T00:00:00.000Z_2014-10-15T18:39:05.536Z]
+2014-10-27 16:36:20,825 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.63.196.119:8080] added segment[click_conversion_2014-06-16T00:00:00.000Z_2014-06-17T00:00:00.000Z_2014-10-15T18:46:02.327Z]
+2014-10-27 16:36:20,826 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.63.196.119:8080] added segment[click_conversion_2014-06-01T00:00:00.000Z_2014-06-02T00:00:00.000Z_2014-10-15T18:39:05.536Z]
+2014-10-27 16:36:20,826 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.63.196.119:8080] added segment[click_conversion_2014-07-06T00:00:00.000Z_2014-07-07T00:00:00.000Z_2014-10-15T19:35:47.234Z]
+2014-10-27 16:36:20,827 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.63.196.119:8080] added segment[click_conversion_2014-07-13T00:00:00.000Z_2014-07-14T00:00:00.000Z_2014-10-15T19:35:47.234Z]
+2014-10-27 16:36:20,828 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.63.196.119:8080] added segment[click_conversion_2014-08-24T00:00:00.000Z_2014-08-25T00:00:00.000Z_2014-10-16T16:59:39.454Z]
+2014-10-27 16:36:20,828 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.63.196.119:8080] added segment[click_conversion_2014-07-14T00:00:00.000Z_2014-07-15T00:00:00.000Z_2014-10-15T19:35:47.234Z]
+2014-10-27 16:36:20,829 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.63.196.119:8080] added segment[click_conversion_2014-06-19T00:00:00.000Z_2014-06-20T00:00:00.000Z_2014-10-15T18:46:02.327Z]
+2014-10-27 16:36:20,829 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.63.196.119:8080] added segment[click_conversion_2014-07-15T00:00:00.000Z_2014-07-16T00:00:00.000Z_2014-10-16T16:53:21.542Z]
+2014-10-27 16:36:20,830 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.63.196.119:8080] added segment[click_conversion_2014-04-24T00:00:00.000Z_2014-04-25T00:00:00.000Z_2014-10-15T16:48:40.148Z]
+2014-10-27 16:36:20,830 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.63.196.119:8080] added segment[click_conversion_2014-08-12T00:00:00.000Z_2014-08-13T00:00:00.000Z_2014-10-16T16:45:43.003Z]
+2014-10-27 16:36:20,830 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.63.196.119:8080] added segment[click_conversion_2014-07-18T00:00:00.000Z_2014-07-19T00:00:00.000Z_2014-10-16T16:53:21.542Z]
+2014-10-27 16:36:20,831 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.63.196.119:8080] added segment[click_conversion_2014-05-05T00:00:00.000Z_2014-05-06T00:00:00.000Z_2014-10-15T17:44:16.171Z]
+2014-10-27 16:36:20,832 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.63.196.119:8080] added segment[click_conversion_2014-07-20T00:00:00.000Z_2014-07-21T00:00:00.000Z_2014-10-16T16:53:21.542Z]
+2014-10-27 16:36:20,833 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.63.196.119:8080] added segment[click_conversion_2014-06-03T00:00:00.000Z_2014-06-04T00:00:00.000Z_2014-10-15T18:39:05.536Z]
+2014-10-27 16:36:20,833 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.63.196.119:8080] added segment[click_conversion_2014-08-10T00:00:00.000Z_2014-08-11T00:00:00.000Z_2014-10-16T16:45:43.003Z]
+2014-10-27 16:36:20,834 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.63.196.119:8080] added segment[click_conversion_2014-06-04T00:00:00.000Z_2014-06-05T00:00:00.000Z_2014-10-15T18:39:05.536Z]
+2014-10-27 16:36:20,835 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.63.196.119:8080] added segment[click_conversion_2014-05-26T00:00:00.000Z_2014-05-27T00:00:00.000Z_2014-10-15T17:49:20.571Z]
+2014-10-27 16:36:20,836 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.63.196.119:8080] added segment[click_conversion_2014-08-25T00:00:00.000Z_2014-08-26T00:00:00.000Z_2014-10-16T16:59:39.454Z]
+2014-10-27 16:36:20,836 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.63.196.119:8080] added segment[click_conversion_2014-06-25T00:00:00.000Z_2014-06-26T00:00:00.000Z_2014-10-15T18:46:02.327Z]
+2014-10-27 16:36:20,837 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.63.196.119:8080] added segment[click_conversion_2014-07-03T00:00:00.000Z_2014-07-04T00:00:00.000Z_2014-10-15T19:35:47.234Z]
+2014-10-27 16:36:20,838 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.63.196.119:8080] added segment[click_conversion_2014-04-21T00:00:00.000Z_2014-04-22T00:00:00.000Z_2014-10-15T16:48:40.148Z]
+2014-10-27 16:36:20,839 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.63.196.119:8080] added segment[click_conversion_2014-04-01T00:00:00.000Z_2014-04-02T00:00:00.000Z_2014-10-15T16:40:58.252Z]
+2014-10-27 16:36:20,839 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.63.196.119:8080] added segment[click_conversion_2014-06-18T00:00:00.000Z_2014-06-19T00:00:00.000Z_2014-10-15T18:46:02.327Z]
+2014-10-27 16:36:20,840 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.63.196.119:8080] added segment[click_conversion_2014-08-20T00:00:00.000Z_2014-08-21T00:00:00.000Z_2014-10-16T16:59:39.454Z]
+2014-10-27 16:36:20,841 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.63.196.119:8080] added segment[click_conversion_2014-05-18T00:00:00.000Z_2014-05-19T00:00:00.000Z_2014-10-15T17:49:20.571Z]
+2014-10-27 16:36:20,841 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.63.196.119:8080] added segment[click_conversion_2014-05-09T00:00:00.000Z_2014-05-10T00:00:00.000Z_2014-10-15T17:44:16.171Z]
+2014-10-27 16:36:20,842 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.63.196.119:8080] added segment[click_conversion_2014-07-28T00:00:00.000Z_2014-07-29T00:00:00.000Z_2014-10-16T16:53:21.542Z]
+2014-10-27 16:36:20,843 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.63.196.119:8080] added segment[click_conversion_2014-05-06T00:00:00.000Z_2014-05-07T00:00:00.000Z_2014-10-15T17:44:16.171Z]
+2014-10-27 16:36:20,844 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.63.196.119:8080] added segment[click_conversion_2014-05-11T00:00:00.000Z_2014-05-12T00:00:00.000Z_2014-10-15T17:44:16.171Z]
+2014-10-27 16:36:20,844 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.63.196.119:8080] added segment[click_conversion_2014-08-22T00:00:00.000Z_2014-08-23T00:00:00.000Z_2014-10-16T16:59:39.454Z]
+2014-10-27 16:36:20,845 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.63.196.119:8080] added segment[click_conversion_2014-07-25T00:00:00.000Z_2014-07-26T00:00:00.000Z_2014-10-16T16:53:21.542Z]
+2014-10-27 16:36:20,846 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.63.196.119:8080] added segment[click_conversion_2014-06-06T00:00:00.000Z_2014-06-07T00:00:00.000Z_2014-10-15T18:39:05.536Z]
+2014-10-27 16:36:20,847 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.63.196.119:8080] added segment[click_conversion_2014-08-04T00:00:00.000Z_2014-08-05T00:00:00.000Z_2014-10-16T16:45:43.003Z]
+2014-10-27 16:36:20,847 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.63.196.119:8080] added segment[click_conversion_2014-04-13T00:00:00.000Z_2014-04-14T00:00:00.000Z_2014-10-15T16:40:58.252Z]
+2014-10-27 16:36:20,848 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.63.196.119:8080] added segment[click_conversion_2014-05-12T00:00:00.000Z_2014-05-13T00:00:00.000Z_2014-10-15T17:44:16.171Z]
+2014-10-27 16:36:20,849 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.63.196.119:8080] added segment[click_conversion_2014-06-08T00:00:00.000Z_2014-06-09T00:00:00.000Z_2014-10-15T18:39:05.536Z]
+2014-10-27 16:36:20,849 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.63.196.119:8080] added segment[click_conversion_2014-08-28T00:00:00.000Z_2014-08-29T00:00:00.000Z_2014-10-16T16:59:39.454Z]
+2014-10-27 16:36:20,850 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.63.196.119:8080] added segment[click_conversion_2014-04-05T00:00:00.000Z_2014-04-06T00:00:00.000Z_2014-10-15T16:40:58.252Z]
+2014-10-27 16:36:20,851 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.63.196.119:8080] added segment[click_conversion_2014-07-10T00:00:00.000Z_2014-07-11T00:00:00.000Z_2014-10-15T19:35:47.234Z]
+2014-10-27 16:36:20,852 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.63.196.119:8080] added segment[click_conversion_2014-07-23T00:00:00.000Z_2014-07-24T00:00:00.000Z_2014-10-16T16:53:21.542Z]
+2014-10-27 16:36:20,852 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.63.196.119:8080] added segment[click_conversion_2014-05-03T00:00:00.000Z_2014-05-04T00:00:00.000Z_2014-10-15T17:44:16.171Z]
+2014-10-27 16:36:20,853 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.63.196.119:8080] added segment[click_conversion_2014-04-10T00:00:00.000Z_2014-04-11T00:00:00.000Z_2014-10-15T16:40:58.252Z]
+2014-10-27 16:36:20,854 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.63.196.119:8080] added segment[click_conversion_2014-04-22T00:00:00.000Z_2014-04-23T00:00:00.000Z_2014-10-15T16:48:40.148Z]
+2014-10-27 16:36:20,854 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.63.196.119:8080] added segment[click_conversion_2014-07-04T00:00:00.000Z_2014-07-05T00:00:00.000Z_2014-10-15T19:35:47.234Z]
+2014-10-27 16:36:20,855 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.63.196.119:8080] added segment[click_conversion_2014-08-14T00:00:00.000Z_2014-08-15T00:00:00.000Z_2014-10-16T16:45:43.003Z]
+2014-10-27 16:36:20,856 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.63.196.119:8080] added segment[click_conversion_2014-05-02T00:00:00.000Z_2014-05-03T00:00:00.000Z_2014-10-15T17:44:16.171Z]
+2014-10-27 16:36:20,857 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.63.196.119:8080] added segment[click_conversion_2014-07-12T00:00:00.000Z_2014-07-13T00:00:00.000Z_2014-10-15T19:35:47.234Z]
+2014-10-27 16:36:20,857 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.63.196.119:8080] added segment[click_conversion_2014-08-06T00:00:00.000Z_2014-08-07T00:00:00.000Z_2014-10-16T16:45:43.003Z]
+2014-10-27 16:36:20,858 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.63.196.119:8080] added segment[click_conversion_2014-05-15T00:00:00.000Z_2014-05-16T00:00:00.000Z_2014-10-15T17:49:20.571Z]
+2014-10-27 16:36:20,859 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.63.196.119:8080] added segment[click_conversion_2014-08-19T00:00:00.000Z_2014-08-20T00:00:00.000Z_2014-10-16T16:59:39.454Z]
+2014-10-27 16:36:20,859 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.63.196.119:8080] added segment[click_conversion_2014-04-08T00:00:00.000Z_2014-04-09T00:00:00.000Z_2014-10-15T16:40:58.252Z]
+2014-10-27 16:36:20,860 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.63.196.119:8080] added segment[click_conversion_2014-04-02T00:00:00.000Z_2014-04-03T00:00:00.000Z_2014-10-15T16:40:58.252Z]
+2014-10-27 16:36:20,860 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.63.196.119:8080] added segment[click_conversion_2014-07-08T00:00:00.000Z_2014-07-09T00:00:00.000Z_2014-10-15T19:35:47.234Z]
+2014-10-27 16:36:20,861 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.63.196.119:8080] added segment[click_conversion_2014-04-11T00:00:00.000Z_2014-04-12T00:00:00.000Z_2014-10-15T16:40:58.252Z]
+2014-10-27 16:36:20,861 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.63.196.119:8080] added segment[click_conversion_2014-06-13T00:00:00.000Z_2014-06-14T00:00:00.000Z_2014-10-15T18:39:05.536Z]
+2014-10-27 16:36:20,862 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.63.196.119:8080] added segment[click_conversion_2014-08-02T00:00:00.000Z_2014-08-03T00:00:00.000Z_2014-10-16T16:45:43.003Z]
+2014-10-27 16:36:20,862 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.63.196.119:8080] added segment[click_conversion_2014-06-24T00:00:00.000Z_2014-06-25T00:00:00.000Z_2014-10-15T18:46:02.327Z]
+2014-10-27 16:36:20,863 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.63.196.119:8080] added segment[click_conversion_2014-04-07T00:00:00.000Z_2014-04-08T00:00:00.000Z_2014-10-15T16:40:58.252Z]
+2014-10-27 16:36:20,863 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.63.196.119:8080] added segment[click_conversion_2014-08-09T00:00:00.000Z_2014-08-10T00:00:00.000Z_2014-10-16T16:45:43.003Z]
+2014-10-27 16:36:20,864 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.63.196.119:8080] added segment[click_conversion_2014-08-16T00:00:00.000Z_2014-08-17T00:00:00.000Z_2014-10-16T16:59:39.454Z]
+2014-10-27 16:36:20,864 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.63.196.119:8080] added segment[click_conversion_2014-05-21T00:00:00.000Z_2014-05-22T00:00:00.000Z_2014-10-15T17:49:20.571Z]
+2014-10-27 16:36:20,865 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.63.196.119:8080] added segment[click_conversion_2014-04-26T00:00:00.000Z_2014-04-27T00:00:00.000Z_2014-10-15T16:48:40.148Z]
+2014-10-27 16:36:20,865 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.63.196.119:8080] added segment[click_conversion_2014-06-12T00:00:00.000Z_2014-06-13T00:00:00.000Z_2014-10-15T18:39:05.536Z]
+2014-10-27 16:36:20,866 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.63.196.119:8080] added segment[click_conversion_2014-07-21T00:00:00.000Z_2014-07-22T00:00:00.000Z_2014-10-16T16:53:21.542Z]
+2014-10-27 16:36:20,866 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.63.196.119:8080] added segment[click_conversion_2014-06-27T00:00:00.000Z_2014-06-28T00:00:00.000Z_2014-10-15T18:46:02.327Z]
+2014-10-27 16:36:20,867 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.63.196.119:8080] added segment[click_conversion_2014-06-22T00:00:00.000Z_2014-06-23T00:00:00.000Z_2014-10-15T18:46:02.327Z]
+2014-10-27 16:36:20,867 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.63.196.119:8080] added segment[click_conversion_2014-07-30T00:00:00.000Z_2014-07-31T00:00:00.000Z_2014-10-16T16:53:21.542Z]
+2014-10-27 16:36:20,868 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.63.196.119:8080] added segment[click_conversion_2014-04-16T00:00:00.000Z_2014-04-17T00:00:00.000Z_2014-10-15T16:48:40.148Z]
+2014-10-27 16:36:20,868 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.63.196.119:8080] added segment[click_conversion_2014-08-23T00:00:00.000Z_2014-08-24T00:00:00.000Z_2014-10-16T16:59:39.454Z]
+2014-10-27 16:36:20,869 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.63.196.119:8080] added segment[click_conversion_2014-08-07T00:00:00.000Z_2014-08-08T00:00:00.000Z_2014-10-16T16:45:43.003Z]
+2014-10-27 16:36:20,869 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.63.196.119:8080] added segment[click_conversion_2014-05-23T00:00:00.000Z_2014-05-24T00:00:00.000Z_2014-10-15T17:49:20.571Z]
+2014-10-27 16:36:20,870 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.63.196.119:8080] added segment[click_conversion_2014-05-20T00:00:00.000Z_2014-05-21T00:00:00.000Z_2014-10-15T17:49:20.571Z]
+2014-10-27 16:36:20,871 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.63.196.119:8080] added segment[click_conversion_2014-07-31T00:00:00.000Z_2014-08-01T00:00:00.000Z_2014-10-16T16:53:21.542Z]
+2014-10-27 16:36:20,871 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.63.196.119:8080] added segment[click_conversion_2014-04-17T00:00:00.000Z_2014-04-18T00:00:00.000Z_2014-10-15T16:48:40.148Z]
+2014-10-27 16:36:20,872 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.63.196.119:8080] added segment[click_conversion_2014-04-19T00:00:00.000Z_2014-04-20T00:00:00.000Z_2014-10-15T16:48:40.148Z]
+2014-10-27 16:36:20,873 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.63.196.119:8080] added segment[click_conversion_2014-08-27T00:00:00.000Z_2014-08-28T00:00:00.000Z_2014-10-16T16:59:39.454Z]
+2014-10-27 16:36:20,873 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.63.196.119:8080] added segment[click_conversion_2014-04-27T00:00:00.000Z_2014-04-28T00:00:00.000Z_2014-10-15T16:48:40.148Z]
+2014-10-27 16:36:20,874 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.63.196.119:8080] added segment[click_conversion_2014-04-14T00:00:00.000Z_2014-04-15T00:00:00.000Z_2014-10-15T16:40:58.252Z]
+2014-10-27 16:36:20,874 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.63.196.119:8080] added segment[click_conversion_2014-05-17T00:00:00.000Z_2014-05-18T00:00:00.000Z_2014-10-15T17:49:20.571Z]
+2014-10-27 16:36:20,875 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.63.196.119:8080] added segment[click_conversion_2014-04-30T00:00:00.000Z_2014-05-01T00:00:00.000Z_2014-10-15T16:48:40.148Z]
+2014-10-27 16:36:20,876 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.63.196.119:8080] added segment[click_conversion_2014-06-15T00:00:00.000Z_2014-06-16T00:00:00.000Z_2014-10-15T18:46:02.327Z]
+2014-10-27 16:36:20,876 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.63.196.119:8080] added segment[click_conversion_2014-04-29T00:00:00.000Z_2014-04-30T00:00:00.000Z_2014-10-15T16:48:40.148Z]
+2014-10-27 16:36:20,877 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.63.196.119:8080] added segment[click_conversion_2014-05-14T00:00:00.000Z_2014-05-15T00:00:00.000Z_2014-10-15T17:44:16.171Z]
+2014-10-27 16:36:20,878 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.63.196.119:8080] added segment[click_conversion_2014-07-26T00:00:00.000Z_2014-07-27T00:00:00.000Z_2014-10-16T16:53:21.542Z]
+2014-10-27 16:36:20,879 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.63.196.119:8080] added segment[click_conversion_2014-05-31T00:00:00.000Z_2014-06-01T00:00:00.000Z_2014-10-15T17:49:20.571Z]
+2014-10-27 16:36:20,879 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.63.196.119:8080] added segment[click_conversion_2014-06-21T00:00:00.000Z_2014-06-22T00:00:00.000Z_2014-10-15T18:46:02.327Z]
+2014-10-27 16:36:20,880 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.63.196.119:8080] added segment[click_conversion_2014-07-17T00:00:00.000Z_2014-07-18T00:00:00.000Z_2014-10-16T16:53:21.542Z]
+2014-10-27 16:36:20,880 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.63.196.119:8080] added segment[click_conversion_2014-05-27T00:00:00.000Z_2014-05-28T00:00:00.000Z_2014-10-15T17:49:20.571Z]
+2014-10-27 16:36:20,881 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.63.196.119:8080] added segment[click_conversion_2014-07-01T00:00:00.000Z_2014-07-02T00:00:00.000Z_2014-10-15T19:35:47.234Z]
+2014-10-27 16:36:20,881 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server[10.63.196.119:8080] added segment[click_conversion_2014-07-24T00:00:00.000Z_2014-07-25T00:00:00.000Z_2014-10-16T16:53:21.542Z]
+Oct 27, 2014 4:36:21 PM com.sun.jersey.guice.spi.container.GuiceComponentProviderFactory getComponentProvider
+INFO: Binding io.druid.server.QueryResource to GuiceInstantiatedComponentProvider
+Oct 27, 2014 4:36:21 PM com.sun.jersey.guice.spi.container.GuiceComponentProviderFactory getComponentProvider
+INFO: Binding io.druid.segment.realtime.firehose.ChatHandlerResource to GuiceInstantiatedComponentProvider
+Oct 27, 2014 4:36:21 PM com.sun.jersey.guice.spi.container.GuiceComponentProviderFactory getComponentProvider
+INFO: Binding io.druid.server.StatusResource to GuiceManagedComponentProvider with the scope "Undefined"
+2014-10-27 16:36:21,088 INFO [main] org.eclipse.jetty.server.handler.ContextHandler - Started o.e.j.s.ServletContextHandler@4301c74a{/,null,AVAILABLE}
+2014-10-27 16:36:21,096 INFO [main] org.eclipse.jetty.server.ServerConnector - Started ServerConnector@68587eaa{HTTP/1.1}{0.0.0.0:8081}
+2014-10-27 16:36:21,096 INFO [main] org.eclipse.jetty.server.Server - Started @5469ms
+2014-10-27 16:36:21,096 INFO [main] com.metamx.common.lifecycle.Lifecycle$AnnotationBasedHandler - Invoking start method[public void io.druid.server.coordination.AbstractDataSegmentAnnouncer.start()] on object[io.druid.server.coordination.SingleDataSegmentAnnouncer@5d9d6317].
+2014-10-27 16:36:21,097 INFO [main] io.druid.server.coordination.AbstractDataSegmentAnnouncer - Announcing self[DruidServerMetadata{name='10.136.64.60:8081', host='10.136.64.60:8081', maxSize=0, tier='_default_tier', type='indexer-executor', priority='0'}] at [/druid/announcements/10.136.64.60:8081]
+2014-10-27 16:36:21,129 INFO [main] com.metamx.common.lifecycle.Lifecycle$AnnotationBasedHandler - Invoking start method[public void io.druid.server.coordination.AbstractDataSegmentAnnouncer.start()] on object[io.druid.server.coordination.BatchDataSegmentAnnouncer@47f36a24].
+2014-10-27 16:36:21,130 INFO [main] io.druid.server.coordination.AbstractDataSegmentAnnouncer - Announcing self[DruidServerMetadata{name='10.136.64.60:8081', host='10.136.64.60:8081', maxSize=0, tier='_default_tier', type='indexer-executor', priority='0'}] at [/druid/announcements/10.136.64.60:8081]
+2014-10-27 16:36:21,130 INFO [main] com.metamx.common.lifecycle.Lifecycle$AnnotationBasedHandler - Invoking start method[public void io.druid.indexing.worker.executor.ExecutorLifecycle.start()] on object[io.druid.indexing.worker.executor.ExecutorLifecycle@65c1ed3f].
+2014-10-27 16:36:21,135 INFO [ServerInventoryView-0] io.druid.curator.inventory.CuratorInventoryManager - Created new InventoryCacheListener for /druid/servedSegments/10.136.64.60:8081
+2014-10-27 16:36:21,135 INFO [ServerInventoryView-0] io.druid.curator.inventory.CuratorInventoryManager - Starting inventory cache for 10.136.64.60:8081, inventoryPath /druid/servedSegments/10.136.64.60:8081
+2014-10-27 16:36:21,135 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - New Server[DruidServerMetadata{name='10.136.64.60:8081', host='10.136.64.60:8081', maxSize=0, tier='_default_tier', type='indexer-executor', priority='0'}]
+2014-10-27 16:36:21,261 INFO [main] io.druid.indexing.worker.executor.ExecutorLifecycle - Running with task: {
+  "type" : "index",
+  "id" : "index_click_conversion_weekly_2014-10-27T16:36:15.336Z",
+  "schema" : {
+    "dataSchema" : {
+      "dataSource" : "click_conversion_weekly",
+      "parser" : null,
+      "metricsSpec" : [ {
+        "type" : "count",
+        "name" : "count"
+      }, {
+        "type" : "doubleSum",
+        "name" : "commissions",
+        "fieldName" : "commissions"
+      }, {
+        "type" : "doubleSum",
+        "name" : "sales",
+        "fieldName" : "sales"
+      }, {
+        "type" : "doubleSum",
+        "name" : "orders",
+        "fieldName" : "orders"
+      } ],
+      "granularitySpec" : {
+        "type" : "uniform",
+        "segmentGranularity" : "WEEK",
+        "queryGranularity" : {
+          "type" : "duration",
+          "duration" : 60000,
+          "origin" : "1970-01-01T00:00:00.000Z"
+        },
+        "intervals" : [ "2014-04-06T00:00:00.000Z/2014-04-13T00:00:00.000Z" ]
+      }
+    },
+    "ioConfig" : {
+      "type" : "index",
+      "firehose" : {
+        "type" : "ingestSegment",
+        "dataSource" : "click_conversion",
+        "interval" : "2014-04-06T00:00:00.000Z/2014-04-13T00:00:00.000Z",
+        "filter" : null,
+        "dimensions" : null,
+        "metrics" : null
+      }
+    },
+    "tuningConfig" : {
+      "type" : "index",
+      "targetPartitionSize" : 5000000,
+      "rowFlushBoundary" : 500000,
+      "numShards" : -1
+    }
+  },
+  "dataSource" : "click_conversion_weekly",
+  "groupId" : "index_click_conversion_weekly_2014-10-27T16:36:15.336Z",
+  "interval" : "2014-03-31T00:00:00.000Z/2014-04-14T00:00:00.000Z",
+  "resource" : {
+    "availabilityGroup" : "index_click_conversion_weekly_2014-10-27T16:36:15.336Z",
+    "requiredCapacity" : 1
+  }
+}
+2014-10-27 16:36:21,264 INFO [main] io.druid.indexing.common.actions.RemoteTaskActionClient - Performing action for task[index_click_conversion_weekly_2014-10-27T16:36:15.336Z]: LockTryAcquireAction{interval=2014-03-31T00:00:00.000Z/2014-04-14T00:00:00.000Z}
+2014-10-27 16:36:21,272 INFO [main] io.druid.indexing.common.actions.RemoteTaskActionClient - Submitting action for task[index_click_conversion_weekly_2014-10-27T16:36:15.336Z] to overlord[http://10.13.132.213:8080/druid/indexer/v1/action]: LockTryAcquireAction{interval=2014-03-31T00:00:00.000Z/2014-04-14T00:00:00.000Z}
+2014-10-27 16:36:21,285 INFO [main] com.metamx.http.client.pool.ChannelResourceFactory - Generating: http://10.13.132.213:8080
+2014-10-27 16:36:21,319 INFO [main] com.metamx.http.client.pool.ChannelResourceFactory - Generating: http://10.13.132.213:8080
+2014-10-27 16:36:21,319 INFO [main] com.metamx.http.client.pool.ChannelResourceFactory - Generating: http://10.13.132.213:8080
+2014-10-27 16:36:21,319 INFO [main] com.metamx.http.client.pool.ChannelResourceFactory - Generating: http://10.13.132.213:8080
+2014-10-27 16:36:21,319 INFO [main] com.metamx.http.client.pool.ChannelResourceFactory - Generating: http://10.13.132.213:8080
+2014-10-27 16:36:21,373 INFO [task-runner-0] io.druid.indexing.overlord.ThreadPoolTaskRunner - Running task: index_click_conversion_weekly_2014-10-27T16:36:15.336Z
+2014-10-27 16:36:21,374 INFO [task-runner-0] io.druid.indexing.common.actions.RemoteTaskActionClient - Performing action for task[index_click_conversion_weekly_2014-10-27T16:36:15.336Z]: LockListAction{}
+2014-10-27 16:36:21,377 INFO [task-runner-0] io.druid.indexing.common.actions.RemoteTaskActionClient - Submitting action for task[index_click_conversion_weekly_2014-10-27T16:36:15.336Z] to overlord[http://10.13.132.213:8080/druid/indexer/v1/action]: LockListAction{}
+2014-10-27 16:36:21,385 INFO [task-runner-0] io.druid.indexing.firehose.IngestSegmentFirehoseFactory - Connecting firehose: dataSource[click_conversion], interval[2014-04-06T00:00:00.000Z/2014-04-13T00:00:00.000Z]
+2014-10-27 16:36:21,386 INFO [task-runner-0] io.druid.indexing.common.actions.RemoteTaskActionClient - Performing action for task[reingest]: SegmentListUsedAction{dataSource='click_conversion', interval=2014-04-06T00:00:00.000Z/2014-04-13T00:00:00.000Z}
+2014-10-27 16:36:21,391 INFO [task-runner-0] io.druid.indexing.common.actions.RemoteTaskActionClient - Submitting action for task[reingest] to overlord[http://10.13.132.213:8080/druid/indexer/v1/action]: SegmentListUsedAction{dataSource='click_conversion', interval=2014-04-06T00:00:00.000Z/2014-04-13T00:00:00.000Z}
+2014-10-27 16:36:21,478 INFO [task-runner-0] io.druid.guice.PropertiesModule - Loading properties from runtime.properties
+2014-10-27 16:36:21,484 INFO [task-runner-0] org.skife.config.ConfigurationObjectFactory - Assigning value [536870912] for [druid.computation.buffer.size] on [io.druid.query.DruidProcessingConfig#intermediateComputeSizeBytes()]
+2014-10-27 16:36:21,485 INFO [task-runner-0] org.skife.config.ConfigurationObjectFactory - Assigning value [3] for [druid.processing.numThreads] on [io.druid.query.DruidProcessingConfig#getNumThreads()]
+2014-10-27 16:36:21,485 INFO [task-runner-0] org.skife.config.ConfigurationObjectFactory - Using method itself for [${base_path}.columnCache.sizeBytes] on [io.druid.query.DruidProcessingConfig#columnCacheSizeBytes()]
+2014-10-27 16:36:21,485 INFO [task-runner-0] org.skife.config.ConfigurationObjectFactory - Assigning default value [processing-%s] for [${base_path}.formatString] on [com.metamx.common.concurrent.ExecutorServiceConfig#getFormatString()]
+2014-10-27 16:36:21,541 INFO [task-runner-0] io.druid.segment.CompressedPools - Allocating new littleEndByteBuf[1]
+2014-10-27 16:36:21,541 INFO [task-runner-0] io.druid.segment.CompressedPools - Allocating new outputBytesPool[1]
+2014-10-27 16:36:21,599 INFO [task-runner-0] io.druid.segment.CompressedPools - Allocating new littleEndByteBuf[2]
+2014-10-27 16:37:04,954 INFO [task-runner-0] io.druid.indexing.common.task.IndexTask - Determining partitions for interval[2014-03-31T00:00:00.000Z/2014-04-07T00:00:00.000Z] with targetPartitionSize[5000000]
+2014-10-27 16:37:04,954 INFO [task-runner-0] io.druid.indexing.firehose.IngestSegmentFirehoseFactory - Connecting firehose: dataSource[click_conversion], interval[2014-04-06T00:00:00.000Z/2014-04-13T00:00:00.000Z]
+2014-10-27 16:37:04,954 INFO [task-runner-0] io.druid.indexing.common.actions.RemoteTaskActionClient - Performing action for task[reingest]: SegmentListUsedAction{dataSource='click_conversion', interval=2014-04-06T00:00:00.000Z/2014-04-13T00:00:00.000Z}
+2014-10-27 16:37:04,955 INFO [task-runner-0] io.druid.indexing.common.actions.RemoteTaskActionClient - Submitting action for task[reingest] to overlord[http://10.13.132.213:8080/druid/indexer/v1/action]: SegmentListUsedAction{dataSource='click_conversion', interval=2014-04-06T00:00:00.000Z/2014-04-13T00:00:00.000Z}
+2014-10-27 16:37:44,480 INFO [task-runner-0] io.druid.indexing.common.task.IndexTask - Partitioning on dimension[outclick_type] with cardinality[14] over rows[1821501]
+2014-10-27 16:37:44,482 INFO [task-runner-0] io.druid.indexing.common.task.IndexTask - Adding shard: NoneShardSpec
+2014-10-27 16:37:44,483 INFO [task-runner-0] io.druid.indexing.firehose.IngestSegmentFirehoseFactory - Connecting firehose: dataSource[click_conversion], interval[2014-04-06T00:00:00.000Z/2014-04-13T00:00:00.000Z]
+2014-10-27 16:37:44,483 INFO [task-runner-0] io.druid.indexing.common.actions.RemoteTaskActionClient - Performing action for task[reingest]: SegmentListUsedAction{dataSource='click_conversion', interval=2014-04-06T00:00:00.000Z/2014-04-13T00:00:00.000Z}
+2014-10-27 16:37:44,484 INFO [task-runner-0] io.druid.indexing.common.actions.RemoteTaskActionClient - Submitting action for task[reingest] to overlord[http://10.13.132.213:8080/druid/indexer/v1/action]: SegmentListUsedAction{dataSource='click_conversion', interval=2014-04-06T00:00:00.000Z/2014-04-13T00:00:00.000Z}
+2014-10-27 16:37:51,292 INFO [task-runner-0] io.druid.indexing.common.index.YeOldePlumberSchool - Spilling index[0] with rows[500000] to: /tmp/persistent/task/index_click_conversion_weekly_2014-10-27T16:36:15.336Z/work/click_conversion_weekly_2014-03-31T00:00:00.000Z_2014-04-07T00:00:00.000Z_2014-10-27T16:36:15.337Z_0/click_conversion_weekly_2014-03-31T00:00:00.000Z_2014-04-07T00:00:00.000Z_2014-10-27T16:36:15.337Z/spill0
+2014-10-27 16:37:51,296 INFO [task-runner-0] io.druid.segment.IndexMerger - Starting persist for interval[2014-03-31T00:00:00.000Z/2014-04-06T11:33:00.000Z], rows[500,000]
+2014-10-27 16:37:51,938 INFO [task-runner-0] io.druid.segment.IndexMerger - outDir[/tmp/persistent/task/index_click_conversion_weekly_2014-10-27T16:36:15.336Z/work/click_conversion_weekly_2014-03-31T00:00:00.000Z_2014-04-07T00:00:00.000Z_2014-10-27T16:36:15.337Z_0/click_conversion_weekly_2014-03-31T00:00:00.000Z_2014-04-07T00:00:00.000Z_2014-10-27T16:36:15.337Z/spill0/v8-tmp] completed index.drd in 2 millis.
+2014-10-27 16:37:52,452 INFO [task-runner-0] io.druid.segment.IndexMerger - outDir[/tmp/persistent/task/index_click_conversion_weekly_2014-10-27T16:36:15.336Z/work/click_conversion_weekly_2014-03-31T00:00:00.000Z_2014-04-07T00:00:00.000Z_2014-10-27T16:36:15.337Z_0/click_conversion_weekly_2014-03-31T00:00:00.000Z_2014-04-07T00:00:00.000Z_2014-10-27T16:36:15.337Z/spill0/v8-tmp] completed dim conversions in 514 millis.
+2014-10-27 16:37:52,695 INFO [task-runner-0] io.druid.segment.CompressedPools - Allocating new chunkEncoder[1]
+2014-10-27 16:37:55,525 INFO [task-runner-0] io.druid.segment.IndexMerger - outDir[/tmp/persistent/task/index_click_conversion_weekly_2014-10-27T16:36:15.336Z/work/click_conversion_weekly_2014-03-31T00:00:00.000Z_2014-04-07T00:00:00.000Z_2014-10-27T16:36:15.337Z_0/click_conversion_weekly_2014-03-31T00:00:00.000Z_2014-04-07T00:00:00.000Z_2014-10-27T16:36:15.337Z/spill0/v8-tmp] walked 500,000/500,000 rows in 3,062 millis.
+2014-10-27 16:37:56,415 INFO [task-runner-0] io.druid.segment.IndexMerger - outDir[/tmp/persistent/task/index_click_conversion_weekly_2014-10-27T16:36:15.336Z/work/click_conversion_weekly_2014-03-31T00:00:00.000Z_2014-04-07T00:00:00.000Z_2014-10-27T16:36:15.337Z_0/click_conversion_weekly_2014-03-31T00:00:00.000Z_2014-04-07T00:00:00.000Z_2014-10-27T16:36:15.337Z/spill0/v8-tmp] completed walk through of 500,000 rows in 3,963 millis.
+2014-10-27 16:37:56,415 INFO [task-runner-0] io.druid.segment.IndexMerger - Starting dimension[browser] with cardinality[7]
+2014-10-27 16:37:56,539 INFO [task-runner-0] io.druid.segment.IndexMerger - Completed dimension[browser] in 124 millis.
+2014-10-27 16:37:56,540 INFO [task-runner-0] io.druid.segment.IndexMerger - Starting dimension[channel] with cardinality[14]
+2014-10-27 16:37:56,598 INFO [task-runner-0] io.druid.segment.IndexMerger - Completed dimension[channel] in 59 millis.
+2014-10-27 16:37:56,598 INFO [task-runner-0] io.druid.segment.IndexMerger - Starting dimension[city] with cardinality[12,420]
+2014-10-27 16:37:56,802 INFO [task-runner-0] io.druid.segment.IndexMerger - Completed dimension[city] in 204 millis.
+2014-10-27 16:37:56,802 INFO [task-runner-0] io.druid.segment.IndexMerger - Starting dimension[country] with cardinality[169]
+2014-10-27 16:37:56,828 INFO [task-runner-0] io.druid.segment.IndexMerger - Completed dimension[country] in 26 millis.
+2014-10-27 16:37:56,828 INFO [task-runner-0] io.druid.segment.IndexMerger - Starting dimension[coupon] with cardinality[85,554]
+2014-10-27 16:37:57,079 INFO [task-runner-0] io.druid.segment.IndexMerger - Completed dimension[coupon] in 251 millis.
+2014-10-27 16:37:57,079 INFO [task-runner-0] io.druid.segment.IndexMerger - Starting dimension[device] with cardinality[4]
+2014-10-27 16:37:57,135 INFO [task-runner-0] io.druid.segment.IndexMerger - Completed dimension[device] in 56 millis.
+2014-10-27 16:37:57,136 INFO [task-runner-0] io.druid.segment.IndexMerger - Starting dimension[outclick_type] with cardinality[14]
+2014-10-27 16:37:57,207 INFO [task-runner-0] io.druid.segment.IndexMerger - Completed dimension[outclick_type] in 72 millis.
+2014-10-27 16:37:57,208 INFO [task-runner-0] io.druid.segment.IndexMerger - Starting dimension[property] with cardinality[11]
+2014-10-27 16:37:57,276 INFO [task-runner-0] io.druid.segment.IndexMerger - Completed dimension[property] in 69 millis.
+2014-10-27 16:37:57,277 INFO [task-runner-0] io.druid.segment.IndexMerger - Starting dimension[region] with cardinality[1,047]
+2014-10-27 16:37:57,332 INFO [task-runner-0] io.druid.segment.IndexMerger - Completed dimension[region] in 56 millis.
+2014-10-27 16:37:57,332 INFO [task-runner-0] io.druid.segment.IndexMerger - Starting dimension[site] with cardinality[20,327]
+2014-10-27 16:37:57,481 INFO [task-runner-0] io.druid.segment.IndexMerger - Completed dimension[site] in 149 millis.
+2014-10-27 16:37:57,481 INFO [task-runner-0] io.druid.segment.IndexMerger - outDir[/tmp/persistent/task/index_click_conversion_weekly_2014-10-27T16:36:15.336Z/work/click_conversion_weekly_2014-03-31T00:00:00.000Z_2014-04-07T00:00:00.000Z_2014-10-27T16:36:15.337Z_0/click_conversion_weekly_2014-03-31T00:00:00.000Z_2014-04-07T00:00:00.000Z_2014-10-27T16:36:15.337Z/spill0/v8-tmp] completed inverted.drd in 1,066 millis.
+2014-10-27 16:37:57,596 INFO [task-runner-0] io.druid.segment.IndexIO$DefaultIndexIOHandler - Converting v8[/tmp/persistent/task/index_click_conversion_weekly_2014-10-27T16:36:15.336Z/work/click_conversion_weekly_2014-03-31T00:00:00.000Z_2014-04-07T00:00:00.000Z_2014-10-27T16:36:15.337Z_0/click_conversion_weekly_2014-03-31T00:00:00.000Z_2014-04-07T00:00:00.000Z_2014-10-27T16:36:15.337Z/spill0/v8-tmp] to v9[/tmp/persistent/task/index_click_conversion_weekly_2014-10-27T16:36:15.336Z/work/click_conversion_weekly_2014-03-31T00:00:00.000Z_2014-04-07T00:00:00.000Z_2014-10-27T16:36:15.337Z_0/click_conversion_weekly_2014-03-31T00:00:00.000Z_2014-04-07T00:00:00.000Z_2014-10-27T16:36:15.337Z/spill0]
+2014-10-27 16:37:57,598 INFO [task-runner-0] io.druid.segment.IndexIO$DefaultIndexIOHandler - Processing file[dim_browser.drd]
+2014-10-27 16:37:57,654 INFO [task-runner-0] io.druid.segment.IndexIO$DefaultIndexIOHandler - Dimension[browser] is single value, converting...
+2014-10-27 16:37:57,654 INFO [task-runner-0] io.druid.segment.IndexIO$DefaultIndexIOHandler - Dimension[browser] has null rows.
+2014-10-27 16:37:57,654 INFO [task-runner-0] io.druid.segment.IndexIO$DefaultIndexIOHandler - Dimension[browser] has no null value in the dictionary, expanding...
+2014-10-27 16:37:57,719 INFO [task-runner-0] io.druid.segment.IndexIO$DefaultIndexIOHandler - Processing file[dim_channel.drd]
+2014-10-27 16:37:57,773 INFO [task-runner-0] io.druid.segment.IndexIO$DefaultIndexIOHandler - Dimension[channel] is single value, converting...
+2014-10-27 16:37:57,773 INFO [task-runner-0] io.druid.segment.IndexIO$DefaultIndexIOHandler - Dimension[channel] has null rows.
+2014-10-27 16:37:57,773 INFO [task-runner-0] io.druid.segment.IndexIO$DefaultIndexIOHandler - Dimension[channel] has no null value in the dictionary, expanding...
+2014-10-27 16:37:57,819 INFO [task-runner-0] io.druid.segment.IndexIO$DefaultIndexIOHandler - Processing file[dim_city.drd]
+2014-10-27 16:37:57,839 INFO [task-runner-0] io.druid.segment.IndexIO$DefaultIndexIOHandler - Dimension[city] is single value, converting...
+2014-10-27 16:37:57,839 INFO [task-runner-0] io.druid.segment.IndexIO$DefaultIndexIOHandler - Dimension[city] has null rows.
+2014-10-27 16:37:57,839 INFO [task-runner-0] io.druid.segment.IndexIO$DefaultIndexIOHandler - Dimension[city] has no null value in the dictionary, expanding...
+2014-10-27 16:37:57,973 INFO [task-runner-0] io.druid.segment.IndexIO$DefaultIndexIOHandler - Processing file[dim_country.drd]
+2014-10-27 16:37:57,993 INFO [task-runner-0] io.druid.segment.IndexIO$DefaultIndexIOHandler - Dimension[country] is single value, converting...
+2014-10-27 16:37:57,993 INFO [task-runner-0] io.druid.segment.IndexIO$DefaultIndexIOHandler - Dimension[country] has null rows.
+2014-10-27 16:37:57,993 INFO [task-runner-0] io.druid.segment.IndexIO$DefaultIndexIOHandler - Dimension[country] has no null value in the dictionary, expanding...
+2014-10-27 16:37:58,021 INFO [task-runner-0] io.druid.segment.IndexIO$DefaultIndexIOHandler - Processing file[dim_coupon.drd]
+2014-10-27 16:37:58,036 INFO [task-runner-0] io.druid.segment.IndexIO$DefaultIndexIOHandler - Dimension[coupon] is single value, converting...
+2014-10-27 16:37:58,036 INFO [task-runner-0] io.druid.segment.IndexIO$DefaultIndexIOHandler - Dimension[coupon] has null rows.
+2014-10-27 16:37:58,036 INFO [task-runner-0] io.druid.segment.IndexIO$DefaultIndexIOHandler - Dimension[coupon] has no null value in the dictionary, expanding...
+2014-10-27 16:37:58,220 INFO [task-runner-0] io.druid.segment.IndexIO$DefaultIndexIOHandler - Processing file[dim_device.drd]
+2014-10-27 16:37:58,234 INFO [task-runner-0] io.druid.segment.IndexIO$DefaultIndexIOHandler - Dimension[device] is single value, converting...
+2014-10-27 16:37:58,234 INFO [task-runner-0] io.druid.segment.IndexIO$DefaultIndexIOHandler - Dimension[device] has null rows.
+2014-10-27 16:37:58,234 INFO [task-runner-0] io.druid.segment.IndexIO$DefaultIndexIOHandler - Dimension[device] has no null value in the dictionary, expanding...
+2014-10-27 16:37:58,260 INFO [task-runner-0] io.druid.segment.IndexIO$DefaultIndexIOHandler - Processing file[dim_outclick_type.drd]
+2014-10-27 16:37:58,274 INFO [task-runner-0] io.druid.segment.IndexIO$DefaultIndexIOHandler - Dimension[outclick_type] is single value, converting...
+2014-10-27 16:37:58,298 INFO [task-runner-0] io.druid.segment.IndexIO$DefaultIndexIOHandler - Processing file[dim_property.drd]
+2014-10-27 16:37:58,312 INFO [task-runner-0] io.druid.segment.IndexIO$DefaultIndexIOHandler - Dimension[property] is single value, converting...
+2014-10-27 16:37:58,336 INFO [task-runner-0] io.druid.segment.IndexIO$DefaultIndexIOHandler - Processing file[dim_region.drd]
+2014-10-27 16:37:58,356 INFO [task-runner-0] io.druid.segment.IndexIO$DefaultIndexIOHandler - Dimension[region] is single value, converting...
+2014-10-27 16:37:58,356 INFO [task-runner-0] io.druid.segment.IndexIO$DefaultIndexIOHandler - Dimension[region] has null rows.
+2014-10-27 16:37:58,356 INFO [task-runner-0] io.druid.segment.IndexIO$DefaultIndexIOHandler - Dimension[region] has no null value in the dictionary, expanding...
+2014-10-27 16:37:58,388 INFO [task-runner-0] io.druid.segment.IndexIO$DefaultIndexIOHandler - Processing file[dim_site.drd]
+2014-10-27 16:37:58,405 INFO [task-runner-0] io.druid.segment.IndexIO$DefaultIndexIOHandler - Dimension[site] is single value, converting...
+2014-10-27 16:37:58,405 INFO [task-runner-0] io.druid.segment.IndexIO$DefaultIndexIOHandler - Dimension[site] has null rows.
+2014-10-27 16:37:58,405 INFO [task-runner-0] io.druid.segment.IndexIO$DefaultIndexIOHandler - Dimension[site] has no null value in the dictionary, expanding...
+2014-10-27 16:37:58,460 INFO [task-runner-0] io.druid.segment.IndexIO$DefaultIndexIOHandler - Processing file[index.drd]
+2014-10-27 16:37:58,461 INFO [task-runner-0] io.druid.segment.IndexIO$DefaultIndexIOHandler - Processing file[inverted.drd]
+2014-10-27 16:37:58,461 INFO [task-runner-0] io.druid.segment.IndexIO$DefaultIndexIOHandler - Processing file[met_commissions_LITTLE_ENDIAN.drd]
+2014-10-27 16:37:58,463 INFO [task-runner-0] io.druid.segment.IndexIO$DefaultIndexIOHandler - Processing file[met_count_LITTLE_ENDIAN.drd]
+2014-10-27 16:37:58,464 INFO [task-runner-0] io.druid.segment.IndexIO$DefaultIndexIOHandler - Processing file[met_orders_LITTLE_ENDIAN.drd]
+2014-10-27 16:37:58,465 INFO [task-runner-0] io.druid.segment.IndexIO$DefaultIndexIOHandler - Processing file[met_sales_LITTLE_ENDIAN.drd]
+2014-10-27 16:37:58,465 INFO [task-runner-0] io.druid.segment.IndexIO$DefaultIndexIOHandler - Processing file[spatial.drd]
+2014-10-27 16:37:58,465 INFO [task-runner-0] io.druid.segment.IndexIO$DefaultIndexIOHandler - Processing file[time_LITTLE_ENDIAN.drd]
+2014-10-27 16:37:58,467 INFO [task-runner-0] io.druid.segment.IndexIO$DefaultIndexIOHandler - Skipped files[[index.drd, inverted.drd, spatial.drd]]
+2014-10-27 16:38:04,840 INFO [task-runner-0] io.druid.indexing.common.index.YeOldePlumberSchool - Spilling index[1] with rows[500000] to: /tmp/persistent/task/index_click_conversion_weekly_2014-10-27T16:36:15.336Z/work/click_conversion_weekly_2014-03-31T00:00:00.000Z_2014-04-07T00:00:00.000Z_2014-10-27T16:36:15.337Z_0/click_conversion_weekly_2014-03-31T00:00:00.000Z_2014-04-07T00:00:00.000Z_2014-10-27T16:36:15.337Z/spill1
+2014-10-27 16:38:04,840 INFO [task-runner-0] io.druid.segment.IndexMerger - Starting persist for interval[2014-03-31T00:00:00.000Z/2014-04-06T18:16:00.000Z], rows[500,000]
+2014-10-27 16:38:05,419 INFO [task-runner-0] io.druid.segment.IndexMerger - outDir[/tmp/persistent/task/index_click_conversion_weekly_2014-10-27T16:36:15.336Z/work/click_conversion_weekly_2014-03-31T00:00:00.000Z_2014-04-07T00:00:00.000Z_2014-10-27T16:36:15.337Z_0/click_conversion_weekly_2014-03-31T00:00:00.000Z_2014-04-07T00:00:00.000Z_2014-10-27T16:36:15.337Z/spill1/v8-tmp] completed index.drd in 0 millis.
+2014-10-27 16:38:05,745 INFO [task-runner-0] io.druid.segment.IndexMerger - outDir[/tmp/persistent/task/index_click_conversion_weekly_2014-10-27T16:36:15.336Z/work/click_conversion_weekly_2014-03-31T00:00:00.000Z_2014-04-07T00:00:00.000Z_2014-10-27T16:36:15.337Z_0/click_conversion_weekly_2014-03-31T00:00:00.000Z_2014-04-07T00:00:00.000Z_2014-10-27T16:36:15.337Z/spill1/v8-tmp] completed dim conversions in 326 millis.
+2014-10-27 16:38:08,826 INFO [task-runner-0] io.druid.segment.IndexMerger - outDir[/tmp/persistent/task/index_click_conversion_weekly_2014-10-27T16:36:15.336Z/work/click_conversion_weekly_2014-03-31T00:00:00.000Z_2014-04-07T00:00:00.000Z_2014-10-27T16:36:15.337Z_0/click_conversion_weekly_2014-03-31T00:00:00.000Z_2014-04-07T00:00:00.000Z_2014-10-27T16:36:15.337Z/spill1/v8-tmp] walked 500,000/500,000 rows in 3,077 millis.
+2014-10-27 16:38:09,843 INFO [task-runner-0] io.druid.segment.IndexMerger - outDir[/tmp/persistent/task/index_click_conversion_weekly_2014-10-27T16:36:15.336Z/work/click_conversion_weekly_2014-03-31T00:00:00.000Z_2014-04-07T00:00:00.000Z_2014-10-27T16:36:15.337Z_0/click_conversion_weekly_2014-03-31T00:00:00.000Z_2014-04-07T00:00:00.000Z_2014-10-27T16:36:15.337Z/spill1/v8-tmp] completed walk through of 500,000 rows in 4,098 millis.
+2014-10-27 16:38:09,844 INFO [task-runner-0] io.druid.segment.IndexMerger - Starting dimension[browser] with cardinality[7]
+2014-10-27 16:38:09,935 INFO [task-runner-0] io.druid.segment.IndexMerger - Completed dimension[browser] in 92 millis.
+2014-10-27 16:38:09,935 INFO [task-runner-0] io.druid.segment.IndexMerger - Starting dimension[channel] with cardinality[14]
+2014-10-27 16:38:09,994 INFO [task-runner-0] io.druid.segment.IndexMerger - Completed dimension[channel] in 59 millis.
+2014-10-27 16:38:09,994 INFO [task-runner-0] io.druid.segment.IndexMerger - Starting dimension[city] with cardinality[13,938]
+2014-10-27 16:38:10,081 INFO [task-runner-0] io.druid.segment.IndexMerger - Completed dimension[city] in 87 millis.
+2014-10-27 16:38:10,081 INFO [task-runner-0] io.druid.segment.IndexMerger - Starting dimension[country] with cardinality[173]
+2014-10-27 16:38:10,110 INFO [task-runner-0] io.druid.segment.IndexMerger - Completed dimension[country] in 29 millis.
+2014-10-27 16:38:10,111 INFO [task-runner-0] io.druid.segment.IndexMerger - Starting dimension[coupon] with cardinality[79,105]
+2014-10-27 16:38:10,397 INFO [task-runner-0] io.druid.segment.IndexMerger - Completed dimension[coupon] in 287 millis.
+2014-10-27 16:38:10,398 INFO [task-runner-0] io.druid.segment.IndexMerger - Starting dimension[device] with cardinality[4]
+2014-10-27 16:38:10,456 INFO [task-runner-0] io.druid.segment.IndexMerger - Completed dimension[device] in 58 millis.
+2014-10-27 16:38:10,456 INFO [task-runner-0] io.druid.segment.IndexMerger - Starting dimension[outclick_type] with cardinality[14]
+2014-10-27 16:38:10,512 INFO [task-runner-0] io.druid.segment.IndexMerger - Completed dimension[outclick_type] in 56 millis.
+2014-10-27 16:38:10,512 INFO [task-runner-0] io.druid.segment.IndexMerger - Starting dimension[property] with cardinality[11]
+2014-10-27 16:38:10,564 INFO [task-runner-0] io.druid.segment.IndexMerger - Completed dimension[property] in 52 millis.
+2014-10-27 16:38:10,564 INFO [task-runner-0] io.druid.segment.IndexMerger - Starting dimension[region] with cardinality[1,015]
+2014-10-27 16:38:10,617 INFO [task-runner-0] io.druid.segment.IndexMerger - Completed dimension[region] in 53 millis.
+2014-10-27 16:38:10,618 INFO [task-runner-0] io.druid.segment.IndexMerger - Starting dimension[site] with cardinality[19,851]
+2014-10-27 16:38:10,815 INFO [task-runner-0] io.druid.segment.IndexMerger - Completed dimension[site] in 198 millis.
+2014-10-27 16:38:10,815 INFO [task-runner-0] io.druid.segment.IndexMerger - outDir[/tmp/persistent/task/index_click_conversion_weekly_2014-10-27T16:36:15.336Z/work/click_conversion_weekly_2014-03-31T00:00:00.000Z_2014-04-07T00:00:00.000Z_2014-10-27T16:36:15.337Z_0/click_conversion_weekly_2014-03-31T00:00:00.000Z_2014-04-07T00:00:00.000Z_2014-10-27T16:36:15.337Z/spill1/v8-tmp] completed inverted.drd in 972 millis.
+2014-10-27 16:38:10,922 INFO [task-runner-0] io.druid.segment.IndexIO$DefaultIndexIOHandler - Converting v8[/tmp/persistent/task/index_click_conversion_weekly_2014-10-27T16:36:15.336Z/work/click_conversion_weekly_2014-03-31T00:00:00.000Z_2014-04-07T00:00:00.000Z_2014-10-27T16:36:15.337Z_0/click_conversion_weekly_2014-03-31T00:00:00.000Z_2014-04-07T00:00:00.000Z_2014-10-27T16:36:15.337Z/spill1/v8-tmp] to v9[/tmp/persistent/task/index_click_conversion_weekly_2014-10-27T16:36:15.336Z/work/click_conversion_weekly_2014-03-31T00:00:00.000Z_2014-04-07T00:00:00.000Z_2014-10-27T16:36:15.337Z_0/click_conversion_weekly_2014-03-31T00:00:00.000Z_2014-04-07T00:00:00.000Z_2014-10-27T16:36:15.337Z/spill1]
+2014-10-27 16:38:10,923 INFO [task-runner-0] io.druid.segment.IndexIO$DefaultIndexIOHandler - Processing file[dim_browser.drd]
+2014-10-27 16:38:11,003 INFO [task-runner-0] io.druid.segment.IndexIO$DefaultIndexIOHandler - Dimension[browser] is single value, converting...
+2014-10-27 16:38:11,003 INFO [task-runner-0] io.druid.segment.IndexIO$DefaultIndexIOHandler - Dimension[browser] has null rows.
+2014-10-27 16:38:11,003 INFO [task-runner-0] io.druid.segment.IndexIO$DefaultIndexIOHandler - Dimension[browser] has no null value in the dictionary, expanding...
+2014-10-27 16:38:11,032 INFO [task-runner-0] io.druid.segment.IndexIO$DefaultIndexIOHandler - Processing file[dim_channel.drd]
+2014-10-27 16:38:11,087 INFO [task-runner-0] io.druid.segment.IndexIO$DefaultIndexIOHandler - Dimension[channel] is single value, converting...
+2014-10-27 16:38:11,087 INFO [task-runner-0] io.druid.segment.IndexIO$DefaultIndexIOHandler - Dimension[channel] has null rows.
+2014-10-27 16:38:11,087 INFO [task-runner-0] io.druid.segment.IndexIO$DefaultIndexIOHandler - Dimension[channel] has no null value in the dictionary, expanding...
+2014-10-27 16:38:11,115 INFO [task-runner-0] io.druid.segment.IndexIO$DefaultIndexIOHandler - Processing file[dim_city.drd]
+2014-10-27 16:38:11,135 INFO [task-runner-0] io.druid.segment.IndexIO$DefaultIndexIOHandler - Dimension[city] is single value, converting...
+2014-10-27 16:38:11,135 INFO [task-runner-0] io.druid.segment.IndexIO$DefaultIndexIOHandler - Dimension[city] has null rows.
+2014-10-27 16:38:11,135 INFO [task-runner-0] io.druid.segment.IndexIO$DefaultIndexIOHandler - Dimension[city] has no null value in the dictionary, expanding...
+2014-10-27 16:38:11,179 INFO [task-runner-0] io.druid.segment.IndexIO$DefaultIndexIOHandler - Processing file[dim_country.drd]
+2014-10-27 16:38:11,197 INFO [task-runner-0] io.druid.segment.IndexIO$DefaultIndexIOHandler - Dimension[country] is single value, converting...
+2014-10-27 16:38:11,197 INFO [task-runner-0] io.druid.segment.IndexIO$DefaultIndexIOHandler - Dimension[country] has null rows.
+2014-10-27 16:38:11,198 INFO [task-runner-0] io.druid.segment.IndexIO$DefaultIndexIOHandler - Dimension[country] has no null value in the dictionary, expanding...
+2014-10-27 16:38:11,230 INFO [task-runner-0] io.druid.segment.IndexIO$DefaultIndexIOHandler - Processing file[dim_coupon.drd]
+2014-10-27 16:38:11,245 INFO [task-runner-0] io.druid.segment.IndexIO$DefaultIndexIOHandler - Dimension[coupon] is single value, converting...
+2014-10-27 16:38:11,245 INFO [task-runner-0] io.druid.segment.IndexIO$DefaultIndexIOHandler - Dimension[coupon] has null rows.
+2014-10-27 16:38:11,245 INFO [task-runner-0] io.druid.segment.IndexIO$DefaultIndexIOHandler - Dimension[coupon] has no null value in the dictionary, expanding...
+2014-10-27 16:38:11,350 INFO [task-runner-0] io.druid.segment.IndexIO$DefaultIndexIOHandler - Processing file[dim_device.drd]
+2014-10-27 16:38:11,364 INFO [task-runner-0] io.druid.segment.IndexIO$DefaultIndexIOHandler - Dimension[device] is single value, converting...
+2014-10-27 16:38:11,364 INFO [task-runner-0] io.druid.segment.IndexIO$DefaultIndexIOHandler - Dimension[device] has null rows.
+2014-10-27 16:38:11,364 INFO [task-runner-0] io.druid.segment.IndexIO$DefaultIndexIOHandler - Dimension[device] has no null value in the dictionary, expanding...
+2014-10-27 16:38:11,390 INFO [task-runner-0] io.druid.segment.IndexIO$DefaultIndexIOHandler - Processing file[dim_outclick_type.drd]
+2014-10-27 16:38:11,404 INFO [task-runner-0] io.druid.segment.IndexIO$DefaultIndexIOHandler - Dimension[outclick_type] is single value, converting...
+2014-10-27 16:38:11,429 INFO [task-runner-0] io.druid.segment.IndexIO$DefaultIndexIOHandler - Processing file[dim_property.drd]
+2014-10-27 16:38:11,443 INFO [task-runner-0] io.druid.segment.IndexIO$DefaultIndexIOHandler - Dimension[property] is single value, converting...
+2014-10-27 16:38:11,467 INFO [task-runner-0] io.druid.segment.IndexIO$DefaultIndexIOHandler - Processing file[dim_region.drd]
+2014-10-27 16:38:11,486 INFO [task-runner-0] io.druid.segment.IndexIO$DefaultIndexIOHandler - Dimension[region] is single value, converting...
+2014-10-27 16:38:11,486 INFO [task-runner-0] io.druid.segment.IndexIO$DefaultIndexIOHandler - Dimension[region] has null rows.
+2014-10-27 16:38:11,487 INFO [task-runner-0] io.druid.segment.IndexIO$DefaultIndexIOHandler - Dimension[region] has no null value in the dictionary, expanding...
+2014-10-27 16:38:11,519 INFO [task-runner-0] io.druid.segment.IndexIO$DefaultIndexIOHandler - Processing file[dim_site.drd]
+2014-10-27 16:38:11,533 INFO [task-runner-0] io.druid.segment.IndexIO$DefaultIndexIOHandler - Dimension[site] is single value, converting...
+2014-10-27 16:38:11,533 INFO [task-runner-0] io.druid.segment.IndexIO$DefaultIndexIOHandler - Dimension[site] has null rows.
+2014-10-27 16:38:11,533 INFO [task-runner-0] io.druid.segment.IndexIO$DefaultIndexIOHandler - Dimension[site] has no null value in the dictionary, expanding...
+2014-10-27 16:38:11,588 INFO [task-runner-0] io.druid.segment.IndexIO$DefaultIndexIOHandler - Processing file[index.drd]
+2014-10-27 16:38:11,588 INFO [task-runner-0] io.druid.segment.IndexIO$DefaultIndexIOHandler - Processing file[inverted.drd]
+2014-10-27 16:38:11,588 INFO [task-runner-0] io.druid.segment.IndexIO$DefaultIndexIOHandler - Processing file[met_commissions_LITTLE_ENDIAN.drd]
+2014-10-27 16:38:11,589 INFO [task-runner-0] io.druid.segment.IndexIO$DefaultIndexIOHandler - Processing file[met_count_LITTLE_ENDIAN.drd]
+2014-10-27 16:38:11,590 INFO [task-runner-0] io.druid.segment.IndexIO$DefaultIndexIOHandler - Processing file[met_orders_LITTLE_ENDIAN.drd]
+2014-10-27 16:38:11,590 INFO [task-runner-0] io.druid.segment.IndexIO$DefaultIndexIOHandler - Processing file[met_sales_LITTLE_ENDIAN.drd]
+2014-10-27 16:38:11,590 INFO [task-runner-0] io.druid.segment.IndexIO$DefaultIndexIOHandler - Processing file[spatial.drd]
+2014-10-27 16:38:11,590 INFO [task-runner-0] io.druid.segment.IndexIO$DefaultIndexIOHandler - Processing file[time_LITTLE_ENDIAN.drd]
+2014-10-27 16:38:11,591 INFO [task-runner-0] io.druid.segment.IndexIO$DefaultIndexIOHandler - Skipped files[[index.drd, inverted.drd, spatial.drd]]
+2014-10-27 16:38:17,128 INFO [task-runner-0] io.druid.indexing.common.index.YeOldePlumberSchool - Spilling index[2] with rows[500000] to: /tmp/persistent/task/index_click_conversion_weekly_2014-10-27T16:36:15.336Z/work/click_conversion_weekly_2014-03-31T00:00:00.000Z_2014-04-07T00:00:00.000Z_2014-10-27T16:36:15.337Z_0/click_conversion_weekly_2014-03-31T00:00:00.000Z_2014-04-07T00:00:00.000Z_2014-10-27T16:36:15.337Z/spill2
+2014-10-27 16:38:17,128 INFO [task-runner-0] io.druid.segment.IndexMerger - Starting persist for interval[2014-03-31T00:00:00.000Z/2014-04-06T23:28:00.000Z], rows[500,000]
+2014-10-27 16:38:17,675 INFO [task-runner-0] io.druid.segment.IndexMerger - outDir[/tmp/persistent/task/index_click_conversion_weekly_2014-10-27T16:36:15.336Z/work/click_conversion_weekly_2014-03-31T00:00:00.000Z_2014-04-07T00:00:00.000Z_2014-10-27T16:36:15.337Z_0/click_conversion_weekly_2014-03-31T00:00:00.000Z_2014-04-07T00:00:00.000Z_2014-10-27T16:36:15.337Z/spill2/v8-tmp] completed index.drd in 1 millis.
+2014-10-27 16:38:17,877 INFO [task-runner-0] io.druid.segment.IndexMerger - outDir[/tmp/persistent/task/index_click_conversion_weekly_2014-10-27T16:36:15.336Z/work/click_conversion_weekly_2014-03-31T00:00:00.000Z_2014-04-07T00:00:00.000Z_2014-10-27T16:36:15.337Z_0/click_conversion_weekly_2014-03-31T00:00:00.000Z_2014-04-07T00:00:00.000Z_2014-10-27T16:36:15.337Z/spill2/v8-tmp] completed dim conversions in 202 millis.
+2014-10-27 16:38:21,781 INFO [task-runner-0] io.druid.segment.IndexMerger - outDir[/tmp/persistent/task/index_click_conversion_weekly_2014-10-27T16:36:15.336Z/work/click_conversion_weekly_2014-03-31T00:00:00.000Z_2014-04-07T00:00:00.000Z_2014-10-27T16:36:15.337Z_0/click_conversion_weekly_2014-03-31T00:00:00.000Z_2014-04-07T00:00:00.000Z_2014-10-27T16:36:15.337Z/spill2/v8-tmp] walked 500,000/500,000 rows in 3,898 millis.
+2014-10-27 16:38:22,648 INFO [task-runner-0] io.druid.segment.IndexMerger - outDir[/tmp/persistent/task/index_click_conversion_weekly_2014-10-27T16:36:15.336Z/work/click_conversion_weekly_2014-03-31T00:00:00.000Z_2014-04-07T00:00:00.000Z_2014-10-27T16:36:15.337Z_0/click_conversion_weekly_2014-03-31T00:00:00.000Z_2014-04-07T00:00:00.000Z_2014-10-27T16:36:15.337Z/spill2/v8-tmp] completed walk through of 500,000 rows in 4,770 millis.
+2014-10-27 16:38:22,648 INFO [task-runner-0] io.druid.segment.IndexMerger - Starting dimension[browser] with cardinality[7]
+2014-10-27 16:38:22,712 INFO [task-runner-0] io.druid.segment.IndexMerger - Completed dimension[browser] in 63 millis.
+2014-10-27 16:38:22,712 INFO [task-runner-0] io.druid.segment.IndexMerger - Starting dimension[channel] with cardinality[14]
+2014-10-27 16:38:22,802 INFO [task-runner-0] io.druid.segment.IndexMerger - Completed dimension[channel] in 90 millis.
+2014-10-27 16:38:22,802 INFO [task-runner-0] io.druid.segment.IndexMerger - Starting dimension[city] with cardinality[12,189]
+2014-10-27 16:38:22,866 INFO [task-runner-0] io.druid.segment.IndexMerger - Completed dimension[city] in 63 millis.
+2014-10-27 16:38:22,866 INFO [task-runner-0] io.druid.segment.IndexMerger - Starting dimension[country] with cardinality[165]
+2014-10-27 16:38:22,890 INFO [task-runner-0] io.druid.segment.IndexMerger - Completed dimension[country] in 24 millis.
+2014-10-27 16:38:22,891 INFO [task-runner-0] io.druid.segment.IndexMerger - Starting dimension[coupon] with cardinality[78,294]
+2014-10-27 16:38:23,156 INFO [task-runner-0] io.druid.segment.IndexMerger - Completed dimension[coupon] in 266 millis.
+2014-10-27 16:38:23,157 INFO [task-runner-0] io.druid.segment.IndexMerger - Starting dimension[device] with cardinality[4]
+2014-10-27 16:38:23,223 INFO [task-runner-0] io.druid.segment.IndexMerger - Completed dimension[device] in 66 millis.
+2014-10-27 16:38:23,223 INFO [task-runner-0] io.druid.segment.IndexMerger - Starting dimension[outclick_type] with cardinality[13]
+2014-10-27 16:38:23,279 INFO [task-runner-0] io.druid.segment.IndexMerger - Completed dimension[outclick_type] in 56 millis.
+2014-10-27 16:38:23,279 INFO [task-runner-0] io.druid.segment.IndexMerger - Starting dimension[property] with cardinality[11]
+2014-10-27 16:38:23,331 INFO [task-runner-0] io.druid.segment.IndexMerger - Completed dimension[property] in 52 millis.
+2014-10-27 16:38:23,331 INFO [task-runner-0] io.druid.segment.IndexMerger - Starting dimension[region] with cardinality[926]
+2014-10-27 16:38:23,377 INFO [task-runner-0] io.druid.segment.IndexMerger - Completed dimension[region] in 46 millis.
+2014-10-27 16:38:23,377 INFO [task-runner-0] io.druid.segment.IndexMerger - Starting dimension[site] with cardinality[19,455]
+2014-10-27 16:38:23,558 INFO [task-runner-0] io.druid.segment.IndexMerger - Completed dimension[site] in 181 millis.
+2014-10-27 16:38:23,558 INFO [task-runner-0] io.druid.segment.IndexMerger - outDir[/tmp/persistent/task/index_click_conversion_weekly_2014-10-27T16:36:15.336Z/work/click_conversion_weekly_2014-03-31T00:00:00.000Z_2014-04-07T00:00:00.000Z_2014-10-27T16:36:15.337Z_0/click_conversion_weekly_2014-03-31T00:00:00.000Z_2014-04-07T00:00:00.000Z_2014-10-27T16:36:15.337Z/spill2/v8-tmp] completed inverted.drd in 910 millis.
+2014-10-27 16:38:23,657 INFO [task-runner-0] io.druid.segment.IndexIO$DefaultIndexIOHandler - Converting v8[/tmp/persistent/task/index_click_conversion_weekly_2014-10-27T16:36:15.336Z/work/click_conversion_weekly_2014-03-31T00:00:00.000Z_2014-04-07T00:00:00.000Z_2014-10-27T16:36:15.337Z_0/click_conversion_weekly_2014-03-31T00:00:00.000Z_2014-04-07T00:00:00.000Z_2014-10-27T16:36:15.337Z/spill2/v8-tmp] to v9[/tmp/persistent/task/index_click_conversion_weekly_2014-10-27T16:36:15.336Z/work/click_conversion_weekly_2014-03-31T00:00:00.000Z_2014-04-07T00:00:00.000Z_2014-10-27T16:36:15.337Z_0/click_conversion_weekly_2014-03-31T00:00:00.000Z_2014-04-07T00:00:00.000Z_2014-10-27T16:36:15.337Z/spill2]
+2014-10-27 16:38:23,658 INFO [task-runner-0] io.druid.segment.IndexIO$DefaultIndexIOHandler - Processing file[dim_browser.drd]
+2014-10-27 16:38:23,674 INFO [task-runner-0] io.druid.segment.IndexIO$DefaultIndexIOHandler - Dimension[browser] is single value, converting...
+2014-10-27 16:38:23,674 INFO [task-runner-0] io.druid.segment.IndexIO$DefaultIndexIOHandler - Dimension[browser] has null rows.
+2014-10-27 16:38:23,675 INFO [task-runner-0] io.druid.segment.IndexIO$DefaultIndexIOHandler - Dimension[browser] has no null value in the dictionary, expanding...
+2014-10-27 16:38:23,703 INFO [task-runner-0] io.druid.segment.IndexIO$DefaultIndexIOHandler - Processing file[dim_channel.drd]
+2014-10-27 16:38:23,719 INFO [task-runner-0] io.druid.segment.IndexIO$DefaultIndexIOHandler - Dimension[channel] is single value, converting...
+2014-10-27 16:38:23,719 INFO [task-runner-0] io.druid.segment.IndexIO$DefaultIndexIOHandler - Dimension[channel] has null rows.
+2014-10-27 16:38:23,719 INFO [task-runner-0] io.druid.segment.IndexIO$DefaultIndexIOHandler - Dimension[channel] has no null value in the dictionary, expanding...
+2014-10-27 16:38:23,748 INFO [task-runner-0] io.druid.segment.IndexIO$DefaultIndexIOHandler - Processing file[dim_city.drd]
+2014-10-27 16:38:23,768 INFO [task-runner-0] io.druid.segment.IndexIO$DefaultIndexIOHandler - Dimension[city] is single value, converting...
+2014-10-27 16:38:23,768 INFO [task-runner-0] io.druid.segment.IndexIO$DefaultIndexIOHandler - Dimension[city] has null rows.
+2014-10-27 16:38:23,768 INFO [task-runner-0] io.druid.segment.IndexIO$DefaultIndexIOHandler - Dimension[city] has no null value in the dictionary, expanding...
+2014-10-27 16:38:23,810 INFO [task-runner-0] io.druid.segment.IndexIO$DefaultIndexIOHandler - Processing file[dim_country.drd]
+2014-10-27 16:38:23,829 INFO [task-runner-0] io.druid.segment.IndexIO$DefaultIndexIOHandler - Dimension[country] is single value, converting...
+2014-10-27 16:38:23,829 INFO [task-runner-0] io.druid.segment.IndexIO$DefaultIndexIOHandler - Dimension[country] has null rows.
+2014-10-27 16:38:23,829 INFO [task-runner-0] io.druid.segment.IndexIO$DefaultIndexIOHandler - Dimension[country] has no null value in the dictionary, expanding...
+2014-10-27 16:38:23,855 INFO [task-runner-0] io.druid.segment.IndexIO$DefaultIndexIOHandler - Processing file[dim_coupon.drd]
+2014-10-27 16:38:23,869 INFO [task-runner-0] io.druid.segment.IndexIO$DefaultIndexIOHandler - Dimension[coupon] is single value, converting...
+2014-10-27 16:38:23,869 INFO [task-runner-0] io.druid.segment.IndexIO$DefaultIndexIOHandler - Dimension[coupon] has null rows.
+2014-10-27 16:38:23,869 INFO [task-runner-0] io.druid.segment.IndexIO$DefaultIndexIOHandler - Dimension[coupon] has no null value in the dictionary, expanding...
+2014-10-27 16:38:23,973 INFO [task-runner-0] io.druid.segment.IndexIO$DefaultIndexIOHandler - Processing file[dim_device.drd]
+2014-10-27 16:38:23,987 INFO [task-runner-0] io.druid.segment.IndexIO$DefaultIndexIOHandler - Dimension[device] is single value, converting...
+2014-10-27 16:38:23,987 INFO [task-runner-0] io.druid.segment.IndexIO$DefaultIndexIOHandler - Dimension[device] has null rows.
+2014-10-27 16:38:23,987 INFO [task-runner-0] io.druid.segment.IndexIO$DefaultIndexIOHandler - Dimension[device] has no null value in the dictionary, expanding...
+2014-10-27 16:38:24,013 INFO [task-runner-0] io.druid.segment.IndexIO$DefaultIndexIOHandler - Processing file[dim_outclick_type.drd]
+2014-10-27 16:38:24,027 INFO [task-runner-0] io.druid.segment.IndexIO$DefaultIndexIOHandler - Dimension[outclick_type] is single value, converting...
+2014-10-27 16:38:24,052 INFO [task-runner-0] io.druid.segment.IndexIO$DefaultIndexIOHandler - Processing file[dim_property.drd]
+2014-10-27 16:38:24,075 INFO [task-runner-0] io.druid.segment.IndexIO$DefaultIndexIOHandler - Dimension[property] is single value, converting...
+2014-10-27 16:38:24,100 INFO [task-runner-0] io.druid.segment.IndexIO$DefaultIndexIOHandler - Processing file[dim_region.drd]
+2014-10-27 16:38:24,120 INFO [task-runner-0] io.druid.segment.IndexIO$DefaultIndexIOHandler - Dimension[region] is single value, converting...
+2014-10-27 16:38:24,120 INFO [task-runner-0] io.druid.segment.IndexIO$DefaultIndexIOHandler - Dimension[region] has null rows.
+2014-10-27 16:38:24,120 INFO [task-runner-0] io.druid.segment.IndexIO$DefaultIndexIOHandler - Dimension[region] has no null value in the dictionary, expanding...
+2014-10-27 16:38:24,151 INFO [task-runner-0] io.druid.segment.IndexIO$DefaultIndexIOHandler - Processing file[dim_site.drd]
+2014-10-27 16:38:24,165 INFO [task-runner-0] io.druid.segment.IndexIO$DefaultIndexIOHandler - Dimension[site] is single value, converting...
+2014-10-27 16:38:24,166 INFO [task-runner-0] io.druid.segment.IndexIO$DefaultIndexIOHandler - Dimension[site] has null rows.
+2014-10-27 16:38:24,166 INFO [task-runner-0] io.druid.segment.IndexIO$DefaultIndexIOHandler - Dimension[site] has no null value in the dictionary, expanding...
+2014-10-27 16:38:24,220 INFO [task-runner-0] io.druid.segment.IndexIO$DefaultIndexIOHandler - Processing file[index.drd]
+2014-10-27 16:38:24,220 INFO [task-runner-0] io.druid.segment.IndexIO$DefaultIndexIOHandler - Processing file[inverted.drd]
+2014-10-27 16:38:24,220 INFO [task-runner-0] io.druid.segment.IndexIO$DefaultIndexIOHandler - Processing file[met_commissions_LITTLE_ENDIAN.drd]
+2014-10-27 16:38:24,220 INFO [task-runner-0] io.druid.segment.IndexIO$DefaultIndexIOHandler - Processing file[met_count_LITTLE_ENDIAN.drd]
+2014-10-27 16:38:24,221 INFO [task-runner-0] io.druid.segment.IndexIO$DefaultIndexIOHandler - Processing file[met_orders_LITTLE_ENDIAN.drd]
+2014-10-27 16:38:24,222 INFO [task-runner-0] io.druid.segment.IndexIO$DefaultIndexIOHandler - Processing file[met_sales_LITTLE_ENDIAN.drd]
+2014-10-27 16:38:24,222 INFO [task-runner-0] io.druid.segment.IndexIO$DefaultIndexIOHandler - Processing file[spatial.drd]
+2014-10-27 16:38:24,222 INFO [task-runner-0] io.druid.segment.IndexIO$DefaultIndexIOHandler - Processing file[time_LITTLE_ENDIAN.drd]
+2014-10-27 16:38:24,223 INFO [task-runner-0] io.druid.segment.IndexIO$DefaultIndexIOHandler - Skipped files[[index.drd, inverted.drd, spatial.drd]]
+2014-10-27 16:38:56,821 INFO [task-runner-0] io.druid.indexing.common.index.YeOldePlumberSchool - Spilling index[3] with rows[44139] to: /tmp/persistent/task/index_click_conversion_weekly_2014-10-27T16:36:15.336Z/work/click_conversion_weekly_2014-03-31T00:00:00.000Z_2014-04-07T00:00:00.000Z_2014-10-27T16:36:15.337Z_0/click_conversion_weekly_2014-03-31T00:00:00.000Z_2014-04-07T00:00:00.000Z_2014-10-27T16:36:15.337Z/spill3
+2014-10-27 16:38:56,822 INFO [task-runner-0] io.druid.segment.IndexMerger - Starting persist for interval[2014-03-31T00:00:00.000Z/2014-04-07T00:00:00.000Z], rows[44,139]
+2014-10-27 16:38:56,862 INFO [task-runner-0] io.druid.segment.IndexMerger - outDir[/tmp/persistent/task/index_click_conversion_weekly_2014-10-27T16:36:15.336Z/work/click_conversion_weekly_2014-03-31T00:00:00.000Z_2014-04-07T00:00:00.000Z_2014-10-27T16:36:15.337Z_0/click_conversion_weekly_2014-03-31T00:00:00.000Z_2014-04-07T00:00:00.000Z_2014-10-27T16:36:15.337Z/spill3/v8-tmp] completed index.drd in 0 millis.
+2014-10-27 16:38:57,844 INFO [task-runner-0] io.druid.segment.IndexMerger - outDir[/tmp/persistent/task/index_click_conversion_weekly_2014-10-27T16:36:15.336Z/work/click_conversion_weekly_2014-03-31T00:00:00.000Z_2014-04-07T00:00:00.000Z_2014-10-27T16:36:15.337Z_0/click_conversion_weekly_2014-03-31T00:00:00.000Z_2014-04-07T00:00:00.000Z_2014-10-27T16:36:15.337Z/spill3/v8-tmp] completed dim conversions in 982 millis.
+2014-10-27 16:38:58,128 INFO [task-runner-0] io.druid.segment.IndexMerger - outDir[/tmp/persistent/task/index_click_conversion_weekly_2014-10-27T16:36:15.336Z/work/click_conversion_weekly_2014-03-31T00:00:00.000Z_2014-04-07T00:00:00.000Z_2014-10-27T16:36:15.337Z_0/click_conversion_weekly_2014-03-31T00:00:00.000Z_2014-04-07T00:00:00.000Z_2014-10-27T16:36:15.337Z/spill3/v8-tmp] completed walk through of 44,139 rows in 284 millis.
+2014-10-27 16:38:58,129 INFO [task-runner-0] io.druid.segment.IndexMerger - Starting dimension[browser] with cardinality[7]
+2014-10-27 16:38:58,135 INFO [task-runner-0] io.druid.segment.IndexMerger - Completed dimension[browser] in 6 millis.
+2014-10-27 16:38:58,135 INFO [task-runner-0] io.druid.segment.IndexMerger - Starting dimension[channel] with cardinality[14]
+2014-10-27 16:38:58,142 INFO [task-runner-0] io.druid.segment.IndexMerger - Completed dimension[channel] in 7 millis.
+2014-10-27 16:38:58,142 INFO [task-runner-0] io.druid.segment.IndexMerger - Starting dimension[city] with cardinality[3,075]
+2014-10-27 16:38:58,151 INFO [task-runner-0] io.druid.segment.IndexMerger - Completed dimension[city] in 9 millis.
+2014-10-27 16:38:58,151 INFO [task-runner-0] io.druid.segment.IndexMerger - Starting dimension[country] with cardinality[84]
+2014-10-27 16:38:58,154 INFO [task-runner-0] io.druid.segment.IndexMerger - Completed dimension[country] in 3 millis.
+2014-10-27 16:38:58,155 INFO [task-runner-0] io.druid.segment.IndexMerger - Starting dimension[coupon] with cardinality[16,131]
+2014-10-27 16:38:58,187 INFO [task-runner-0] io.druid.segment.IndexMerger - Completed dimension[coupon] in 33 millis.
+2014-10-27 16:38:58,188 INFO [task-runner-0] io.druid.segment.IndexMerger - Starting dimension[device] with cardinality[4]
+2014-10-27 16:38:58,194 INFO [task-runner-0] io.druid.segment.IndexMerger - Completed dimension[device] in 7 millis.
+2014-10-27 16:38:58,194 INFO [task-runner-0] io.druid.segment.IndexMerger - Starting dimension[outclick_type] with cardinality[12]
+2014-10-27 16:38:58,201 INFO [task-runner-0] io.druid.segment.IndexMerger - Completed dimension[outclick_type] in 7 millis.
+2014-10-27 16:38:58,201 INFO [task-runner-0] io.druid.segment.IndexMerger - Starting dimension[property] with cardinality[10]
+2014-10-27 16:38:58,207 INFO [task-runner-0] io.druid.segment.IndexMerger - Completed dimension[property] in 6 millis.
+2014-10-27 16:38:58,207 INFO [task-runner-0] io.druid.segment.IndexMerger - Starting dimension[region] with cardinality[365]
+2014-10-27 16:38:58,212 INFO [task-runner-0] io.druid.segment.IndexMerger - Completed dimension[region] in 5 millis.
+2014-10-27 16:38:58,213 INFO [task-runner-0] io.druid.segment.IndexMerger - Starting dimension[site] with cardinality[5,685]
+2014-10-27 16:38:58,232 INFO [task-runner-0] io.druid.segment.IndexMerger - Completed dimension[site] in 20 millis.
+2014-10-27 16:38:58,232 INFO [task-runner-0] io.druid.segment.IndexMerger - outDir[/tmp/persistent/task/index_click_conversion_weekly_2014-10-27T16:36:15.336Z/work/click_conversion_weekly_2014-03-31T00:00:00.000Z_2014-04-07T00:00:00.000Z_2014-10-27T16:36:15.337Z_0/click_conversion_weekly_2014-03-31T00:00:00.000Z_2014-04-07T00:00:00.000Z_2014-10-27T16:36:15.337Z/spill3/v8-tmp] completed inverted.drd in 104 millis.
+2014-10-27 16:38:58,245 INFO [task-runner-0] io.druid.segment.IndexIO$DefaultIndexIOHandler - Converting v8[/tmp/persistent/task/index_click_conversion_weekly_2014-10-27T16:36:15.336Z/work/click_conversion_weekly_2014-03-31T00:00:00.000Z_2014-04-07T00:00:00.000Z_2014-10-27T16:36:15.337Z_0/click_conversion_weekly_2014-03-31T00:00:00.000Z_2014-04-07T00:00:00.000Z_2014-10-27T16:36:15.337Z/spill3/v8-tmp] to v9[/tmp/persistent/task/index_click_conversion_weekly_2014-10-27T16:36:15.336Z/work/click_conversion_weekly_2014-03-31T00:00:00.000Z_2014-04-07T00:00:00.000Z_2014-10-27T16:36:15.337Z_0/click_conversion_weekly_2014-03-31T00:00:00.000Z_2014-04-07T00:00:00.000Z_2014-10-27T16:36:15.337Z/spill3]
+2014-10-27 16:38:58,246 INFO [task-runner-0] io.druid.segment.IndexIO$DefaultIndexIOHandler - Processing file[dim_browser.drd]
+2014-10-27 16:38:58,247 INFO [task-runner-0] io.druid.segment.IndexIO$DefaultIndexIOHandler - Dimension[browser] is single value, converting...
+2014-10-27 16:38:58,247 INFO [task-runner-0] io.druid.segment.IndexIO$DefaultIndexIOHandler - Dimension[browser] has null rows.
+2014-10-27 16:38:58,247 INFO [task-runner-0] io.druid.segment.IndexIO$DefaultIndexIOHandler - Dimension[browser] has no null value in the dictionary, expanding...
+2014-10-27 16:38:58,250 INFO [task-runner-0] io.druid.segment.IndexIO$DefaultIndexIOHandler - Processing file[dim_channel.drd]
+2014-10-27 16:38:58,252 INFO [task-runner-0] io.druid.segment.IndexIO$DefaultIndexIOHandler - Dimension[channel] is single value, converting...
+2014-10-27 16:38:58,252 INFO [task-runner-0] io.druid.segment.IndexIO$DefaultIndexIOHandler - Dimension[channel] has null rows.
+2014-10-27 16:38:58,252 INFO [task-runner-0] io.druid.segment.IndexIO$DefaultIndexIOHandler - Dimension[channel] has no null value in the dictionary, expanding...
+2014-10-27 16:38:58,254 INFO [task-runner-0] io.druid.segment.IndexIO$DefaultIndexIOHandler - Processing file[dim_city.drd]
+2014-10-27 16:38:58,256 INFO [task-runner-0] io.druid.segment.IndexIO$DefaultIndexIOHandler - Dimension[city] is single value, converting...
+2014-10-27 16:38:58,256 INFO [task-runner-0] io.druid.segment.IndexIO$DefaultIndexIOHandler - Dimension[city] has null rows.
+2014-10-27 16:38:58,256 INFO [task-runner-0] io.druid.segment.IndexIO$DefaultIndexIOHandler - Dimension[city] has no null value in the dictionary, expanding...
+2014-10-27 16:38:58,262 INFO [task-runner-0] io.druid.segment.IndexIO$DefaultIndexIOHandler - Processing file[dim_country.drd]
+2014-10-27 16:38:58,264 INFO [task-runner-0] io.druid.segment.IndexIO$DefaultIndexIOHandler - Dimension[country] is single value, converting...
+2014-10-27 16:38:58,264 INFO [task-runner-0] io.druid.segment.IndexIO$DefaultIndexIOHandler - Dimension[country] has null rows.
+2014-10-27 16:38:58,264 INFO [task-runner-0] io.druid.segment.IndexIO$DefaultIndexIOHandler - Dimension[country] has no null value in the dictionary, expanding...
+2014-10-27 16:38:58,266 INFO [task-runner-0] io.druid.segment.IndexIO$DefaultIndexIOHandler - Processing file[dim_coupon.drd]
+2014-10-27 16:38:58,268 INFO [task-runner-0] io.druid.segment.IndexIO$DefaultIndexIOHandler - Dimension[coupon] is single value, converting...
+2014-10-27 16:38:58,268 INFO [task-runner-0] io.druid.segment.IndexIO$DefaultIndexIOHandler - Dimension[coupon] has null rows.
+2014-10-27 16:38:58,268 INFO [task-runner-0] io.druid.segment.IndexIO$DefaultIndexIOHandler - Dimension[coupon] has no null value in the dictionary, expanding...
+2014-10-27 16:38:58,284 INFO [task-runner-0] io.druid.segment.IndexIO$DefaultIndexIOHandler - Processing file[dim_device.drd]
+2014-10-27 16:38:58,286 INFO [task-runner-0] io.druid.segment.IndexIO$DefaultIndexIOHandler - Dimension[device] is single value, converting...
+2014-10-27 16:38:58,286 INFO [task-runner-0] io.druid.segment.IndexIO$DefaultIndexIOHandler - Dimension[device] has null rows.
+2014-10-27 16:38:58,286 INFO [task-runner-0] io.druid.segment.IndexIO$DefaultIndexIOHandler - Dimension[device] has no null value in the dictionary, expanding...
+2014-10-27 16:38:58,288 INFO [task-runner-0] io.druid.segment.IndexIO$DefaultIndexIOHandler - Processing file[dim_outclick_type.drd]
+2014-10-27 16:38:58,290 INFO [task-runner-0] io.druid.segment.IndexIO$DefaultIndexIOHandler - Dimension[outclick_type] is single value, converting...
+2014-10-27 16:38:58,292 INFO [task-runner-0] io.druid.segment.IndexIO$DefaultIndexIOHandler - Processing file[dim_property.drd]
+2014-10-27 16:38:58,293 INFO [task-runner-0] io.druid.segment.IndexIO$DefaultIndexIOHandler - Dimension[property] is single value, converting...
+2014-10-27 16:38:58,296 INFO [task-runner-0] io.druid.segment.IndexIO$DefaultIndexIOHandler - Processing file[dim_region.drd]
+2014-10-27 16:38:58,297 INFO [task-runner-0] io.druid.segment.IndexIO$DefaultIndexIOHandler - Dimension[region] is single value, converting...
+2014-10-27 16:38:58,297 INFO [task-runner-0] io.druid.segment.IndexIO$DefaultIndexIOHandler - Dimension[region] has null rows.
+2014-10-27 16:38:58,298 INFO [task-runner-0] io.druid.segment.IndexIO$DefaultIndexIOHandler - Dimension[region] has no null value in the dictionary, expanding...
+2014-10-27 16:38:58,301 INFO [task-runner-0] io.druid.segment.IndexIO$DefaultIndexIOHandler - Processing file[dim_site.drd]
+2014-10-27 16:38:58,302 INFO [task-runner-0] io.druid.segment.IndexIO$DefaultIndexIOHandler - Dimension[site] is single value, converting...
+2014-10-27 16:38:58,305 INFO [task-runner-0] io.druid.segment.IndexIO$DefaultIndexIOHandler - Processing file[index.drd]
+2014-10-27 16:38:58,306 INFO [task-runner-0] io.druid.segment.IndexIO$DefaultIndexIOHandler - Processing file[inverted.drd]
+2014-10-27 16:38:58,306 INFO [task-runner-0] io.druid.segment.IndexIO$DefaultIndexIOHandler - Processing file[met_commissions_LITTLE_ENDIAN.drd]
+2014-10-27 16:38:58,306 INFO [task-runner-0] io.druid.segment.IndexIO$DefaultIndexIOHandler - Processing file[met_count_LITTLE_ENDIAN.drd]
+2014-10-27 16:38:58,306 INFO [task-runner-0] io.druid.segment.IndexIO$DefaultIndexIOHandler - Processing file[met_orders_LITTLE_ENDIAN.drd]
+2014-10-27 16:38:58,306 INFO [task-runner-0] io.druid.segment.IndexIO$DefaultIndexIOHandler - Processing file[met_sales_LITTLE_ENDIAN.drd]
+2014-10-27 16:38:58,307 INFO [task-runner-0] io.druid.segment.IndexIO$DefaultIndexIOHandler - Processing file[spatial.drd]
+2014-10-27 16:38:58,307 INFO [task-runner-0] io.druid.segment.IndexIO$DefaultIndexIOHandler - Processing file[time_LITTLE_ENDIAN.drd]
+2014-10-27 16:38:58,307 INFO [task-runner-0] io.druid.segment.IndexIO$DefaultIndexIOHandler - Skipped files[[index.drd, inverted.drd, spatial.drd]]
+2014-10-27 16:38:58,339 INFO [task-runner-0] io.druid.segment.IndexMerger - outDir[/tmp/persistent/task/index_click_conversion_weekly_2014-10-27T16:36:15.336Z/work/click_conversion_weekly_2014-03-31T00:00:00.000Z_2014-04-07T00:00:00.000Z_2014-10-27T16:36:15.337Z_0/merged/v8-tmp] completed index.drd in 1 millis.
+2014-10-27 16:38:58,890 INFO [task-runner-0] io.druid.segment.IndexMerger - outDir[/tmp/persistent/task/index_click_conversion_weekly_2014-10-27T16:36:15.336Z/work/click_conversion_weekly_2014-03-31T00:00:00.000Z_2014-04-07T00:00:00.000Z_2014-10-27T16:36:15.337Z_0/merged/v8-tmp] completed dim conversions in 551 millis.
+2014-10-27 16:38:58,900 INFO [task-runner-0] io.druid.segment.CompressedPools - Allocating new littleEndByteBuf[3]
+2014-10-27 16:38:58,900 INFO [task-runner-0] io.druid.segment.CompressedPools - Allocating new littleEndByteBuf[4]
+2014-10-27 16:38:58,901 INFO [task-runner-0] io.druid.segment.CompressedPools - Allocating new littleEndByteBuf[5]
+2014-10-27 16:38:58,901 INFO [task-runner-0] io.druid.segment.CompressedPools - Allocating new littleEndByteBuf[6]
+2014-10-27 16:38:58,901 INFO [task-runner-0] io.druid.segment.CompressedPools - Allocating new littleEndByteBuf[7]
+2014-10-27 16:38:58,901 INFO [task-runner-0] io.druid.segment.CompressedPools - Allocating new littleEndByteBuf[8]
+2014-10-27 16:38:58,902 INFO [task-runner-0] io.druid.segment.CompressedPools - Allocating new littleEndByteBuf[9]
+2014-10-27 16:38:58,902 INFO [task-runner-0] io.druid.segment.CompressedPools - Allocating new littleEndByteBuf[10]
+2014-10-27 16:38:58,902 INFO [task-runner-0] io.druid.segment.CompressedPools - Allocating new littleEndByteBuf[11]
+2014-10-27 16:38:58,903 INFO [task-runner-0] io.druid.segment.CompressedPools - Allocating new littleEndByteBuf[12]
+2014-10-27 16:38:58,903 INFO [task-runner-0] io.druid.segment.CompressedPools - Allocating new littleEndByteBuf[13]
+2014-10-27 16:38:58,903 INFO [task-runner-0] io.druid.segment.CompressedPools - Allocating new littleEndByteBuf[14]
+2014-10-27 16:38:58,903 INFO [task-runner-0] io.druid.segment.CompressedPools - Allocating new littleEndByteBuf[15]
+2014-10-27 16:38:58,904 INFO [task-runner-0] io.druid.segment.CompressedPools - Allocating new littleEndByteBuf[16]
+2014-10-27 16:38:58,904 INFO [task-runner-0] io.druid.segment.CompressedPools - Allocating new littleEndByteBuf[17]
+2014-10-27 16:38:58,904 INFO [task-runner-0] io.druid.segment.CompressedPools - Allocating new littleEndByteBuf[18]
+2014-10-27 16:38:58,905 INFO [task-runner-0] io.druid.segment.CompressedPools - Allocating new littleEndByteBuf[19]
+2014-10-27 16:38:58,905 INFO [task-runner-0] io.druid.segment.CompressedPools - Allocating new littleEndByteBuf[20]
+2014-10-27 16:39:01,866 INFO [task-runner-0] io.druid.segment.IndexMerger - outDir[/tmp/persistent/task/index_click_conversion_weekly_2014-10-27T16:36:15.336Z/work/click_conversion_weekly_2014-03-31T00:00:00.000Z_2014-04-07T00:00:00.000Z_2014-10-27T16:36:15.337Z_0/merged/v8-tmp] walked 500,000/500,000 rows in 2,971 millis.
+2014-10-27 16:39:04,591 INFO [task-runner-0] io.druid.segment.IndexMerger - outDir[/tmp/persistent/task/index_click_conversion_weekly_2014-10-27T16:36:15.336Z/work/click_conversion_weekly_2014-03-31T00:00:00.000Z_2014-04-07T00:00:00.000Z_2014-10-27T16:36:15.337Z_0/merged/v8-tmp] walked 500,000/1,000,000 rows in 2,725 millis.
+2014-10-27 16:39:07,276 INFO [task-runner-0] io.druid.segment.IndexMerger - outDir[/tmp/persistent/task/index_click_conversion_weekly_2014-10-27T16:36:15.336Z/work/click_conversion_weekly_2014-03-31T00:00:00.000Z_2014-04-07T00:00:00.000Z_2014-10-27T16:36:15.337Z_0/merged/v8-tmp] walked 500,000/1,500,000 rows in 2,685 millis.
+2014-10-27 16:39:10,471 INFO [task-runner-0] io.druid.segment.IndexMerger - outDir[/tmp/persistent/task/index_click_conversion_weekly_2014-10-27T16:36:15.336Z/work/click_conversion_weekly_2014-03-31T00:00:00.000Z_2014-04-07T00:00:00.000Z_2014-10-27T16:36:15.337Z_0/merged/v8-tmp] completed walk through of 1,544,139 rows in 11,580 millis.
+2014-10-27 16:39:10,471 INFO [task-runner-0] io.druid.segment.IndexMerger - Starting dimension[browser] with cardinality[8]
+2014-10-27 16:39:10,845 INFO [task-runner-0] io.druid.segment.IndexMerger - Completed dimension[browser] in 374 millis.
+2014-10-27 16:39:10,845 INFO [task-runner-0] io.druid.segment.IndexMerger - Starting dimension[channel] with cardinality[15]
+2014-10-27 16:39:11,170 INFO [task-runner-0] io.druid.segment.IndexMerger - Completed dimension[channel] in 325 millis.
+2014-10-27 16:39:11,171 INFO [task-runner-0] io.druid.segment.IndexMerger - Starting dimension[city] with cardinality[20,258]
+2014-10-27 16:39:11,881 INFO [task-runner-0] io.druid.segment.IndexMerger - Completed dimension[city] in 711 millis.
+2014-10-27 16:39:11,882 INFO [task-runner-0] io.druid.segment.IndexMerger - Starting dimension[country] with cardinality[193]
+2014-10-27 16:39:12,110 INFO [task-runner-0] io.druid.segment.IndexMerger - Completed dimension[country] in 228 millis.
+2014-10-27 16:39:12,111 INFO [task-runner-0] io.druid.segment.IndexMerger - Starting dimension[coupon] with cardinality[152,524]
+2014-10-27 16:39:14,965 INFO [task-runner-0] io.druid.segment.IndexMerger - Completed dimension[coupon] in 2,854 millis.
+2014-10-27 16:39:14,966 INFO [task-runner-0] io.druid.segment.IndexMerger - Starting dimension[device] with cardinality[5]
+2014-10-27 16:39:15,214 INFO [task-runner-0] io.druid.segment.IndexMerger - Completed dimension[device] in 248 millis.
+2014-10-27 16:39:15,214 INFO [task-runner-0] io.druid.segment.IndexMerger - Starting dimension[outclick_type] with cardinality[14]
+2014-10-27 16:39:15,446 INFO [task-runner-0] io.druid.segment.IndexMerger - Completed dimension[outclick_type] in 232 millis.
+2014-10-27 16:39:15,446 INFO [task-runner-0] io.druid.segment.IndexMerger - Starting dimension[property] with cardinality[11]
+2014-10-27 16:39:15,659 INFO [task-runner-0] io.druid.segment.IndexMerger - Completed dimension[property] in 213 millis.
+2014-10-27 16:39:15,659 INFO [task-runner-0] io.druid.segment.IndexMerger - Starting dimension[region] with cardinality[1,314]
+2014-10-27 16:39:15,991 INFO [task-runner-0] io.druid.segment.IndexMerger - Completed dimension[region] in 332 millis.
+2014-10-27 16:39:15,992 INFO [task-runner-0] io.druid.segment.IndexMerger - Starting dimension[site] with cardinality[30,278]
+2014-10-27 16:39:16,892 INFO [task-runner-0] io.druid.segment.IndexMerger - Completed dimension[site] in 901 millis.
+2014-10-27 16:39:16,893 INFO [task-runner-0] io.druid.segment.IndexMerger - outDir[/tmp/persistent/task/index_click_conversion_weekly_2014-10-27T16:36:15.336Z/work/click_conversion_weekly_2014-03-31T00:00:00.000Z_2014-04-07T00:00:00.000Z_2014-10-27T16:36:15.337Z_0/merged/v8-tmp] completed inverted.drd in 6,421 millis.
+2014-10-27 16:39:17,193 INFO [task-runner-0] io.druid.segment.IndexIO$DefaultIndexIOHandler - Converting v8[/tmp/persistent/task/index_click_conversion_weekly_2014-10-27T16:36:15.336Z/work/click_conversion_weekly_2014-03-31T00:00:00.000Z_2014-04-07T00:00:00.000Z_2014-10-27T16:36:15.337Z_0/merged/v8-tmp] to v9[/tmp/persistent/task/index_click_conversion_weekly_2014-10-27T16:36:15.336Z/work/click_conversion_weekly_2014-03-31T00:00:00.000Z_2014-04-07T00:00:00.000Z_2014-10-27T16:36:15.337Z_0/merged]
+2014-10-27 16:39:17,194 INFO [task-runner-0] io.druid.segment.IndexIO$DefaultIndexIOHandler - Processing file[dim_browser.drd]
+2014-10-27 16:39:17,236 INFO [task-runner-0] io.druid.segment.IndexIO$DefaultIndexIOHandler - Dimension[browser] is single value, converting...
+2014-10-27 16:39:17,313 INFO [task-runner-0] io.druid.segment.IndexIO$DefaultIndexIOHandler - Processing file[dim_channel.drd]
+2014-10-27 16:39:17,355 INFO [task-runner-0] io.druid.segment.IndexIO$DefaultIndexIOHandler - Dimension[channel] is single value, converting...
+2014-10-27 16:39:17,432 INFO [task-runner-0] io.druid.segment.IndexIO$DefaultIndexIOHandler - Processing file[dim_city.drd]
+2014-10-27 16:39:17,474 INFO [task-runner-0] io.druid.segment.IndexIO$DefaultIndexIOHandler - Dimension[city] is single value, converting...
+2014-10-27 16:39:17,587 INFO [task-runner-0] io.druid.segment.IndexIO$DefaultIndexIOHandler - Processing file[dim_country.drd]
+2014-10-27 16:39:17,629 INFO [task-runner-0] io.druid.segment.IndexIO$DefaultIndexIOHandler - Dimension[country] is single value, converting...
+2014-10-27 16:39:17,707 INFO [task-runner-0] io.druid.segment.IndexIO$DefaultIndexIOHandler - Processing file[dim_coupon.drd]
+2014-10-27 16:39:17,749 INFO [task-runner-0] io.druid.segment.IndexIO$DefaultIndexIOHandler - Dimension[coupon] is single value, converting...
+2014-10-27 16:39:17,861 INFO [task-runner-0] io.druid.segment.IndexIO$DefaultIndexIOHandler - Processing file[dim_device.drd]
+2014-10-27 16:39:17,903 INFO [task-runner-0] io.druid.segment.IndexIO$DefaultIndexIOHandler - Dimension[device] is single value, converting...
+2014-10-27 16:39:17,978 INFO [task-runner-0] io.druid.segment.IndexIO$DefaultIndexIOHandler - Processing file[dim_outclick_type.drd]
+2014-10-27 16:39:18,020 INFO [task-runner-0] io.druid.segment.IndexIO$DefaultIndexIOHandler - Dimension[outclick_type] is single value, converting...
+2014-10-27 16:39:18,095 INFO [task-runner-0] io.druid.segment.IndexIO$DefaultIndexIOHandler - Processing file[dim_property.drd]
+2014-10-27 16:39:18,137 INFO [task-runner-0] io.druid.segment.IndexIO$DefaultIndexIOHandler - Dimension[property] is single value, converting...
+2014-10-27 16:39:18,210 INFO [task-runner-0] io.druid.segment.IndexIO$DefaultIndexIOHandler - Processing file[dim_region.drd]
+2014-10-27 16:39:18,253 INFO [task-runner-0] io.druid.segment.IndexIO$DefaultIndexIOHandler - Dimension[region] is single value, converting...
+2014-10-27 16:39:18,340 INFO [task-runner-0] io.druid.segment.IndexIO$DefaultIndexIOHandler - Processing file[dim_site.drd]
+2014-10-27 16:39:18,386 INFO [task-runner-0] io.druid.segment.IndexIO$DefaultIndexIOHandler - Dimension[site] is single value, converting...
+2014-10-27 16:39:18,480 INFO [task-runner-0] io.druid.segment.IndexIO$DefaultIndexIOHandler - Processing file[index.drd]
+2014-10-27 16:39:18,481 INFO [task-runner-0] io.druid.segment.IndexIO$DefaultIndexIOHandler - Processing file[inverted.drd]
+2014-10-27 16:39:18,481 INFO [task-runner-0] io.druid.segment.IndexIO$DefaultIndexIOHandler - Processing file[met_commissions_LITTLE_ENDIAN.drd]
+2014-10-27 16:39:18,481 INFO [task-runner-0] io.druid.segment.IndexIO$DefaultIndexIOHandler - Processing file[met_count_LITTLE_ENDIAN.drd]
+2014-10-27 16:39:18,484 INFO [task-runner-0] io.druid.segment.IndexIO$DefaultIndexIOHandler - Processing file[met_orders_LITTLE_ENDIAN.drd]
+2014-10-27 16:39:18,484 INFO [task-runner-0] io.druid.segment.IndexIO$DefaultIndexIOHandler - Processing file[met_sales_LITTLE_ENDIAN.drd]
+2014-10-27 16:39:18,484 INFO [task-runner-0] io.druid.segment.IndexIO$DefaultIndexIOHandler - Processing file[spatial.drd]
+2014-10-27 16:39:18,484 INFO [task-runner-0] io.druid.segment.IndexIO$DefaultIndexIOHandler - Processing file[time_LITTLE_ENDIAN.drd]
+2014-10-27 16:39:18,485 INFO [task-runner-0] io.druid.segment.IndexIO$DefaultIndexIOHandler - Skipped files[[index.drd, inverted.drd, spatial.drd]]
+2014-10-27 16:39:18,494 INFO [task-runner-0] io.druid.storage.s3.S3DataSegmentPusher - Uploading [/tmp/persistent/task/index_click_conversion_weekly_2014-10-27T16:36:15.336Z/work/click_conversion_weekly_2014-03-31T00:00:00.000Z_2014-04-07T00:00:00.000Z_2014-10-27T16:36:15.337Z_0/merged] to S3
+2014-10-27 16:39:18,497 INFO [task-runner-0] io.druid.utils.CompressionUtils - Adding file[/tmp/persistent/task/index_click_conversion_weekly_2014-10-27T16:36:15.336Z/work/click_conversion_weekly_2014-03-31T00:00:00.000Z_2014-04-07T00:00:00.000Z_2014-10-27T16:36:15.337Z_0/merged/00000.smoosh] with size[49,381,089].  Total size so far[0]
+2014-10-27 16:39:23,752 INFO [task-runner-0] io.druid.utils.CompressionUtils - Adding file[/tmp/persistent/task/index_click_conversion_weekly_2014-10-27T16:36:15.336Z/work/click_conversion_weekly_2014-03-31T00:00:00.000Z_2014-04-07T00:00:00.000Z_2014-10-27T16:36:15.337Z_0/merged/version.bin] with size[4].  Total size so far[49,381,089]
+2014-10-27 16:39:23,753 INFO [task-runner-0] io.druid.utils.CompressionUtils - Adding file[/tmp/persistent/task/index_click_conversion_weekly_2014-10-27T16:36:15.336Z/work/click_conversion_weekly_2014-03-31T00:00:00.000Z_2014-04-07T00:00:00.000Z_2014-10-27T16:36:15.337Z_0/merged/meta.smoosh] with size[451].  Total size so far[49,381,093]
+2014-10-27 16:39:24,038 INFO [task-runner-0] io.druid.storage.s3.S3DataSegmentPusher - Pushing S3Object [key=click_conversion_weekly/2014-03-31T00:00:00.000Z_2014-04-07T00:00:00.000Z/2014-10-27T16:36:15.337Z/0/index.zip, bucket=s3-int-std-agg-deep-storage, lastModified=null, dataInputStream=null, Metadata={x-amz-acl=bucket-owner-full-control, Content-Length=23253866, Content-MD5=nlafhcsOJI/uqqYSeY/hdg==, md5-hash=9e569f85cb0e248feeaaa612798fe176, Content-Type=application/zip}].
+2014-10-27 16:39:25,470 INFO [task-runner-0] io.druid.storage.s3.S3DataSegmentPusher - Pushing S3Object [key=click_conversion_weekly/2014-03-31T00:00:00.000Z_2014-04-07T00:00:00.000Z/2014-10-27T16:36:15.337Z/0/descriptor.json, bucket=s3-int-std-agg-deep-storage, lastModified=null, dataInputStream=null, Metadata={x-amz-acl=bucket-owner-full-control, Content-Length=459, Content-MD5=mp2ee5PqM6mv6VydeRMirA==, md5-hash=9a9d9e7b93ea33a9afe95c9d791322ac, Content-Type=application/octet-stream}]
+2014-10-27 16:39:25,597 INFO [task-runner-0] io.druid.storage.s3.S3DataSegmentPusher - Deleting zipped index File[/tmp/druid776350258585657540index.zip]
+2014-10-27 16:39:25,600 INFO [task-runner-0] io.druid.storage.s3.S3DataSegmentPusher - Deleting descriptor file[/tmp/druid2041432717379203758descriptor.json]
+2014-10-27 16:39:25,600 INFO [task-runner-0] io.druid.indexing.common.index.YeOldePlumberSchool - Uploaded segment[click_conversion_weekly_2014-03-31T00:00:00.000Z_2014-04-07T00:00:00.000Z_2014-10-27T16:36:15.337Z]
+2014-10-27 16:39:25,600 INFO [task-runner-0] io.druid.indexing.common.index.YeOldePlumberSchool - Deleting Index File[/tmp/persistent/task/index_click_conversion_weekly_2014-10-27T16:36:15.336Z/work/click_conversion_weekly_2014-03-31T00:00:00.000Z_2014-04-07T00:00:00.000Z_2014-10-27T16:36:15.337Z_0/merged]
+2014-10-27 16:39:25,601 INFO [task-runner-0] io.druid.indexing.common.task.IndexTask - Task[index_click_conversion_weekly_2014-10-27T16:36:15.336Z] interval[2014-03-31T00:00:00.000Z/2014-04-07T00:00:00.000Z] partition[0] took in 12,968,203 rows (1,821,501 processed, 0 unparseable, 11,146,702 thrown away) and output 1,544,139 rows
+2014-10-27 16:39:25,601 INFO [task-runner-0] io.druid.indexing.common.task.IndexTask - Determining partitions for interval[2014-04-07T00:00:00.000Z/2014-04-14T00:00:00.000Z] with targetPartitionSize[5000000]
+2014-10-27 16:39:25,601 INFO [task-runner-0] io.druid.indexing.firehose.IngestSegmentFirehoseFactory - Connecting firehose: dataSource[click_conversion], interval[2014-04-06T00:00:00.000Z/2014-04-13T00:00:00.000Z]
+2014-10-27 16:39:25,601 INFO [task-runner-0] io.druid.indexing.common.actions.RemoteTaskActionClient - Performing action for task[reingest]: SegmentListUsedAction{dataSource='click_conversion', interval=2014-04-06T00:00:00.000Z/2014-04-13T00:00:00.000Z}
+2014-10-27 16:39:25,601 INFO [task-runner-0] io.druid.indexing.common.actions.RemoteTaskActionClient - Submitting action for task[reingest] to overlord[http://10.13.132.213:8080/druid/indexer/v1/action]: SegmentListUsedAction{dataSource='click_conversion', interval=2014-04-06T00:00:00.000Z/2014-04-13T00:00:00.000Z}
+2014-10-27 16:40:11,933 INFO [task-runner-0] io.druid.indexing.common.task.IndexTask - Partitioning on dimension[outclick_type] with cardinality[14] over rows[11146702]
+2014-10-27 16:40:11,933 INFO [task-runner-0] io.druid.indexing.common.task.IndexTask - Adding shard: SingleDimensionShardSpec{dimension='outclick_type', start='null', end='1', partitionNum=0}
+2014-10-27 16:40:11,933 INFO [task-runner-0] io.druid.indexing.common.task.IndexTask - Adding shard: SingleDimensionShardSpec{dimension='outclick_type', start='1', end='10', partitionNum=1}
+2014-10-27 16:40:11,933 INFO [task-runner-0] io.druid.indexing.common.task.IndexTask - Adding shard: SingleDimensionShardSpec{dimension='outclick_type', start='10', end='null', partitionNum=2}
+2014-10-27 16:40:11,934 INFO [task-runner-0] io.druid.indexing.firehose.IngestSegmentFirehoseFactory - Connecting firehose: dataSource[click_conversion], interval[2014-04-06T00:00:00.000Z/2014-04-13T00:00:00.000Z]
+2014-10-27 16:40:11,934 INFO [task-runner-0] io.druid.indexing.common.actions.RemoteTaskActionClient - Performing action for task[reingest]: SegmentListUsedAction{dataSource='click_conversion', interval=2014-04-06T00:00:00.000Z/2014-04-13T00:00:00.000Z}
+2014-10-27 16:40:11,934 INFO [task-runner-0] io.druid.indexing.common.actions.RemoteTaskActionClient - Submitting action for task[reingest] to overlord[http://10.13.132.213:8080/druid/indexer/v1/action]: SegmentListUsedAction{dataSource='click_conversion', interval=2014-04-06T00:00:00.000Z/2014-04-13T00:00:00.000Z}
+2014-10-27 16:40:50,224 WARN [task-runner-0] io.druid.indexing.common.index.YeOldePlumberSchool - Failed to merge and upload
+java.lang.IllegalStateException: Nothing indexed?
+	at io.druid.indexing.common.index.YeOldePlumberSchool$1.finishJob(YeOldePlumberSchool.java:159)
+	at io.druid.indexing.common.task.IndexTask.generateSegment(IndexTask.java:444)
+	at io.druid.indexing.common.task.IndexTask.run(IndexTask.java:198)
+	at io.druid.indexing.overlord.ThreadPoolTaskRunner$ThreadPoolTaskRunnerCallable.call(ThreadPoolTaskRunner.java:219)
+	at io.druid.indexing.overlord.ThreadPoolTaskRunner$ThreadPoolTaskRunnerCallable.call(ThreadPoolTaskRunner.java:198)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:262)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+2014-10-27 16:40:50,228 INFO [task-runner-0] io.druid.indexing.common.task.IndexTask - Task[index_click_conversion_weekly_2014-10-27T16:36:15.336Z] interval[2014-04-07T00:00:00.000Z/2014-04-14T00:00:00.000Z] partition[0] took in 12,968,203 rows (0 processed, 0 unparseable, 12,968,203 thrown away) and output 0 rows
+2014-10-27 16:40:50,229 ERROR [task-runner-0] io.druid.indexing.overlord.ThreadPoolTaskRunner - Exception while running task[IndexTask{id=index_click_conversion_weekly_2014-10-27T16:36:15.336Z, type=index, dataSource=click_conversion_weekly}]
+java.lang.IllegalStateException: Nothing indexed?
+	at io.druid.indexing.common.index.YeOldePlumberSchool$1.finishJob(YeOldePlumberSchool.java:159)
+	at io.druid.indexing.common.task.IndexTask.generateSegment(IndexTask.java:444)
+	at io.druid.indexing.common.task.IndexTask.run(IndexTask.java:198)
+	at io.druid.indexing.overlord.ThreadPoolTaskRunner$ThreadPoolTaskRunnerCallable.call(ThreadPoolTaskRunner.java:219)
+	at io.druid.indexing.overlord.ThreadPoolTaskRunner$ThreadPoolTaskRunnerCallable.call(ThreadPoolTaskRunner.java:198)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:262)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+2014-10-27 16:40:50,229 INFO [task-runner-0] io.druid.indexing.overlord.ThreadPoolTaskRunner - Removing task directory: /tmp/persistent/task/index_click_conversion_weekly_2014-10-27T16:36:15.336Z/work
+2014-10-27 16:40:50,242 INFO [task-runner-0] io.druid.indexing.worker.executor.ExecutorLifecycle - Task completed with status: {
+  "id" : "index_click_conversion_weekly_2014-10-27T16:36:15.336Z",
+  "status" : "FAILED",
+  "duration" : 268865
+}
+2014-10-27 16:40:50,248 INFO [main] com.metamx.common.lifecycle.Lifecycle$AnnotationBasedHandler - Invoking stop method[public void io.druid.server.coordination.AbstractDataSegmentAnnouncer.stop()] on object[io.druid.server.coordination.BatchDataSegmentAnnouncer@47f36a24].
+2014-10-27 16:40:50,248 INFO [main] io.druid.server.coordination.AbstractDataSegmentAnnouncer - Stopping class io.druid.server.coordination.BatchDataSegmentAnnouncer with config[io.druid.server.initialization.ZkPathsConfig$$EnhancerByCGLIB$$ecb41c43@430fe248]
+2014-10-27 16:40:50,248 INFO [main] io.druid.curator.announcement.Announcer - unannouncing [/druid/announcements/10.136.64.60:8081]
+2014-10-27 16:40:50,253 INFO [ServerInventoryView-0] io.druid.curator.inventory.CuratorInventoryManager - Closing inventory cache for 10.136.64.60:8081. Also removing listeners.
+2014-10-27 16:40:50,254 INFO [main] com.metamx.common.lifecycle.Lifecycle$AnnotationBasedHandler - Invoking stop method[public void io.druid.server.coordination.AbstractDataSegmentAnnouncer.stop()] on object[io.druid.server.coordination.SingleDataSegmentAnnouncer@5d9d6317].
+2014-10-27 16:40:50,254 INFO [main] io.druid.server.coordination.AbstractDataSegmentAnnouncer - Stopping class io.druid.server.coordination.SingleDataSegmentAnnouncer with config[io.druid.server.initialization.ZkPathsConfig$$EnhancerByCGLIB$$ecb41c43@430fe248]
+2014-10-27 16:40:50,254 INFO [main] io.druid.curator.announcement.Announcer - unannouncing [/druid/announcements/10.136.64.60:8081]
+2014-10-27 16:40:50,254 ERROR [main] io.druid.curator.announcement.Announcer - Path[/druid/announcements/10.136.64.60:8081] not announced, cannot unannounce.
+2014-10-27 16:40:50,254 INFO [main] com.metamx.common.lifecycle.Lifecycle$AnnotationBasedHandler - Invoking stop method[public void io.druid.indexing.worker.executor.ExecutorLifecycle.stop()] on object[io.druid.indexing.worker.executor.ExecutorLifecycle@65c1ed3f].
+2014-10-27 16:40:50,255 INFO [ServerInventoryView-0] io.druid.client.SingleServerInventoryView - Server Disappeared[DruidServerMetadata{name='10.136.64.60:8081', host='10.136.64.60:8081', maxSize=0, tier='_default_tier', type='indexer-executor', priority='0'}]
+2014-10-27 16:40:50,257 INFO [main] org.eclipse.jetty.server.ServerConnector - Stopped ServerConnector@68587eaa{HTTP/1.1}{0.0.0.0:8081}
+2014-10-27 16:40:50,258 INFO [main] org.eclipse.jetty.server.handler.ContextHandler - Stopped o.e.j.s.ServletContextHandler@4301c74a{/,null,UNAVAILABLE}
+2014-10-27 16:40:50,264 INFO [main] com.metamx.common.lifecycle.Lifecycle$AnnotationBasedHandler - Invoking stop method[public void io.druid.server.log.FileRequestLogger.stop()] on object[io.druid.server.log.FileRequestLogger@26f73ca4].
+2014-10-27 16:40:50,264 INFO [main] com.metamx.common.lifecycle.Lifecycle$AnnotationBasedHandler - Invoking stop method[public void io.druid.indexing.overlord.ThreadPoolTaskRunner.stop()] on object[io.druid.indexing.overlord.ThreadPoolTaskRunner@27d863fe].
+2014-10-27 16:40:50,265 INFO [main] com.metamx.common.lifecycle.Lifecycle$AnnotationBasedHandler - Invoking stop method[public void io.druid.client.ServerInventoryView.stop() throws java.io.IOException] on object[io.druid.client.SingleServerInventoryView@2f9801c7].
+2014-10-27 16:40:50,265 INFO [main] com.metamx.common.lifecycle.Lifecycle$AnnotationBasedHandler - Invoking stop method[public void io.druid.curator.announcement.Announcer.stop()] on object[io.druid.curator.announcement.Announcer@2a592759].
+2014-10-27 16:40:50,265 INFO [main] com.metamx.common.lifecycle.Lifecycle$AnnotationBasedHandler - Invoking stop method[public void io.druid.curator.discovery.ServerDiscoverySelector.stop() throws java.io.IOException] on object[io.druid.curator.discovery.ServerDiscoverySelector@17d3a6c].
+2014-10-27 16:40:50,266 INFO [main] io.druid.curator.CuratorModule - Stopping Curator
+2014-10-27 16:40:50,269 INFO [main] org.apache.zookeeper.ZooKeeper - Session: 0x1495224b432000c closed
+2014-10-27 16:40:50,269 INFO [main-EventThread] org.apache.zookeeper.ClientCnxn - EventThread shut down
+2014-10-27 16:40:50,270 INFO [main] com.metamx.common.lifecycle.Lifecycle$AnnotationBasedHandler - Invoking stop method[public void com.metamx.http.client.HttpClient.stop()] on object[com.metamx.http.client.HttpClient@4e3b9bed].
+2014-10-27 16:40:50,278 INFO [main] com.metamx.common.lifecycle.Lifecycle$AnnotationBasedHandler - Invoking stop method[public void com.metamx.metrics.MonitorScheduler.stop()] on object[com.metamx.metrics.MonitorScheduler@7c4dc992].
+2014-10-27 16:40:50,278 INFO [main] com.metamx.common.lifecycle.Lifecycle$AnnotationBasedHandler - Invoking stop method[public void com.metamx.emitter.service.ServiceEmitter.close() throws java.io.IOException] on object[com.metamx.emitter.service.ServiceEmitter@23dce922].
+2014-10-27 16:40:50,278 INFO [main] com.metamx.common.lifecycle.Lifecycle$AnnotationBasedHandler - Invoking stop method[public void com.metamx.emitter.core.LoggingEmitter.close() throws java.io.IOException] on object[com.metamx.emitter.core.LoggingEmitter@343242ef].
