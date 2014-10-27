@@ -31,6 +31,8 @@ Index Task Fails
 ---
 I am trying to reindex my `click_conversion` dataset so that segments are indexed by `WEEK` rather than by `DAY`.
 
+### Index Task Description
+
 Here is my indexing task specification:
 
 ```json
@@ -57,6 +59,8 @@ Here is my indexing task specification:
     }
 }
 ```
+
+### Index Task Error
 
 The task eventually fails with the following error:
 
@@ -95,6 +99,27 @@ java.lang.IllegalStateException: Nothing indexed?
 ```
 
 Please see the full log for details: [task.log](task.log).
+
+### Index Task Overlord Log
+
+And here is what the overlord log shows:
+
+```
+2014-10-27 16:40:11,761 INFO [qtp1352013222-38] io.druid.indexing.common.actions.LocalTaskActionClient - Performing action for task[reingest]: SegmentListUsedAction{dataSource='click_conversion', interval=2014-04-06T00:00:00.000Z/2014-04-13T00:00:00.000Z}
+2014-10-27 16:40:28,849 INFO [TaskQueue-StorageSync] io.druid.indexing.overlord.TaskQueue - Synced 1 tasks from storage (0 tasks added, 0 tasks removed).
+2014-10-27 16:40:50,822 INFO [PathChildrenCache-0] io.druid.indexing.overlord.RemoteTaskRunner - Worker[10.136.64.60:8080] wrote FAILED status for task: index_click_conversion_weekly_2014-10-27T16:36:15.336Z
+2014-10-27 16:40:50,822 INFO [PathChildrenCache-0] io.druid.indexing.overlord.RemoteTaskRunner - Worker[10.136.64.60:8080] completed task[index_click_conversion_weekly_2014-10-27T16:36:15.336Z] with status[FAILED]
+2014-10-27 16:40:50,822 INFO [PathChildrenCache-0] io.druid.indexing.overlord.TaskQueue - Received FAILED status for task: index_click_conversion_weekly_2014-10-27T16:36:15.336Z
+2014-10-27 16:40:50,823 INFO [PathChildrenCache-0] io.druid.indexing.overlord.RemoteTaskRunner - Cleaning up task[index_click_conversion_weekly_2014-10-27T16:36:15.336Z] on worker[10.136.64.60:8080]
+2014-10-27 16:40:50,826 INFO [PathChildrenCache-0] io.druid.indexing.overlord.HeapMemoryTaskStorage - Updating task index_click_conversion_weekly_2014-10-27T16:36:15.336Z to status: TaskStatus{id=index_click_conversion_weekly_2014-10-27T16:36:15.336Z, status=FAILED, duration=0}
+2014-10-27 16:40:50,826 INFO [PathChildrenCache-0] io.druid.indexing.overlord.TaskLockbox - Removing task[index_click_conversion_weekly_2014-10-27T16:36:15.336Z] from TaskLock[index_click_conversion_weekly_2014-10-27T16:36:15.336Z]
+2014-10-27 16:40:50,826 INFO [PathChildrenCache-0] io.druid.indexing.overlord.TaskLockbox - TaskLock is now empty: TaskLock{groupId=index_click_conversion_weekly_2014-10-27T16:36:15.336Z, dataSource=click_conversion_weekly, interval=2014-03-31T00:00:00.000Z/2014-04-14T00:00:00.000Z, version=2014-10-27T16:36:15.337Z}
+2014-10-27 16:40:50,826 INFO [PathChildrenCache-0] io.druid.indexing.overlord.TaskQueue - Task done: IndexTask{id=index_click_conversion_weekly_2014-10-27T16:36:15.336Z, type=index, dataSource=click_conversion_weekly}
+2014-10-27 16:40:50,827 INFO [PathChildrenCache-0] io.druid.indexing.overlord.TaskQueue - Task FAILED: IndexTask{id=index_click_conversion_weekly_2014-10-27T16:36:15.336Z, type=index, dataSource=click_conversion_weekly} (0 run duration)
+2014-10-27 16:40:50,827 INFO [PathChildrenCache-0] io.druid.indexing.overlord.RemoteTaskRunner - Task[index_click_conversion_weekly_2014-10-27T16:36:15.336Z] went bye bye.
+2014-10-27 16:41:28,849 INFO [TaskQueue-StorageSync] io.druid.indexing.overlord.TaskQueue - Synced 0 tasks from storage (0 tasks added, 0 tasks removed).
+2014-10-27 16:42:28,850 INFO [TaskQueue-StorageSync] io.druid.indexing.overlord.TaskQueue - Synced 0 tasks from storage (0 tasks added, 0 tasks removed).
+```
 
 Coordinator Console Problems
 ----
