@@ -2,6 +2,8 @@
 
 - [Overview](#overview)
 - [Issues](#issues)
+  - [Not enough direct memory](#not-enough-direct-memory)
+  - [Exception with one of the sequences](#exception-with-one-of-the-sequences)
   - [Coordinator Console Problems](#coordinator-console-problems)
 - [Resolved Issues](#resolved-issues)
   - [No Task Logs](#no-task-logs)
@@ -27,8 +29,329 @@ My druid cluster consists of the following nodes:
 Issues
 ===
 
+Not enough direct memory
+---
+
+I get the following in my historical node log:
+
+```
+2014-10-29 21:30:44,610 INFO [main] io.druid.guice.JsonConfigurator - Loaded class[class io.druid.segment.loading.SegmentLoaderConfig] from props[druid.segmentCache.] as [SegmentLoaderConfig{locations=[StorageLocationConfig{path=/indexCache, maxSize=21207667507}], deleteOnRemove=true, dropSegmentDelayMillis=30000, infoDir=null}]
+2014-10-29 21:30:44,615 INFO [main] io.druid.guice.JsonConfigurator - Loaded class[class io.druid.query.QueryConfig] from props[druid.query.] as [io.druid.query.QueryConfig@1159f15e]
+2014-10-29 21:30:44,630 INFO [main] io.druid.guice.JsonConfigurator - Loaded class[class io.druid.query.search.search.SearchQueryConfig] from props[druid.query.search.] as [io.druid.query.search.search.SearchQueryConfig@60f1057]
+2014-10-29 21:30:44,638 INFO [main] io.druid.guice.JsonConfigurator - Loaded class[class io.druid.query.groupby.GroupByQueryConfig] from props[druid.query.groupBy.] as [io.druid.query.groupby.GroupByQueryConfig@70095013]
+2014-10-29 21:30:44,641 INFO [main] org.skife.config.ConfigurationObjectFactory - Assigning value [1142857142] for [druid.processing.buffer.sizeBytes] on [io.druid.query.DruidProcessingConfig#intermediateComputeSizeBytes()]
+2014-10-29 21:30:44,644 INFO [main] org.skife.config.ConfigurationObjectFactory - Assigning value [7] for [druid.processing.numThreads] on [io.druid.query.DruidProcessingConfig#getNumThreads()]
+2014-10-29 21:30:44,644 INFO [main] org.skife.config.ConfigurationObjectFactory - Using method itself for [${base_path}.columnCache.sizeBytes] on [io.druid.query.DruidProcessingConfig#columnCacheSizeBytes()]
+2014-10-29 21:30:44,645 INFO [main] org.skife.config.ConfigurationObjectFactory - Assigning default value [processing-%s] for [${base_path}.formatString] on [com.metamx.common.concurrent.ExecutorServiceConfig#getFormatString()]
+2014-10-29 21:30:44,726 WARN [main] io.druid.guice.DruidProcessingModule - Guice provision errors:
+
+1) Not enough direct memory.  Please adjust -XX:MaxDirectMemorySize, druid.processing.buffer.sizeBytes, or druid.processing.numThreads: maxDirectMemory[4,294,967,296], memoryNeeded[9,142,857,136] = druid.processing.buffer.sizeBytes[1,142,857,142] * ( druid.processing.numThreads[7] + 1 )
+
+1 error
+com.google.inject.ProvisionException: Guice provision errors:
+
+1) Not enough direct memory.  Please adjust -XX:MaxDirectMemorySize, druid.processing.buffer.sizeBytes, or druid.processing.numThreads: maxDirectMemory[4,294,967,296], memoryNeeded[9,142,857,136] = druid.processing.buffer.sizeBytes[1,142,857,142] * ( druid.processing.numThreads[7] + 1 )
+
+1 error
+	at io.druid.guice.DruidProcessingModule.getIntermediateResultsPool(DruidProcessingModule.java:87)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at com.google.inject.internal.ProviderMethod.get(ProviderMethod.java:105)
+	at com.google.inject.internal.ProviderInternalFactory.provision(ProviderInternalFactory.java:86)
+	at com.google.inject.internal.InternalFactoryToInitializableAdapter.provision(InternalFactoryToInitializableAdapter.java:55)
+	at com.google.inject.internal.ProviderInternalFactory.circularGet(ProviderInternalFactory.java:66)
+	at com.google.inject.internal.InternalFactoryToInitializableAdapter.get(InternalFactoryToInitializableAdapter.java:47)
+	at com.google.inject.internal.ProviderToInternalFactoryAdapter$1.call(ProviderToInternalFactoryAdapter.java:46)
+	at com.google.inject.internal.InjectorImpl.callInContext(InjectorImpl.java:1058)
+	at com.google.inject.internal.ProviderToInternalFactoryAdapter.get(ProviderToInternalFactoryAdapter.java:40)
+	at com.google.inject.Scopes$1$1.get(Scopes.java:65)
+	at com.google.inject.internal.InternalFactoryToProviderAdapter.get(InternalFactoryToProviderAdapter.java:41)
+	at com.google.inject.internal.SingleParameterInjector.inject(SingleParameterInjector.java:38)
+	at com.google.inject.internal.SingleParameterInjector.getAll(SingleParameterInjector.java:62)
+	at com.google.inject.internal.ConstructorInjector.provision(ConstructorInjector.java:107)
+	at com.google.inject.internal.ConstructorInjector.construct(ConstructorInjector.java:88)
+	at com.google.inject.internal.ConstructorBindingImpl$Factory.get(ConstructorBindingImpl.java:269)
+	at com.google.inject.internal.ProviderToInternalFactoryAdapter$1.call(ProviderToInternalFactoryAdapter.java:46)
+	at com.google.inject.internal.InjectorImpl.callInContext(InjectorImpl.java:1058)
+	at com.google.inject.internal.ProviderToInternalFactoryAdapter.get(ProviderToInternalFactoryAdapter.java:40)
+	at com.google.inject.Scopes$1$1.get(Scopes.java:65)
+	at com.google.inject.internal.InternalFactoryToProviderAdapter.get(InternalFactoryToProviderAdapter.java:41)
+	at com.google.inject.internal.SingleParameterInjector.inject(SingleParameterInjector.java:38)
+	at com.google.inject.internal.SingleParameterInjector.getAll(SingleParameterInjector.java:62)
+	at com.google.inject.internal.ConstructorInjector.provision(ConstructorInjector.java:107)
+	at com.google.inject.internal.ConstructorInjector.construct(ConstructorInjector.java:88)
+	at com.google.inject.internal.ConstructorBindingImpl$Factory.get(ConstructorBindingImpl.java:269)
+	at com.google.inject.internal.ProviderToInternalFactoryAdapter$1.call(ProviderToInternalFactoryAdapter.java:46)
+	at com.google.inject.internal.InjectorImpl.callInContext(InjectorImpl.java:1058)
+	at com.google.inject.internal.ProviderToInternalFactoryAdapter.get(ProviderToInternalFactoryAdapter.java:40)
+	at com.google.inject.Scopes$1$1.get(Scopes.java:65)
+	at com.google.inject.internal.InternalFactoryToProviderAdapter.get(InternalFactoryToProviderAdapter.java:41)
+	at com.google.inject.internal.FactoryProxy.get(FactoryProxy.java:56)
+	at com.google.inject.internal.InjectorImpl$3$1.call(InjectorImpl.java:1005)
+	at com.google.inject.internal.InjectorImpl.callInContext(InjectorImpl.java:1058)
+	at com.google.inject.internal.InjectorImpl$3.get(InjectorImpl.java:1001)
+	at com.google.inject.spi.ProviderLookup$1.get(ProviderLookup.java:90)
+	at com.google.inject.spi.ProviderLookup$1.get(ProviderLookup.java:90)
+	at com.google.inject.multibindings.MapBinder$RealMapBinder$2.get(MapBinder.java:389)
+	at com.google.inject.multibindings.MapBinder$RealMapBinder$2.get(MapBinder.java:385)
+	at com.google.inject.internal.ProviderInternalFactory.provision(ProviderInternalFactory.java:86)
+	at com.google.inject.internal.InternalFactoryToInitializableAdapter.provision(InternalFactoryToInitializableAdapter.java:55)
+	at com.google.inject.internal.ProviderInternalFactory.circularGet(ProviderInternalFactory.java:66)
+	at com.google.inject.internal.InternalFactoryToInitializableAdapter.get(InternalFactoryToInitializableAdapter.java:47)
+	at com.google.inject.internal.SingleParameterInjector.inject(SingleParameterInjector.java:38)
+	at com.google.inject.internal.SingleParameterInjector.getAll(SingleParameterInjector.java:62)
+	at com.google.inject.internal.ConstructorInjector.provision(ConstructorInjector.java:107)
+	at com.google.inject.internal.ConstructorInjector.construct(ConstructorInjector.java:88)
+	at com.google.inject.internal.ConstructorBindingImpl$Factory.get(ConstructorBindingImpl.java:269)
+	at com.google.inject.internal.FactoryProxy.get(FactoryProxy.java:56)
+	at com.google.inject.internal.ProviderToInternalFactoryAdapter$1.call(ProviderToInternalFactoryAdapter.java:46)
+	at com.google.inject.internal.InjectorImpl.callInContext(InjectorImpl.java:1058)
+	at com.google.inject.internal.ProviderToInternalFactoryAdapter.get(ProviderToInternalFactoryAdapter.java:40)
+	at com.google.inject.Scopes$1$1.get(Scopes.java:65)
+	at com.google.inject.internal.InternalFactoryToProviderAdapter.get(InternalFactoryToProviderAdapter.java:41)
+	at com.google.inject.internal.SingleParameterInjector.inject(SingleParameterInjector.java:38)
+	at com.google.inject.internal.SingleParameterInjector.getAll(SingleParameterInjector.java:62)
+	at com.google.inject.internal.ConstructorInjector.provision(ConstructorInjector.java:107)
+	at com.google.inject.internal.ConstructorInjector.construct(ConstructorInjector.java:88)
+	at com.google.inject.internal.ConstructorBindingImpl$Factory.get(ConstructorBindingImpl.java:269)
+	at com.google.inject.internal.ProviderToInternalFactoryAdapter$1.call(ProviderToInternalFactoryAdapter.java:46)
+	at com.google.inject.internal.InjectorImpl.callInContext(InjectorImpl.java:1058)
+	at com.google.inject.internal.ProviderToInternalFactoryAdapter.get(ProviderToInternalFactoryAdapter.java:40)
+	at com.google.inject.Scopes$1$1.get(Scopes.java:65)
+	at com.google.inject.internal.InternalFactoryToProviderAdapter.get(InternalFactoryToProviderAdapter.java:41)
+	at com.google.inject.internal.SingleParameterInjector.inject(SingleParameterInjector.java:38)
+	at com.google.inject.internal.SingleParameterInjector.getAll(SingleParameterInjector.java:62)
+	at com.google.inject.internal.ConstructorInjector.provision(ConstructorInjector.java:107)
+	at com.google.inject.internal.ConstructorInjector.construct(ConstructorInjector.java:88)
+	at com.google.inject.internal.ConstructorBindingImpl$Factory.get(ConstructorBindingImpl.java:269)
+	at com.google.inject.internal.InjectorImpl$3$1.call(InjectorImpl.java:1005)
+	at com.google.inject.internal.InjectorImpl.callInContext(InjectorImpl.java:1058)
+	at com.google.inject.internal.InjectorImpl$3.get(InjectorImpl.java:1001)
+	at com.google.inject.internal.InjectorImpl.getInstance(InjectorImpl.java:1040)
+	at io.druid.server.metrics.MetricsModule.getMonitorScheduler(MetricsModule.java:83)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at com.google.inject.internal.ProviderMethod.get(ProviderMethod.java:105)
+	at com.google.inject.internal.ProviderInternalFactory.provision(ProviderInternalFactory.java:86)
+	at com.google.inject.internal.InternalFactoryToInitializableAdapter.provision(InternalFactoryToInitializableAdapter.java:55)
+	at com.google.inject.internal.ProviderInternalFactory.circularGet(ProviderInternalFactory.java:66)
+	at com.google.inject.internal.InternalFactoryToInitializableAdapter.get(InternalFactoryToInitializableAdapter.java:47)
+	at com.google.inject.internal.ProviderToInternalFactoryAdapter$1.call(ProviderToInternalFactoryAdapter.java:46)
+	at com.google.inject.internal.InjectorImpl.callInContext(InjectorImpl.java:1058)
+	at com.google.inject.internal.ProviderToInternalFactoryAdapter.get(ProviderToInternalFactoryAdapter.java:40)
+	at io.druid.guice.LifecycleScope$1.get(LifecycleScope.java:49)
+	at com.google.inject.internal.InternalFactoryToProviderAdapter.get(InternalFactoryToProviderAdapter.java:41)
+	at com.google.inject.internal.FactoryProxy.get(FactoryProxy.java:56)
+	at com.google.inject.internal.ProviderToInternalFactoryAdapter$1.call(ProviderToInternalFactoryAdapter.java:46)
+	at com.google.inject.internal.InjectorImpl.callInContext(InjectorImpl.java:1058)
+	at com.google.inject.internal.ProviderToInternalFactoryAdapter.get(ProviderToInternalFactoryAdapter.java:40)
+	at com.google.inject.Scopes$1$1.get(Scopes.java:65)
+	at com.google.inject.internal.InternalFactoryToProviderAdapter.get(InternalFactoryToProviderAdapter.java:41)
+	at com.google.inject.internal.InternalInjectorCreator$1.call(InternalInjectorCreator.java:205)
+	at com.google.inject.internal.InternalInjectorCreator$1.call(InternalInjectorCreator.java:199)
+	at com.google.inject.internal.InjectorImpl.callInContext(InjectorImpl.java:1051)
+	at com.google.inject.internal.InternalInjectorCreator.loadEagerSingletons(InternalInjectorCreator.java:199)
+	at com.google.inject.internal.InternalInjectorCreator.injectDynamically(InternalInjectorCreator.java:180)
+	at com.google.inject.internal.InternalInjectorCreator.build(InternalInjectorCreator.java:110)
+	at com.google.inject.Guice.createInjector(Guice.java:96)
+	at com.google.inject.Guice.createInjector(Guice.java:73)
+	at com.google.inject.Guice.createInjector(Guice.java:62)
+	at io.druid.initialization.Initialization.makeInjectorWithModules(Initialization.java:349)
+	at io.druid.cli.GuiceRunnable.makeInjector(GuiceRunnable.java:56)
+	at io.druid.cli.ServerRunnable.run(ServerRunnable.java:39)
+	at io.druid.cli.Main.main(Main.java:90)
+```
+
+Exception with one of the sequences
+---
+
+When trying to run a simple topN query after restarting my cluster, I get the following response:
+
+```bash
+$ dq "http://${druid_broker}:8080/druid/v2/?pretty" topn_by_channel.json 
+
+curl --silent --show-error -d @topn_by_channel.json -H 'content-type: application/json' 'http://broker-ip:8080/druid/v2/' --data-urlencode 'pretty' | python -mjson.tool | pygmentize -l json -f terminal256
+
+{
+    "error": "null exception"
+}
+
+real    0m1.964s
+user    0m0.003s
+sys 0m0.002s
+```
+
+Looking in the broker node's log, I see the following entry:
+
+```
+2014-10-29 21:37:52,655 INFO [qtp1289413694-43] io.druid.server.QueryResource - null exception [3941ccaa-f425-4dfc-913f-8f3faa08d953]
+```
+
+Looking in the historical node's log, I see the the following:
+
+```
+2014-10-29 21:40:58,826 INFO [topN_click_conversion_[2014-04-11T00:00:00.000Z/2014-04-12T00:00:00.000Z]] io.druid.guice.DruidProcessingModule$IntermediateProcessingBufferPool - Allocating new intermediate processing buffer[219] of size[1,142,857,142]
+2014-10-29 21:40:58,826 INFO [topN_click_conversion_[2014-04-14T00:00:00.000Z/2014-04-15T00:00:00.000Z]] io.druid.guice.DruidProcessingModule$IntermediateProcessingBufferPool - Allocating new intermediate processing buffer[220] of size[1,142,857,142]
+2014-10-29 21:40:58,826 INFO [topN_click_conversion_[2014-04-17T00:00:00.000Z/2014-04-18T00:00:00.000Z]] io.druid.guice.DruidProcessingModule$IntermediateProcessingBufferPool - Allocating new intermediate processing buffer[221] of size[1,142,857,142]
+2014-10-29 21:40:58,826 INFO [topN_click_conversion_[2014-04-22T00:00:00.000Z/2014-04-23T00:00:00.000Z]] io.druid.guice.DruidProcessingModule$IntermediateProcessingBufferPool - Allocating new intermediate processing buffer[222] of size[1,142,857,142]
+[Full GC[CMS: 15246K->15444K(3145728K), 0.1036770 secs] 314761K->15444K(4089472K), [CMS Perm : 39889K->39889K(66556K)], 0.1037830 secs] [Times: user=0.11 sys=0.00, real=0.10 secs] 
+[Full GC[CMS: 15444K->15444K(3145728K), 0.0891800 secs] 15444K->15444K(4089472K), [CMS Perm : 39889K->39889K(66556K)], 0.0892730 secs] [Times: user=0.09 sys=0.00, real=0.09 secs] 
+[Full GC[CMS: 15444K->15444K(3145728K), 0.0885340 secs] 15444K->15444K(4089472K), [CMS Perm : 39889K->39889K(66556K)], 0.0886360 secs] [Times: user=0.09 sys=0.00, real=0.09 secs] 
+[Full GC[CMS: 15444K->15444K(3145728K), 0.0892900 secs] 17841K->15444K(4089472K), [CMS Perm : 39889K->39889K(66556K)], 0.0893870 secs] [Times: user=0.09 sys=0.00, real=0.09 secs] 
+2014-10-29 21:40:59,199 ERROR [processing-6] io.druid.query.ChainedExecutionQueryRunner - Exception with one of the sequences!
+java.lang.NullPointerException
+	at io.druid.query.topn.PooledTopNAlgorithm.cleanup(PooledTopNAlgorithm.java:231)
+	at io.druid.query.topn.PooledTopNAlgorithm.cleanup(PooledTopNAlgorithm.java:37)
+	at io.druid.query.topn.TopNMapFn.apply(TopNMapFn.java:64)
+	at io.druid.query.topn.TopNMapFn.apply(TopNMapFn.java:29)
+	at io.druid.query.topn.TopNQueryEngine$1.apply(TopNQueryEngine.java:84)
+	at io.druid.query.topn.TopNQueryEngine$1.apply(TopNQueryEngine.java:79)
+	at com.metamx.common.guava.MappingYieldingAccumulator.accumulate(MappingYieldingAccumulator.java:57)
+	at com.metamx.common.guava.FilteringYieldingAccumulator.accumulate(FilteringYieldingAccumulator.java:69)
+	at com.metamx.common.guava.MappingYieldingAccumulator.accumulate(MappingYieldingAccumulator.java:57)
+	at com.metamx.common.guava.BaseSequence.makeYielder(BaseSequence.java:104)
+	at com.metamx.common.guava.BaseSequence.toYielder(BaseSequence.java:81)
+	at com.metamx.common.guava.MappedSequence.toYielder(MappedSequence.java:46)
+	at com.metamx.common.guava.ResourceClosingSequence.toYielder(ResourceClosingSequence.java:25)
+	at com.metamx.common.guava.FilteredSequence.toYielder(FilteredSequence.java:52)
+	at com.metamx.common.guava.MappedSequence.toYielder(MappedSequence.java:46)
+	at com.metamx.common.guava.FilteredSequence.toYielder(FilteredSequence.java:52)
+	at com.metamx.common.guava.ResourceClosingSequence.toYielder(ResourceClosingSequence.java:25)
+	at com.metamx.common.guava.YieldingSequenceBase.accumulate(YieldingSequenceBase.java:18)
+	at io.druid.query.MetricsEmittingQueryRunner$1.accumulate(MetricsEmittingQueryRunner.java:103)
+	at io.druid.query.MetricsEmittingQueryRunner$1.accumulate(MetricsEmittingQueryRunner.java:103)
+	at io.druid.query.spec.SpecificSegmentQueryRunner$2$1.call(SpecificSegmentQueryRunner.java:78)
+	at io.druid.query.spec.SpecificSegmentQueryRunner.doNamed(SpecificSegmentQueryRunner.java:149)
+	at io.druid.query.spec.SpecificSegmentQueryRunner.access$300(SpecificSegmentQueryRunner.java:35)
+	at io.druid.query.spec.SpecificSegmentQueryRunner$2.doItNamed(SpecificSegmentQueryRunner.java:140)
+	at io.druid.query.spec.SpecificSegmentQueryRunner$2.accumulate(SpecificSegmentQueryRunner.java:72)
+	at com.metamx.common.guava.Sequences.toList(Sequences.java:113)
+	at io.druid.query.ChainedExecutionQueryRunner$1$1$1.call(ChainedExecutionQueryRunner.java:132)
+	at io.druid.query.ChainedExecutionQueryRunner$1$1$1.call(ChainedExecutionQueryRunner.java:118)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:262)
+	at io.druid.query.PrioritizedExecutorService$PrioritizedListenableFutureTask.run(PrioritizedExecutorService.java:204)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+2014-10-29 21:40:59,199 ERROR [processing-5] io.druid.query.ChainedExecutionQueryRunner - Exception with one of the sequences!
+java.lang.NullPointerException
+	at io.druid.query.topn.PooledTopNAlgorithm.cleanup(PooledTopNAlgorithm.java:231)
+	at io.druid.query.topn.PooledTopNAlgorithm.cleanup(PooledTopNAlgorithm.java:37)
+	at io.druid.query.topn.TopNMapFn.apply(TopNMapFn.java:64)
+	at io.druid.query.topn.TopNMapFn.apply(TopNMapFn.java:29)
+	at io.druid.query.topn.TopNQueryEngine$1.apply(TopNQueryEngine.java:84)
+	at io.druid.query.topn.TopNQueryEngine$1.apply(TopNQueryEngine.java:79)
+	at com.metamx.common.guava.MappingYieldingAccumulator.accumulate(MappingYieldingAccumulator.java:57)
+	at com.metamx.common.guava.FilteringYieldingAccumulator.accumulate(FilteringYieldingAccumulator.java:69)
+	at com.metamx.common.guava.MappingYieldingAccumulator.accumulate(MappingYieldingAccumulator.java:57)
+	at com.metamx.common.guava.BaseSequence.makeYielder(BaseSequence.java:104)
+	at com.metamx.common.guava.BaseSequence.toYielder(BaseSequence.java:81)
+	at com.metamx.common.guava.MappedSequence.toYielder(MappedSequence.java:46)
+	at com.metamx.common.guava.ResourceClosingSequence.toYielder(ResourceClosingSequence.java:25)
+	at com.metamx.common.guava.FilteredSequence.toYielder(FilteredSequence.java:52)
+	at com.metamx.common.guava.MappedSequence.toYielder(MappedSequence.java:46)
+	at com.metamx.common.guava.FilteredSequence.toYielder(FilteredSequence.java:52)
+	at com.metamx.common.guava.ResourceClosingSequence.toYielder(ResourceClosingSequence.java:25)
+	at com.metamx.common.guava.YieldingSequenceBase.accumulate(YieldingSequenceBase.java:18)
+	at io.druid.query.MetricsEmittingQueryRunner$1.accumulate(MetricsEmittingQueryRunner.java:103)
+	at io.druid.query.MetricsEmittingQueryRunner$1.accumulate(MetricsEmittingQueryRunner.java:103)
+	at io.druid.query.spec.SpecificSegmentQueryRunner$2$1.call(SpecificSegmentQueryRunner.java:78)
+	at io.druid.query.spec.SpecificSegmentQueryRunner.doNamed(SpecificSegmentQueryRunner.java:149)
+	at io.druid.query.spec.SpecificSegmentQueryRunner.access$300(SpecificSegmentQueryRunner.java:35)
+	at io.druid.query.spec.SpecificSegmentQueryRunner$2.doItNamed(SpecificSegmentQueryRunner.java:140)
+	at io.druid.query.spec.SpecificSegmentQueryRunner$2.accumulate(SpecificSegmentQueryRunner.java:72)
+	at com.metamx.common.guava.Sequences.toList(Sequences.java:113)
+	at io.druid.query.ChainedExecutionQueryRunner$1$1$1.call(ChainedExecutionQueryRunner.java:132)
+	at io.druid.query.ChainedExecutionQueryRunner$1$1$1.call(ChainedExecutionQueryRunner.java:118)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:262)
+	at io.druid.query.PrioritizedExecutorService$PrioritizedListenableFutureTask.run(PrioritizedExecutorService.java:204)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+2014-10-29 21:40:59,207 INFO [topN_click_conversion_[2014-07-24T00:00:00.000Z/2014-07-25T00:00:00.000Z]] io.druid.guice.DruidProcessingModule$IntermediateProcessingBufferPool - Allocating new intermediate processing buffer[223] of size[1,142,857,142]
+2014-10-29 21:40:59,207 INFO [topN_click_conversion_[2014-06-04T00:00:00.000Z/2014-06-05T00:00:00.000Z]] io.druid.guice.DruidProcessingModule$IntermediateProcessingBufferPool - Allocating new intermediate processing buffer[224] of size[1,142,857,142]
+[Full GC[CMS: 15444K->15262K(3145728K), 0.0890440 secs] 44207K->15262K(4089472K), [CMS Perm : 39889K->39889K(66556K)], 0.0891450 secs] [Times: user=0.09 sys=0.00, real=0.09 secs] 
+[Full GC[CMS: 15262K->15247K(3145728K), 0.0889730 secs] 22454K->15247K(4089472K), [CMS Perm : 39889K->39889K(66556K)], 0.0890760 secs] [Times: user=0.09 sys=0.00, real=0.08 secs] 
+2014-10-29 21:40:59,386 ERROR [processing-1] io.druid.query.ChainedExecutionQueryRunner - Exception with one of the sequences!
+java.lang.NullPointerException
+	at io.druid.query.topn.PooledTopNAlgorithm.cleanup(PooledTopNAlgorithm.java:231)
+	at io.druid.query.topn.PooledTopNAlgorithm.cleanup(PooledTopNAlgorithm.java:37)
+	at io.druid.query.topn.TopNMapFn.apply(TopNMapFn.java:64)
+	at io.druid.query.topn.TopNMapFn.apply(TopNMapFn.java:29)
+	at io.druid.query.topn.TopNQueryEngine$1.apply(TopNQueryEngine.java:84)
+	at io.druid.query.topn.TopNQueryEngine$1.apply(TopNQueryEngine.java:79)
+	at com.metamx.common.guava.MappingYieldingAccumulator.accumulate(MappingYieldingAccumulator.java:57)
+	at com.metamx.common.guava.FilteringYieldingAccumulator.accumulate(FilteringYieldingAccumulator.java:69)
+	at com.metamx.common.guava.MappingYieldingAccumulator.accumulate(MappingYieldingAccumulator.java:57)
+	at com.metamx.common.guava.BaseSequence.makeYielder(BaseSequence.java:104)
+	at com.metamx.common.guava.BaseSequence.toYielder(BaseSequence.java:81)
+	at com.metamx.common.guava.MappedSequence.toYielder(MappedSequence.java:46)
+	at com.metamx.common.guava.ResourceClosingSequence.toYielder(ResourceClosingSequence.java:25)
+	at com.metamx.common.guava.FilteredSequence.toYielder(FilteredSequence.java:52)
+	at com.metamx.common.guava.MappedSequence.toYielder(MappedSequence.java:46)
+	at com.metamx.common.guava.FilteredSequence.toYielder(FilteredSequence.java:52)
+	at com.metamx.common.guava.ResourceClosingSequence.toYielder(ResourceClosingSequence.java:25)
+	at com.metamx.common.guava.YieldingSequenceBase.accumulate(YieldingSequenceBase.java:18)
+	at io.druid.query.MetricsEmittingQueryRunner$1.accumulate(MetricsEmittingQueryRunner.java:103)
+	at io.druid.query.MetricsEmittingQueryRunner$1.accumulate(MetricsEmittingQueryRunner.java:103)
+	at io.druid.query.spec.SpecificSegmentQueryRunner$2$1.call(SpecificSegmentQueryRunner.java:78)
+	at io.druid.query.spec.SpecificSegmentQueryRunner.doNamed(SpecificSegmentQueryRunner.java:149)
+	at io.druid.query.spec.SpecificSegmentQueryRunner.access$300(SpecificSegmentQueryRunner.java:35)
+	at io.druid.query.spec.SpecificSegmentQueryRunner$2.doItNamed(SpecificSegmentQueryRunner.java:140)
+	at io.druid.query.spec.SpecificSegmentQueryRunner$2.accumulate(SpecificSegmentQueryRunner.java:72)
+	at com.metamx.common.guava.Sequences.toList(Sequences.java:113)
+	at io.druid.query.ChainedExecutionQueryRunner$1$1$1.call(ChainedExecutionQueryRunner.java:132)
+	at io.druid.query.ChainedExecutionQueryRunner$1$1$1.call(ChainedExecutionQueryRunner.java:118)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:262)
+	at io.druid.query.PrioritizedExecutorService$PrioritizedListenableFutureTask.run(PrioritizedExecutorService.java:204)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+2014-10-29 21:40:59,386 ERROR [processing-4] io.druid.query.ChainedExecutionQueryRunner - Exception with one of the sequences!
+java.lang.NullPointerException
+	at io.druid.query.topn.PooledTopNAlgorithm.cleanup(PooledTopNAlgorithm.java:231)
+	at io.druid.query.topn.PooledTopNAlgorithm.cleanup(PooledTopNAlgorithm.java:37)
+	at io.druid.query.topn.TopNMapFn.apply(TopNMapFn.java:64)
+	at io.druid.query.topn.TopNMapFn.apply(TopNMapFn.java:29)
+	at io.druid.query.topn.TopNQueryEngine$1.apply(TopNQueryEngine.java:84)
+	at io.druid.query.topn.TopNQueryEngine$1.apply(TopNQueryEngine.java:79)
+	at com.metamx.common.guava.MappingYieldingAccumulator.accumulate(MappingYieldingAccumulator.java:57)
+	at com.metamx.common.guava.FilteringYieldingAccumulator.accumulate(FilteringYieldingAccumulator.java:69)
+	at com.metamx.common.guava.MappingYieldingAccumulator.accumulate(MappingYieldingAccumulator.java:57)
+	at com.metamx.common.guava.BaseSequence.makeYielder(BaseSequence.java:104)
+	at com.metamx.common.guava.BaseSequence.toYielder(BaseSequence.java:81)
+	at com.metamx.common.guava.MappedSequence.toYielder(MappedSequence.java:46)
+	at com.metamx.common.guava.ResourceClosingSequence.toYielder(ResourceClosingSequence.java:25)
+	at com.metamx.common.guava.FilteredSequence.toYielder(FilteredSequence.java:52)
+	at com.metamx.common.guava.MappedSequence.toYielder(MappedSequence.java:46)
+	at com.metamx.common.guava.FilteredSequence.toYielder(FilteredSequence.java:52)
+	at com.metamx.common.guava.ResourceClosingSequence.toYielder(ResourceClosingSequence.java:25)
+	at com.metamx.common.guava.YieldingSequenceBase.accumulate(YieldingSequenceBase.java:18)
+	at io.druid.query.MetricsEmittingQueryRunner$1.accumulate(MetricsEmittingQueryRunner.java:103)
+	at io.druid.query.MetricsEmittingQueryRunner$1.accumulate(MetricsEmittingQueryRunner.java:103)
+	at io.druid.query.spec.SpecificSegmentQueryRunner$2$1.call(SpecificSegmentQueryRunner.java:78)
+	at io.druid.query.spec.SpecificSegmentQueryRunner.doNamed(SpecificSegmentQueryRunner.java:149)
+	at io.druid.query.spec.SpecificSegmentQueryRunner.access$300(SpecificSegmentQueryRunner.java:35)
+	at io.druid.query.spec.SpecificSegmentQueryRunner$2.doItNamed(SpecificSegmentQueryRunner.java:140)
+	at io.druid.query.spec.SpecificSegmentQueryRunner$2.accumulate(SpecificSegmentQueryRunner.java:72)
+	at com.metamx.common.guava.Sequences.toList(Sequences.java:113)
+	at io.druid.query.ChainedExecutionQueryRunner$1$1$1.call(ChainedExecutionQueryRunner.java:132)
+	at io.druid.query.ChainedExecutionQueryRunner$1$1$1.call(ChainedExecutionQueryRunner.java:118)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:262)
+	at io.druid.query.PrioritizedExecutorService$PrioritizedListenableFutureTask.run(PrioritizedExecutorService.java:204)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+```
+
+The above lines repeat hundreds of times in the log.
+
 Coordinator Console Problems
-----
+---
 
 The Coordniator Console looks like this:
 ![alt tag](https://raw.github.com/lexicalunit/druid_config/master/images/console.png)
