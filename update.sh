@@ -1,10 +1,18 @@
 #!/bin/bash
 
-scp -i $WHIRR_PEM -o "UserKnownHostsFile /dev/null" -o StrictHostKeyChecking=no $DRUID_COORDINATOR:/usr/local/druid-services/config/coordinator/runtime.properties coordinator.properties
-scp -i $WHIRR_PEM -o "UserKnownHostsFile /dev/null" -o StrictHostKeyChecking=no $DRUID_BROKER:/usr/local/druid-services/config/broker/runtime.properties broker.properties
-scp -i $WHIRR_PEM -o "UserKnownHostsFile /dev/null" -o StrictHostKeyChecking=no $DRUID_HISTORICAL_1:/usr/local/druid-services/config/historical/runtime.properties historical.properties
-scp -i $WHIRR_PEM -o "UserKnownHostsFile /dev/null" -o StrictHostKeyChecking=no $DRUID_OVERLORD:/usr/local/druid-services/config/overlord/runtime.properties overlord.properties
-scp -i $WHIRR_PEM -o "UserKnownHostsFile /dev/null" -o StrictHostKeyChecking=no $DRUID_MIDDLEMANAGER:/usr/local/druid-services/config/middleManager/runtime.properties middleManager.properties
+function abort()
+{
+    echo $'\e[1;31merror:' $1 $'\e[0m' >&2
+    exit 1
+}
+
+[[ -n "$druid_coordinator" && -n "$druid_broker" && -n "$druid_historical_1" && -n "$druid_overlord" && -n "$druid_middleManager" ]] || abort "exports not set up"
+
+scp -i $WHIRR_PEM -o "UserKnownHostsFile /dev/null" -o StrictHostKeyChecking=no $druid_coordinator:/usr/local/druid-services/config/coordinator/runtime.properties coordinator.properties
+scp -i $WHIRR_PEM -o "UserKnownHostsFile /dev/null" -o StrictHostKeyChecking=no $druid_broker:/usr/local/druid-services/config/broker/runtime.properties broker.properties
+scp -i $WHIRR_PEM -o "UserKnownHostsFile /dev/null" -o StrictHostKeyChecking=no $druid_historical_1:/usr/local/druid-services/config/historical/runtime.properties historical.properties
+scp -i $WHIRR_PEM -o "UserKnownHostsFile /dev/null" -o StrictHostKeyChecking=no $druid_overlord:/usr/local/druid-services/config/overlord/runtime.properties overlord.properties
+scp -i $WHIRR_PEM -o "UserKnownHostsFile /dev/null" -o StrictHostKeyChecking=no $druid_middleManager:/usr/local/druid-services/config/middleManager/runtime.properties middleManager.properties
 
 for I in *.properties; do
 	perl -pi -e 's/druid.s3.accessKey=.*/druid.s3.accessKey=XXXXXXXXXXXX/g' $I
