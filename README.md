@@ -185,6 +185,43 @@ user    0m0.003s
 sys 0m0.002s
 ```
 
+The topN query JSON:
+
+```json
+{
+    "queryType": "topN", 
+    "dataSource": "click_conversion", 
+    "granularity": "day", 
+    "dimension": "channel",
+    "metric": "events",
+    "threshold": 100,
+    "aggregations": [
+        {
+            "type": "longSum",
+            "fieldName": "count",
+            "name": "events"
+        },
+        {
+            "type": "longSum",
+            "fieldName": "orders",
+            "name": "orders"
+        },
+        {
+            "type": "doubleSum",
+            "fieldName": "sales",
+            "name": "sales"
+        },
+        {
+            "type": "doubleSum",
+            "fieldName": "commissions",
+            "name": "commissions"
+        }
+    ], 
+    "intervals": ["0/3000"],
+    "context": {"useCache": false, "populateCache": false}
+}
+```
+
 Looking in the broker node's log, I see the following entry:
 
 ```
