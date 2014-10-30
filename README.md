@@ -1,6 +1,7 @@
 **Table of Contents**
 
 - [Overview](#overview)
+  - [JVM Settings](#jvm-settings)
 - [Issues](#issues)
   - [Not enough direct memory](#not-enough-direct-memory)
   - [Exception with one of the sequences](#exception-with-one-of-the-sequences)
@@ -25,6 +26,25 @@ My druid cluster consists of the following nodes:
 * 1 zookeeper
 
 **Each node is a seperate AWS EC2 instance**
+
+JVM Settings
+---
+
+### coordinator
+`java -server -Xmx10g -Xms10g -XX:NewSize=512m -XX:MaxNewSize=512m -XX:+UseG1GC -XX:+PrintGCDetails -XX:+PrintGCTimeStamps -Duser.timezone=UTC -Dfile.encoding=UTF-8 -Djava.io.tmpdir=/tmp -classpath /usr/local/druid-services/lib/*:/usr/local/druid-services/config/coordinator io.druid.cli.Main server coordinator`
+
+### broker
+`java -server -Xmx20g -Xms20g -XX:NewSize=2g -XX:MaxNewSize=2g -XX:MaxDirectMemorySize=31g -XX:+UseConcMarkSweepGC -XX:+PrintGCDetails -XX:+PrintGCTimeStamps -Duser.timezone=UTC -Dfile.encoding=UTF-8 -Djava.i.tmpdir=/tmp -classpath /usr/local/druid-services/lib/*:/usr/local/druid-services/config/broker io.druid.cli.Main server broker`
+
+### historical
+`java -server -Xmx4g -Xms4g -XX:NewSize=1g -XX:MaxDirectMemorySize=4g -XX:+UseConcMarkSweepGC -XX:+PrintGCDetails -Duser.timezone=UTC -Dfile.encoding=UTF-8 -Djava.i.tmpdir=/tmp -classpath /usr/local/druid-services/lib/*:/usr/local/druid-services/config/historical io.druid.cli.Main server historical`
+
+### overlord
+`java -server -Xmx10g -Xms10g -XX:NewSize=512m -XX:MaxNewSize=512m -XX:+UseConcMarkSweepGC -XX:+PrintGCDetails -XX:+PrintGCTimeStamps -Duser.timezone=UTC -Dfile.encoding=UTF-8 -Djava.io.tmpdir=/tmp -classpath /usr/local/druid-services/lib/*:/usr/local/druid-services/config/overlord io.druid.cli.Main server overlord`
+
+### middleManager
+`java -server -Xmx64m -Xms64m -XX:+UseConcMarkSweepGC -XX:+PrintGCDetails -XX:+PrintGCTimeStamps -Duser.timezone=UTC -Dfile.encoding=UTF-8 -Djava.io.tmpdir=/tmp -classpath /usr/local/druid-services/lib/*:/usr/local/druid-services/config/middleManager io.druid.cli.Main server middleManager`
+
 
 Issues
 ===
