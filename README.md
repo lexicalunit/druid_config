@@ -40,7 +40,7 @@ My druid cluster consists of the following node types with the linked `<node-typ
 `java -server -Xmx20g -Xms20g -XX:NewSize=2g -XX:MaxNewSize=2g -XX:MaxDirectMemorySize=31g -XX:+UseConcMarkSweepGC -XX:+PrintGCDetails -XX:+PrintGCTimeStamps -Duser.timezone=UTC -Dfile.encoding=UTF-8 -Djava.i.tmpdir=/tmp -classpath /usr/local/druid-services/lib/*:/usr/local/druid-services/config/broker io.druid.cli.Main server broker`
 
 ### historical
-`java -server -Xmx4g -Xms4g -XX:NewSize=1g -XX:MaxDirectMemorySize=4g -XX:+UseConcMarkSweepGC -XX:+PrintGCDetails -Duser.timezone=UTC -Dfile.encoding=UTF-8 -Djava.i.tmpdir=/tmp -classpath /usr/local/druid-services/lib/*:/usr/local/druid-services/config/historical io.druid.cli.Main server historical`
+`java -server -Xmx4g -Xms4g -XX:NewSize=1g -XX:MaxDirectMemorySize=9g -XX:+UseConcMarkSweepGC -XX:+PrintGCDetails -Duser.timezone=UTC -Dfile.encoding=UTF-8 -Djava.i.tmpdir=/tmp -classpath /usr/local/druid-services/lib/*:/usr/local/druid-services/config/historical io.druid.cli.Main server historical`
 
 ### overlord
 `java -server -Xmx10g -Xms10g -XX:NewSize=512m -XX:MaxNewSize=512m -XX:+UseConcMarkSweepGC -XX:+PrintGCDetails -XX:+PrintGCTimeStamps -Duser.timezone=UTC -Dfile.encoding=UTF-8 -Djava.io.tmpdir=/tmp -classpath /usr/local/druid-services/lib/*:/usr/local/druid-services/config/overlord io.druid.cli.Main server overlord`
