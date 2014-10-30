@@ -629,3 +629,7 @@ The above lines repeat hundreds of times in the log.
 ### Resolution
 
 The JVM setting `-XX:MaxDirectMemorySize` on the historical nodes must be at least as big as `druid.processing.numThreads * druid.processing.buffer.sizeBytes`.
+
+Explanation from Fangjin:
+
+    The intermediate buffer is a block of off-heap memory used to hold intermediate results for computation (one of the biggest users of this buffer is topN queries). For example, if you need to compute aggregates for every dimension value in a topN dimension with very high cardinality, you may require a lot of memory to store these results. Using off-heap memory bounds the total resources used so we don't overflow the heap for computations, something that is likely without bounds when there are numerous concurrent queries. Because of the limited memory available on your nodes, you do have a make a tradeoff of how this memory gets used for various things. Druid needs some manual configuration for resource distribution right now and we hope this gets easier in the future.
