@@ -1,6 +1,7 @@
 **Table of Contents**
 
 - [Overview](#overview)
+  - [Node Configuration](#node-configuration)
   - [JVM Settings](#jvm-settings)
 - [Issues](#issues)
   - [Not enough direct memory](#not-enough-direct-memory)
@@ -10,25 +11,27 @@
   - [No Task Logs](#no-task-logs)
   - [Index Task Fails](#index-task-fails)
 
-Overview
-===
+---
+
+# Overview
 
 Please see the included `.properties` files for the druid configuration of each node type. At the top of each file is a summary of system resources such as the number of processors the machine has, the size of main memory in bytes, etc...
 
-My druid cluster consists of the following nodes:
+## Node Configuration
 
-* [3 historical](historical.properties)
-* [1 overlord](overlord.properties)
-* [1 middleManager](middleManager.properties)
-* [1 broker](broker.properties)
-* [1 coordinator](coordinator.properties)
-* 1 mysql
-* 1 zookeeper
+My druid cluster consists of the following node types with the linked `<node-type>/runtime.properties` configuration files:
+
+* 3x [historical](historical.properties)
+* 1x [overlord](overlord.properties)
+* 1x [middleManager](middleManager.properties)
+* 1x [broker](broker.properties)
+* 1x [coordinator](coordinator.properties)
+* 1x mysql
+* 1x zookeeper
 
 **Each node is a seperate AWS EC2 instance**
 
-JVM Settings
----
+## JVM Settings
 
 ### coordinator
 `java -server -Xmx10g -Xms10g -XX:NewSize=512m -XX:MaxNewSize=512m -XX:+UseG1GC -XX:+PrintGCDetails -XX:+PrintGCTimeStamps -Duser.timezone=UTC -Dfile.encoding=UTF-8 -Djava.io.tmpdir=/tmp -classpath /usr/local/druid-services/lib/*:/usr/local/druid-services/config/coordinator io.druid.cli.Main server coordinator`
@@ -45,12 +48,11 @@ JVM Settings
 ### middleManager
 `java -server -Xmx64m -Xms64m -XX:+UseConcMarkSweepGC -XX:+PrintGCDetails -XX:+PrintGCTimeStamps -Duser.timezone=UTC -Dfile.encoding=UTF-8 -Djava.io.tmpdir=/tmp -classpath /usr/local/druid-services/lib/*:/usr/local/druid-services/config/middleManager io.druid.cli.Main server middleManager`
 
-
-Issues
-===
-
-Not enough direct memory
 ---
+
+# Issues
+
+## Not enough direct memory
 
 I get the following in my historical node log:
 
@@ -186,8 +188,7 @@ com.google.inject.ProvisionException: Guice provision errors:
 	at io.druid.cli.Main.main(Main.java:90)
 ```
 
-Exception with one of the sequences
----
+## Exception with one of the sequences
 
 When trying to run a simple topN query after restarting my cluster, I get the following response:
 
@@ -407,8 +408,7 @@ java.lang.NullPointerException
 
 The above lines repeat hundreds of times in the log.
 
-Coordinator Console Problems
----
+## Coordinator Console Problems
 
 The Coordniator Console looks like this:
 ![alt tag](https://raw.github.com/lexicalunit/druid_config/master/images/console.png)
@@ -419,11 +419,12 @@ When I go to `http://coordinator-ip:8080`, the Coordinator Console comes up and 
 However, when I go to, for example, `http://overlord-ip:8080` instead, the console will come up but nothing works properly. For example, dropdowns not working anymore:
 ![alt tag](https://raw.github.com/lexicalunit/druid_config/master/images/broken_console.png)
 
-Resolved Issues
-===
-
-No Task Logs
 ---
+
+# Resolved Issues
+
+## No Task Logs
+
 After kicking off a Indexing Task I can see that it is running in the console:
 ![alt tag](https://raw.github.com/lexicalunit/druid_config/master/images/task_running.png)
 
@@ -468,8 +469,8 @@ druid.indexer.logs.s3Bucket=s3-bucket
 druid.indexer.logs.s3Prefix=logs
 ```
 
-Index Task Fails
----
+## Index Task Fails
+
 I am trying to reindex my `click_conversion` dataset so that segments are indexed by `WEEK` rather than by `DAY`.
 
 ### Index Task Description
